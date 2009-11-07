@@ -1,7 +1,7 @@
 package opencgd.games;
 
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.io.IOException;
 
 import opencgd.AbstractGame;
@@ -68,7 +68,7 @@ public class Reversi extends AbstractGame {
 		opencgd.library.D.b(super.u, "Time-Remaining:" + h, l, 502, 20);
 	}
 	
-	public void b(){
+	private void b(){
 		super.k.a(0, 0, 0);
 		for(int i1 = 0; i1 <= 7; i1++){
 			for(int j1 = 0; j1 <= 7; j1++){
@@ -82,7 +82,7 @@ public class Reversi extends AbstractGame {
 		super.k.b(10);
 	}
 	
-	public void a(int i1, int j1, int k1){
+	private void a(int i1, int j1, int k1){
 		int l1 = (b[j1] + b[j1 + 1]) / 2;
 		int i2 = (e[i1] + e[i1 + 1]) / 2;
 		int j2 = (d[i1] + d[i1 + 1]) / 2;
@@ -92,7 +92,7 @@ public class Reversi extends AbstractGame {
 		super.k.b(k2 - l2 / 2, l1 - i3 / 2, l2, i3, k1);
 	}
 	
-	public void a(int i1, int j1){
+	private void a(int i1, int j1){
 		i1 -= 6;
 		if((j1 -= 6) < b[0] || j1 >= b[8]){
 			a = -1;
@@ -128,7 +128,7 @@ public class Reversi extends AbstractGame {
 		
 	}
 	
-	public int b(int i1, int j1){
+	private int b(int i1, int j1){
 		if(i1 < 0 || j1 < 0 || i1 > 7 || j1 > 7){
 			return 0;
 		} else {
@@ -136,7 +136,7 @@ public class Reversi extends AbstractGame {
 		}
 	}
 	
-	public int a(int i1, int j1, int k1, int l1){
+	private int a(int i1, int j1, int k1, int l1){
 		int i2 = 1 + (1 - super.q) * 8;
 		int j2 = i1 + k1;
 		int k2 = j1 + l1;
@@ -160,7 +160,7 @@ public class Reversi extends AbstractGame {
 		return l2;
 	}
 	
-	public void c(int i1, int j1){
+	private void c(int i1, int j1){
 		if(f){
 			return;
 		}

@@ -1,7 +1,7 @@
 package opencgd.games;
 
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.io.IOException;
 
 import opencgd.AbstractGame;
@@ -143,24 +143,24 @@ public class BattleCruisers extends AbstractGame {
 		opencgd.library.D.b(super.u, "Time-Remaining:" + l, cb, 502, 20);
 	}
 	
-	public void a(int i1, int j1){
+	private void a(int i1, int j1){
 		z[u] = i1;
 		y[u] = j1;
 		u++;
 	}
 	
-	public void d(int i1, int j1, int k1){
+	private void d(int i1, int j1, int k1){
 		super.k.a(0, 0, 23);
 		super.k.a(j + i1 * g, e + j1 * b, 24 + k1);
 		super.k.b(23);
 	}
 	
-	public void b(){
+	private void b(){
 		super.k.a(0, 0, 0);
 		super.k.b(23);
 	}
 	
-	public void c(){
+	private void c(){
 		super.k.a(0, 0, 0);
 		for(int i1 = 0; i1 < 8; i1++){
 			for(int j1 = 0; j1 < 10; j1++){
@@ -174,7 +174,7 @@ public class BattleCruisers extends AbstractGame {
 		super.k.b(22);
 	}
 	
-	public void c(int i1, int j1, int k1){
+	private void c(int i1, int j1, int k1){
 		if(k1 < 0){
 			k1 = -k1;
 		}
@@ -182,11 +182,11 @@ public class BattleCruisers extends AbstractGame {
 		super.k.a(j + i1 * g + 6, (e + j1 * b) - k1, 1);
 	}
 	
-	public void b(int i1, int j1, int k1){
+	private void b(int i1, int j1, int k1){
 		super.k.a(j + i1 * g + 6, (e + j1 * b) - 9, k1 + 2);
 	}
 	
-	public void e(int i1, int j1, int k1){
+	private void e(int i1, int j1, int k1){
 		int l1 = x[k1 & 0xf];
 		int i2 = k1 / 32;
 		int j2 = 6 + (l1 - 2) * 4 + i2 * 2 + 1;
@@ -205,7 +205,7 @@ public class BattleCruisers extends AbstractGame {
 		}
 	}
 	
-	public void a(int i1, int j1, int k1){
+	private void a(int i1, int j1, int k1){
 		int l1 = x[k1 & 0xf];
 		int i2 = k1 / 32;
 		int j2 = 6 + (l1 - 2) * 4 + i2 * 2;
@@ -224,7 +224,7 @@ public class BattleCruisers extends AbstractGame {
 		}
 	}
 	
-	public void b(int i1, int j1){
+	private void b(int i1, int j1){
 		i1 -= 6;
 		if((j1 -= 6) < e || j1 >= e + b * 8 || i1 < j || i1 >= j + g * 10){
 			a = -1;
@@ -237,7 +237,7 @@ public class BattleCruisers extends AbstractGame {
 		}
 	}
 	
-	public void c(int i1, int j1){
+	private void c(int i1, int j1){
 		if(i1 < 0 || j1 < 0 || i1 > 9 || j1 > 7 || l == 0){
 			return;
 		}
@@ -329,7 +329,7 @@ public class BattleCruisers extends AbstractGame {
 		}
 	}
 	
-	public boolean c(int i1, int j1, int k1, int l1){
+	private boolean c(int i1, int j1, int k1, int l1){
 		if(i1 < 0 || j1 < 0){
 			return false;
 		}
@@ -378,7 +378,7 @@ public class BattleCruisers extends AbstractGame {
 		return true;
 	}
 	
-	public void a(int i1, int j1, int k1, int l1, boolean flag){
+	private void a(int i1, int j1, int k1, int l1, boolean flag){
 		if(i1 > k1){
 			int i2 = i1;
 			i1 = k1;
@@ -403,7 +403,7 @@ public class BattleCruisers extends AbstractGame {
 		}
 	}
 	
-	public void a(int i1, int j1, int k1, int l1){
+	private void a(int i1, int j1, int k1, int l1){
 		if(i1 < 0 || j1 < 0 || i1 >= 10 || j1 >= 8){
 			return;
 		}
@@ -423,7 +423,7 @@ public class BattleCruisers extends AbstractGame {
 		super.k.a(j + i1 * g, e + j1 * b, ((k1 - i1) + 1) * g, ((l1 - j1) + 1) * b, Color.red, 128, false);
 	}
 	
-	public void b(int i1, int j1, int k1, int l1){
+	private void b(int i1, int j1, int k1, int l1){
 		int i2 = Math.abs(i1 - k1);
 		int j2 = Math.abs(j1 - l1);
 		if(i2 < j2){
@@ -435,7 +435,7 @@ public class BattleCruisers extends AbstractGame {
 		c = l1;
 	}
 	
-	public void d(int i1, int j1){
+	private void d(int i1, int j1){
 		if(i1 < 0 || j1 < 0 || i1 >= 10 || j1 >= 8){
 			return;
 		}
@@ -459,7 +459,7 @@ public class BattleCruisers extends AbstractGame {
 		c();
 	}
 	
-	public void e(){
+	private void e(){
 		f();
 		for(int i1 = 0; i1 < 6; i1++){
 			int j1;
@@ -476,7 +476,7 @@ public class BattleCruisers extends AbstractGame {
 		c();
 	}
 	
-	public void f(){
+	private void f(){
 		for(int i1 = 0; i1 < 10; i1++){
 			for(int j1 = 0; j1 < 8; j1++){
 				db[i1][j1] = -1;

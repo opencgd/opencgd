@@ -1,6 +1,9 @@
 package opencgd;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.io.IOException;
 
 import opencgd.library.Buffer;
@@ -109,14 +112,14 @@ public abstract class AbstractGame {
 		t.drawImage(y, 0, 0, w);
 	}
 	
-	public void n(){
+	private void n(){
 		u.setColor(new Color(0, 104, 130));
 		u.fillRect(0, 0, 512, 6);
 		u.setColor(Color.black);
 		u.drawLine(5, 5, 507, 5);
 	}
 	
-	public final void o(){
+	private final void o(){
 		try{
 			b++;
 			if(b > c){
@@ -262,7 +265,7 @@ public abstract class AbstractGame {
 		}
 	}
 	
-	public final void p(){
+	private final void p(){
 		w.gameScreen = 1;
 		w.te = -1;
 		w.se = -1;

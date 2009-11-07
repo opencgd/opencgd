@@ -1,7 +1,7 @@
 package opencgd.games;
 
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.io.IOException;
 
 import opencgd.AbstractGame;
@@ -129,7 +129,7 @@ public class Dungeon extends AbstractGame {
 		super.u.drawString(h, 95, 38);
 	}
 	
-	public void b(){
+	private void b(){
 		super.k.a(0, 0, 0);
 		for(int i1 = 0; i1 < 8; i1++){
 			for(int j1 = 0; j1 < 5; j1++){

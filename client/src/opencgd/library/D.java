@@ -1,10 +1,27 @@
 package opencgd.library;
 
 import java.applet.Applet;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dialog;
+import java.awt.Event;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.MediaTracker;
+import java.awt.Toolkit;
 import java.awt.image.MemoryImageSource;
 import java.awt.image.PixelGrabber;
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -50,7 +67,7 @@ public class D extends Dialog {
 		}
 	}
 	
-	public D(Frame frame, String s){
+	private D(Frame frame, String s){
 		super(frame, s);
 		setBackground(Color.lightGray);
 		setLayout(new BorderLayout());
@@ -269,7 +286,7 @@ public class D extends Dialog {
 		return fileoutputstream;
 	}
 	
-	public static OutputStream f(String s) throws IOException{
+	private static OutputStream f(String s) throws IOException{
 		FileOutputStream fileoutputstream = new FileOutputStream(abspath + s);
 		return fileoutputstream;
 	}

@@ -1,7 +1,7 @@
 package opencgd.games;
 
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.io.IOException;
 
 import opencgd.AbstractGame;
@@ -180,7 +180,7 @@ public class Chess extends AbstractGame {
 		opencgd.library.D.b(super.u, "Time-Remaining:" + h, db, 502, 20);
 	}
 	
-	public void b(){
+	private void b(){
 		super.k.b = 290;
 		super.k.a(0, 0, 0);
 		super.k.b = 279;
@@ -208,7 +208,7 @@ public class Chess extends AbstractGame {
 		super.k.b(25);
 	}
 	
-	public void b(int i1, int j1, int k1, int l1, int i2, int j2, int k2){
+	private void b(int i1, int j1, int k1, int l1, int i2, int j2, int k2){
 		if(super.q == 0){
 			j1 = 7 - j1;
 			l1 = 7 - l1;
@@ -236,7 +236,7 @@ public class Chess extends AbstractGame {
 		super.k.b(l5 - j6 / 2, i6 - (k6 * 77) / 91, j6, k6, i2);
 	}
 	
-	public void a(int i1, int j1, int k1, int l1, int i2, int j2, int k2){
+	private void a(int i1, int j1, int k1, int l1, int i2, int j2, int k2){
 		if(super.q == 0){
 			j1 = 7 - j1;
 			l1 = 7 - l1;
@@ -264,7 +264,7 @@ public class Chess extends AbstractGame {
 		super.k.a(l5 - j6 / 2, i6 - (k6 * 16) / 75, j6, k6, i2 + 12, 128);
 	}
 	
-	public void a(int i1, int j1, int k1){
+	private void a(int i1, int j1, int k1){
 		if(super.q == 0){
 			j1 = 7 - j1;
 		}
@@ -280,7 +280,7 @@ public class Chess extends AbstractGame {
 		super.k.b(k2 - l2 / 2, l1 - (i3 * 77) / 91, l2, i3, k1);
 	}
 	
-	public void b(int i1, int j1, int k1){
+	private void b(int i1, int j1, int k1){
 		if(super.q == 0){
 			j1 = 7 - j1;
 		}
@@ -296,7 +296,7 @@ public class Chess extends AbstractGame {
 		super.k.a(k2 - l2 / 2, l1 - (i3 * 16) / 75, l2, i3, k1 + 12, 128);
 	}
 	
-	public void a(int i1, int j1){
+	private void a(int i1, int j1){
 		if(super.q == 0){
 			j1 = 7 - j1;
 		}
@@ -312,7 +312,7 @@ public class Chess extends AbstractGame {
 		super.k.b(j2 - k2 / 2, k1 - l2 / 2, k2, l2, 26);
 	}
 	
-	public void b(int i1, int j1){
+	private void b(int i1, int j1){
 		i1 -= 6;
 		if((j1 -= 6) < b[0] || j1 >= b[8]){
 			a = -1;
@@ -356,7 +356,7 @@ public class Chess extends AbstractGame {
 		}
 	}
 	
-	public void a(int i1, int j1, int k1, int l1, int i2){
+	private void a(int i1, int j1, int k1, int l1, int i2){
 		int j2 = Math.abs(k1 - i1);
 		int k2 = Math.abs(l1 - j1);
 		int l2 = j2;
@@ -382,7 +382,7 @@ public class Chess extends AbstractGame {
 		}
 	}
 	
-	public void c(int i1, int j1){
+	private void c(int i1, int j1){
 		if(i1 == -1 || j1 == -1 || h == 0){
 			return;
 		}
@@ -424,7 +424,7 @@ public class Chess extends AbstractGame {
 		a(hb, gb, kb, jb, fb);
 	}
 	
-	public void c(){
+	private void c(){
 		if(l == -1){
 			return;
 		}
@@ -438,7 +438,7 @@ public class Chess extends AbstractGame {
 		}
 	}
 	
-	public void d(int i1, int j1){
+	private void d(int i1, int j1){
 		if(i1 == -1 || j1 == -1){
 			return;
 		}
@@ -463,7 +463,7 @@ public class Chess extends AbstractGame {
 		f();
 	}
 	
-	public boolean a(int i1, int j1, int k1, int l1){
+	private boolean a(int i1, int j1, int k1, int l1){
 		int i2 = eb[i1][j1];
 		int j2 = eb[k1][l1];
 		eb[i1][j1] = 0;
@@ -477,7 +477,7 @@ public class Chess extends AbstractGame {
 		return v;
 	}
 	
-	public void b(int i1, int j1, int k1, int l1){
+	private void b(int i1, int j1, int k1, int l1){
 		if(eb[k1][l1] == 1 || eb[k1][l1] == 7){
 			v = true;
 		}
@@ -492,7 +492,7 @@ public class Chess extends AbstractGame {
 		}
 	}
 	
-	public boolean c(int i1, int j1, int k1){
+	private boolean c(int i1, int j1, int k1){
 		if(i1 < 0 || j1 < 0 || i1 >= 8 || j1 >= 8){
 			return false;
 		}
@@ -502,18 +502,18 @@ public class Chess extends AbstractGame {
 		return (eb[i1][j1] - 1) / 6 != k1;
 	}
 	
-	public boolean f(int i1, int j1){
+	private boolean f(int i1, int j1){
 		if(i1 < 0 || j1 < 0 || i1 >= 8 || j1 >= 8){
 			return false;
 		}
 		return eb[i1][j1] == 0;
 	}
 	
-	public boolean d(int i1, int j1, int k1){
+	private boolean d(int i1, int j1, int k1){
 		return f(i1, j1) || c(i1, j1, k1);
 	}
 	
-	public void a(int i1){
+	private void a(int i1){
 		int j1 = i1 * 6;
 		for(int k2 = 0; k2 < 8; k2++){
 			for(int l2 = 0; l2 < 8; l2++){
@@ -697,7 +697,7 @@ public class Chess extends AbstractGame {
 		
 	}
 	
-	public void e(){
+	private void e(){
 		n = true;
 		s = 0;
 		y = 0;
@@ -718,7 +718,7 @@ public class Chess extends AbstractGame {
 		
 	}
 	
-	public void f(){
+	private void f(){
 		int i1 = l;
 		int j1 = k;
 		y = 0;

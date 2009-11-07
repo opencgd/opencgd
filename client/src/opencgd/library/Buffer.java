@@ -1,10 +1,10 @@
 package opencgd.library;
 
-import java.io.*;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.Socket;
-
-// Referenced classes of package jagex:
-//            d
 
 public class Buffer implements Runnable {
 	
@@ -25,18 +25,10 @@ public class Buffer implements Runnable {
 	private Socket f;
 	private OutputStream h;
 	private InputStream l;
-	final int n = 8192;
 	private static char cmap[];
 	private static int quotes = 34;
-	public static int bar = 124;
-	public static int space = 32;
-	public static int bslash = 92;
-	public static int slash = 47;
-	public static int fullstop = 46;
 	private static int minus = 45;
 	private static int comma = 44;
-	public static int plus = 43;
-	public static int star = 42;
 	private static int semi = 59;
 	private static int equals = 61;
 	
@@ -94,7 +86,7 @@ public class Buffer implements Runnable {
 		offset = 3;
 	}
 	
-	static int a(byte abyte0[], byte abyte1[], int i1){
+	private static int a(byte abyte0[], byte abyte1[], int i1){
 		int j1 = i1 + 300;
 		if(j1 > 8192){
 			j1 = 8192;
@@ -191,7 +183,7 @@ public class Buffer implements Runnable {
 		return l1;
 	}
 	
-	int b(byte abyte0[], byte abyte1[], int i1){
+	private int b(byte abyte0[], byte abyte1[], int i1){
 		byte abyte2[][] = new byte[8192][];
 		int ai[] = new int[8192];
 		int ai1[] = new int[8];
@@ -244,7 +236,7 @@ public class Buffer implements Runnable {
 		} while(true);
 	}
 	
-	static int c(byte abyte0[], byte abyte1[], int i1){
+	private static int c(byte abyte0[], byte abyte1[], int i1){
 		byte byte0 = abyte0[0];
 		int j1 = 0;
 		int k1 = 1;
@@ -277,7 +269,7 @@ public class Buffer implements Runnable {
 		return j1;
 	}
 	
-	int d(byte abyte0[], byte abyte1[], int i1){
+	private int d(byte abyte0[], byte abyte1[], int i1){
 		char c1 = '\u01F4';
 		int j1 = 0;
 		for(int l1 = 0; l1 < i1; l1++){
@@ -309,7 +301,7 @@ public class Buffer implements Runnable {
 		return ai;
 	}
 	
-	public byte[] e() throws IOException{
+	private byte[] e() throws IOException{
 		int i1 = f() - 8;
 		int j1 = f();
 		if(j1 == 0){
@@ -327,7 +319,7 @@ public class Buffer implements Runnable {
 		}
 	}
 	
-	public static void a(String s1, byte abyte0[], int i1){
+	private static void a(String s1, byte abyte0[], int i1){
 		byte abyte1[] = new byte[8];
 		i1 += 8;
 		abyte1[0] = (byte) (i1 >> 24);
@@ -444,7 +436,7 @@ public class Buffer implements Runnable {
 		}
 	}
 	
-	public void a(byte abyte0[], int i1, int j1, boolean flag) throws IOException{
+	private void a(byte abyte0[], int i1, int j1, boolean flag) throws IOException{
 		if(m){
 			return;
 		}
@@ -700,7 +692,7 @@ public class Buffer implements Runnable {
 		l.skip(i1);
 	}
 	
-	public int f() throws IOException{
+	private int f() throws IOException{
 		int i1 = q();
 		int j1 = q();
 		return i1 * 0x10000 + j1;
@@ -712,7 +704,7 @@ public class Buffer implements Runnable {
 		return i1 * 256 + j1;
 	}
 	
-	public int r() throws IOException{
+	private int r() throws IOException{
 		if(m){
 			return 0;
 		} else {

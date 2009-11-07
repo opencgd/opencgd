@@ -1,7 +1,7 @@
 package opencgd.games;
 
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.io.IOException;
 
 import opencgd.AbstractGame;
@@ -172,7 +172,7 @@ public class MysteryMonster extends AbstractGame {
 		}
 	}
 	
-	public void b(){
+	private void b(){
 		super.k.a(0, 0, 0);
 		for(int i1 = 0; i1 < 6; i1++){
 			for(int j1 = 0; j1 < 4; j1++){
@@ -199,7 +199,7 @@ public class MysteryMonster extends AbstractGame {
 		super.k.b(10);
 	}
 	
-	public void a(int i1, int j1, int k1){
+	private void a(int i1, int j1, int k1){
 		int l1 = c[j1];
 		int i2 = b[j1];
 		int j2 = (i[i1] + i[i1 + 1]) / 2;
@@ -211,7 +211,7 @@ public class MysteryMonster extends AbstractGame {
 		super.k.d((l2 - 3) + 13, l1, 1 + k1, i3 - l2, 60 - (i2 - l1));
 	}
 	
-	public void a(int i1, int j1){
+	private void a(int i1, int j1){
 		i1 -= 6;
 		if((j1 -= 6) < d[0] || j1 >= d[4]){
 			a = -1;
@@ -386,7 +386,7 @@ public class MysteryMonster extends AbstractGame {
 		
 	}
 	
-	public static void c(){
+	private static void c(){
 		int i1 = 0;
 		try{
 			opencgd.library.Buffer g1 = new opencgd.library.Buffer("monster/questions.dat");

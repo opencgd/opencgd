@@ -1,7 +1,7 @@
 package opencgd.games;
 
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.io.IOException;
 
 import opencgd.AbstractGame;
@@ -349,7 +349,7 @@ public class Mahjong extends AbstractGame {
 		super.k.a("mahjong/brick.gif", 35, true);
 	}
 	
-	public void a(int i1, boolean flag, boolean flag1){
+	private void a(int i1, boolean flag, boolean flag1){
 		int ai[] = new int[14];
 		p = 0;
 		if(g == super.q){
@@ -471,7 +471,7 @@ public class Mahjong extends AbstractGame {
 		bb = true;
 	}
 	
-	public boolean a(int ai[]){
+	private boolean a(int ai[]){
 		int ai1[] = new int[14];
 		for(int i1 = 0; i1 < 14; i1++){
 			int j1 = ai[i1];

@@ -1,7 +1,7 @@
 package opencgd.games;
 
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.io.IOException;
 
 import opencgd.AbstractGame;
@@ -90,37 +90,9 @@ public class Crypt extends AbstractGame {
 	private Color db;
 	private Color eb;
 	private int mc[][] = {
-			{
-				12
-			}, {
-					4, 7, 5, 6
-			}, {
-					1, 3
-			}, {
-					0, 2
-			}, {
-					4, 7, 2
-			}, {
-					4, 5, 3
-			}, {
-					0, 5, 6
-			}, {
-					1, 7, 6
-			}, {
-				8
-			}, {
-				9
-			}, {
-				10
-			}, {
-				11
-			}, {
-				12
-			}, {
-				12
-			}, {
-				16
-			}
+			{12}, {4, 7, 5, 6}, {1, 3}, {0, 2}, {4, 7, 2},
+			{4, 5, 3}, {0, 5, 6}, {1, 7, 6}, {8}, {9},
+			{10}, {11}, {12}, {12}, {16}
 	};
 	private Color bb;
 	private Font oc;
@@ -421,7 +393,7 @@ public class Crypt extends AbstractGame {
 		opencgd.library.D.b(super.u, "Tiles-Left:" + f + "    Time-Remaining:" + e, qc, 502, 20);
 	}
 	
-	public void a(int i1){
+	private void a(int i1){
 		if(super.n[i1] != null){
 			int j1 = b[i1] - lc;
 			int k1 = a[i1] - kc;
@@ -459,7 +431,7 @@ public class Crypt extends AbstractGame {
 		}
 	}
 	
-	public void b(){
+	private void b(){
 		j = -1;
 		super.k.a(0, 0, 0);
 		for(int i1 = 2; i1 >= -2; i1--){
@@ -674,7 +646,7 @@ public class Crypt extends AbstractGame {
 		b();
 	}
 	
-	public void c(){
+	private void c(){
 		ec = new String[y];
 		hc = new String[y];
 		jb = new int[y];

@@ -1,7 +1,7 @@
 package opencgd.games;
 
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.io.IOException;
 
 import opencgd.AbstractGame;
@@ -146,7 +146,7 @@ public class Pairs extends AbstractGame {
 		opencgd.library.D.b(super.u, "Time-Remaining:" + d, o, 502, 20);
 	}
 	
-	public void b(){
+	private void b(){
 		super.k.c = 0;
 		super.k.a(0, 0, 0);
 		for(int i1 = 0; i1 < 4; i1++){

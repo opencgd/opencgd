@@ -1,10 +1,9 @@
 package opencgd.library;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.image.PixelGrabber;
-
-// Referenced classes of package jagex:
-//            f, d
 
 public class B {
 	
@@ -18,10 +17,6 @@ public class B {
 	private boolean g[];
 	private int i[][];
 	private int o;
-	public static final int focus = 8;
-	public static final int scale = 5;
-	public static final int detpow = 4;
-	public static final int detail = 16;
 	private int xb;
 	private int r;
 	private int x[];
@@ -193,7 +188,7 @@ public class B {
 		return af;
 	}
 	
-	public void a(int i1){
+	private void a(int i1){
 		char c1;
 		if(e[i1] == 0){
 			c1 = '\u1000';
@@ -229,7 +224,7 @@ public class B {
 		
 	}
 	
-	public int a(Image image, int ai[], int i1, int j1){
+	private int a(Image image, int ai[], int i1, int j1){
 		if(j1 > 0){
 			i1 = (i1 + j1) / 2;
 			opencgd.library.D.a(i1);
@@ -514,7 +509,7 @@ public class B {
 		vb = j2;
 	}
 	
-	public static void a(int ai[], int i1, int j1, int k1, int l1, int i2){
+	private static void a(int ai[], int i1, int j1, int k1, int l1, int i2){
 		if(i1 >= 0){
 			return;
 		}
@@ -563,7 +558,7 @@ public class B {
 		
 	}
 	
-	public static void a(int ai[], int i1, int j1, int k1, int ai1[], int l1, int i2, int j2, int k2, int l2, int i3, int j3, int k3, int l3, int i4){
+	private static void a(int ai[], int i1, int j1, int k1, int ai1[], int l1, int i2, int j2, int k2, int l2, int i3, int j3, int k3, int l3, int i4){
 		if(j3 <= 0){
 			return;
 		}
@@ -723,7 +718,7 @@ public class B {
 		
 	}
 	
-	public static void b(int ai[], int i1, int j1, int k1, int ai1[], int l1, int i2, int j2, int k2, int l2, int i3, int j3, int k3, int l3, int i4){
+	private static void b(int ai[], int i1, int j1, int k1, int ai1[], int l1, int i2, int j2, int k2, int l2, int i3, int j3, int k3, int l3, int i4){
 		if(j3 <= 0){
 			return;
 		}
@@ -883,7 +878,7 @@ public class B {
 		
 	}
 	
-	public static void a(int ai[], int ai1[], int i1, int j1, int k1, int l1, int i2, int j2, int k2, int l2, int i3, int j3, int k3, int l3){
+	private static void a(int ai[], int ai1[], int i1, int j1, int k1, int l1, int i2, int j2, int k2, int l2, int i3, int j3, int k3, int l3){
 		if(i3 <= 0){
 			return;
 		}
@@ -992,7 +987,7 @@ public class B {
 		
 	}
 	
-	public static void b(int ai[], int ai1[], int i1, int j1, int k1, int l1, int i2, int j2, int k2, int l2, int i3, int j3, int k3, int l3){
+	private static void b(int ai[], int ai1[], int i1, int j1, int k1, int l1, int i2, int j2, int k2, int l2, int i3, int j3, int k3, int l3){
 		if(i3 <= 0){
 			return;
 		}
@@ -1101,7 +1096,7 @@ public class B {
 		
 	}
 	
-	public void a(int i1, int j1, int ai[], int ai1[], int ai2[], int ai3[], int ai4[], int ai5[], int k1){
+	private void a(int i1, int j1, int ai[], int ai1[], int ai2[], int ai3[], int ai4[], int ai5[], int k1){
 		for(int l1 = 0; l1 < i1; l1++){
 			if(ai5[l1] < 0){
 				ai5[l1] = 0;
@@ -1824,7 +1819,7 @@ public class B {
 		
 	}
 	
-	public void a(F f1){
+	private void a(F f1){
 		for(int i1 = 0; i1 < p; i1++){
 			if(m[i1] == f1){
 				p--;

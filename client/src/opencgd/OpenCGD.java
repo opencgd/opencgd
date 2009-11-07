@@ -1,8 +1,12 @@
 package opencgd;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.io.IOException;
-import java.net.*;
+import java.net.InetAddress;
+import java.net.Socket;
 
 import opencgd.games.BattleCruisers;
 import opencgd.games.Checkers;
@@ -99,7 +103,6 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 	private String username;
 	private int s;
 	private F ie;
-	int ee;
 	private int be;
 	private boolean cb;
 	private int ad;
@@ -130,7 +133,6 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 	private boolean ed;
 	private AbstractGame games[];
 	private static boolean inAppletMode = true;
-	int q;
 	int sb;
 	int gameScreen;
 	boolean lowDetail;
@@ -218,7 +220,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		fb = 1;
 	}
 	
-	public void a(Graphics g1, int i1, int j1, int k1, int l1, boolean flag){
+	private void a(Graphics g1, int i1, int j1, int k1, int l1, boolean flag){
 		g1.drawRect(i1, j1, k1, l1);
 		if(flag){
 			g1.drawLine(i1, j1, i1 + k1, j1 + l1);
@@ -226,7 +228,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		}
 	}
 	
-	public void h(){
+	private void h(){
 		if(pd < 200){
 			boolean flag = lowDetail;
 			if(pd == 140){
@@ -592,7 +594,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		}
 	}
 	
-	public boolean c(int i1){
+	private boolean c(int i1){
 		if(myscore <= 100 && (i1 & 1) == 0){
 			return true;
 		}
@@ -617,7 +619,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		return myscore > 300 && (i1 & 0x80) == 0;
 	}
 	
-	public String b(int i1){
+	private String b(int i1){
 		if(i1 <= 100){
 			return "Beginner";
 		}
@@ -643,7 +645,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		}
 	}
 	
-	public void i(){
+	private void i(){
 		j();
 		k();
 		if(pd < 140){
@@ -923,7 +925,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		super.hh = 0;
 	}
 	
-	public void k(){
+	private void k(){
 		try{
 			if(super.ii != ""){
 				y.setPacketID(3);
@@ -1055,7 +1057,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		}
 	}
 	
-	public void l(){
+	private void l(){
 		g.a(lowDetail);
 		nb.a(96, 105, 320, 40, rc, 140, lowDetail);
 		nb.a(graphics, 6, 6, lowDetail);
@@ -1129,7 +1131,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		ad = 0;
 	}
 	
-	public void drawLobby(){
+	private void drawLobby(){
 		if(gameScreen == 1){
 			if(!lowDetail){
 				nb.b(0, 0, 500, 145, Color.black);
@@ -1173,7 +1175,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		}
 	}
 	
-	public boolean d(int i1, int j1){
+	private boolean d(int i1, int j1){
 		int k1 = i1 >> 7;
 		int l1 = j1 >> 7;
 		int i2 = i1 & 0x7f;
@@ -1271,7 +1273,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		}
 	}
 	
-	public void n(){
+	private void n(){
 		j();
 		o();
 		if(super.hh != 0 && super.e > 351){
@@ -1445,7 +1447,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		}
 	}
 	
-	public void o(){
+	private void o(){
 		try{
 			if(super.ii != ""){
 				y.setPacketID(3);
@@ -1484,7 +1486,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		}
 	}
 	
-	public void p(){
+	private void p(){
 		try{
 			for(int i1 = 0; i1 < yd * 3; i1++){
 				for(int j1 = 0; j1 < ce * 3; j1++){
@@ -1620,7 +1622,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		pe = -1;
 	}
 	
-	public boolean bb(int i1, int j1){
+	private boolean bb(int i1, int j1){
 		if(i1 < 0 || j1 < 0 || i1 >= yd || j1 >= ce){
 			return false;
 		}
@@ -1631,7 +1633,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		return c1 > 0;
 	}
 	
-	public boolean a(int i1, int j1, char c1){
+	private boolean a(int i1, int j1, char c1){
 		if(i1 < 0 || j1 < 0 || i1 >= yd || j1 >= ce){
 			return false;
 		}
@@ -1645,7 +1647,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		return c2 > 0;
 	}
 	
-	public void q(){
+	private void q(){
 		sc = new F((yd + 1) * (ce + 1) * 6, yd * ce * 2);
 		ge = new F((yd + 1) * (ce + 1) * 4, yd * ce * 4);
 		pb = new int[yd * 2 + 1][ce * 2 + 1];
@@ -2035,7 +2037,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		
 	}
 	
-	public void a(int i1, int j1, int k1, int l1, int i2, int j2, int k2, int l2){
+	private void a(int i1, int j1, int k1, int l1, int i2, int j2, int k2, int l2){
 		if(i1 >= yd * 2 || k1 >= yd * 2 || i2 >= yd * 2 || k2 >= yd * 2 || j1 >= ce * 2 || l1 >= ce * 2 || j2 >= ce * 2 || l2 >= ce * 2){
 			return;
 		}
@@ -2079,7 +2081,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		ge.a(4, ai, cc, 0);
 	}
 	
-	public void a(int i1, int j1, int k1, int l1, int i2, int j2){
+	private void a(int i1, int j1, int k1, int l1, int i2, int j2){
 		if(i1 >= yd * 2 || k1 >= yd * 2 || i2 >= yd * 2 || j1 >= ce * 2 || l1 >= ce * 2 || j2 >= ce * 2){
 			return;
 		}
@@ -2114,7 +2116,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		ge.a(3, ai, cc, 0);
 	}
 	
-	public void a(int i1, int j1, int k1, int l1, int i2, int j2, int k2){
+	private void a(int i1, int j1, int k1, int l1, int i2, int j2, int k2){
 		if(k2 == 0){
 			return;
 		}
@@ -2146,7 +2148,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		sc.a(4, ai, i2, j2);
 	}
 	
-	public void r(){
+	private void r(){
 		if(!ke){
 			g.c();
 			ke = true;
@@ -2184,7 +2186,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		y.sendPacket();
 	}
 	
-	public void loadCastle(){
+	private void loadCastle(){
 		try{
 			Buffer g1 = new Buffer("menu/castle.dat");
 			g1.m();
@@ -2293,7 +2295,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		i = new F("menu/trapdoor.ob2");
 	}
 	
-	public void processServerResponse(){
+	private void processServerResponse(){
 		try{
 			y.q();
 			int response = y.i();
@@ -2333,7 +2335,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		messageBottom = "Please try later, or press any key to retry";
 	}
 	
-	public void connectToServer(){
+	private void connectToServer(){
 		try{
 			messageTop = "Please wait...";
 			messageBottom = "Connecting to server";
@@ -2365,7 +2367,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		}
 	}
 	
-	public void drawLoginScreen(){
+	private void drawLoginScreen(){
 		if(gameScreen == 0){
 			nb.a(lowDetail);
 			g.d(0, 0, 0, 235, s, 0, 500);
@@ -2381,7 +2383,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		}
 	}
 	
-	public void w(){
+	private void w(){
 		if(gameScreen == 0){
 			s = s + 2 & 0xff;
 			if(pc == 0){
@@ -2454,7 +2456,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		}
 	}
 	
-	public void x(){
+	private void x(){
 		messageTop = "Please enter a username:";
 		messageBottom = "*" + username + "*";
 		ke = false;
@@ -2474,11 +2476,11 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		super.q = "";
 	}
 	
-	public void y(){
+	private void y(){
 		ie = new F("menu/castle.ob2");
 	}
 	
-	public void drawOptionsScreen(){
+	private void drawOptionsScreen(){
 		graphics.setColor(Color.black);
 		graphics.fillRect(0, 0, 512, 384);
 		graphics.setColor(new Color(0, 32, 64));
@@ -2496,7 +2498,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		md.drawImage(le, 0, 0, this);
 	}
 	
-	public void handleSelectOptions(){
+	private void handleSelectOptions(){
 		if(super.hh != 0){
 			if(super.e >= 112 && super.e < 160){
 				lowDetail = true;
@@ -2513,7 +2515,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		}
 	}
 	
-	public void db(){
+	private void db(){
 		if(y != null){
 			y.setPacketID(1);
 			y.sendPacket();
@@ -2522,7 +2524,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		pc = 0;
 	}
 	
-	public void j(){
+	private void j(){
 		try{
 			m++;
 			if(m > n){
@@ -2543,7 +2545,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		}
 	}
 	
-	public void eb(){
+	private void eb(){
 		try{
 			if(gameScreen != sb){
 				sb = gameScreen;

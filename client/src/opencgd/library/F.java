@@ -1,10 +1,8 @@
 package opencgd.library;
 
-import java.awt.Color;
-import java.io.*;
-
-// Referenced classes of package jagex:
-//            d, g
+import java.io.DataInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class F {
 	
@@ -80,8 +78,6 @@ public class F {
 	protected int tc[];
 	protected int uc[];
 	protected int tb;
-	public Color t;
-	public Color u;
 	
 	public F[] a(){
 		b();
@@ -230,7 +226,7 @@ public class F {
 		}
 	}
 	
-	public int a(byte abyte0[]){
+	private int a(byte abyte0[]){
 		for(; abyte0[wc] == 10 || abyte0[wc] == 13; wc++){
 		}
 		int i1 = g[abyte0[wc++] & 0xff];
@@ -351,7 +347,7 @@ public class F {
 		return false;
 	}
 	
-	public void b(){
+	private void b(){
 		d();
 		for(int i1 = 0; i1 < tb; i1++){
 			z[i1] = pb[i1];

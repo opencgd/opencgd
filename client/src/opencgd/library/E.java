@@ -1,10 +1,15 @@
 package opencgd.library;
 
-import java.awt.*;
-import java.awt.image.*;
-
-// Referenced classes of package jagex:
-//            d
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.ColorModel;
+import java.awt.image.DirectColorModel;
+import java.awt.image.ImageConsumer;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
+import java.awt.image.PixelGrabber;
 
 public class E implements ImageObserver, ImageProducer {
 	
@@ -638,7 +643,7 @@ public class E implements ImageObserver, ImageProducer {
 		
 	}
 	
-	public void a(Image image, int i1, boolean flag){
+	private void a(Image image, int i1, boolean flag){
 		int j1 = image.getWidth(this);
 		int k1 = image.getHeight(this);
 		int ai[] = new int[j1 * k1];
@@ -896,7 +901,7 @@ public class E implements ImageObserver, ImageProducer {
 		g1.drawImage(s, i1, j1, this);
 	}
 	
-	public synchronized void b(boolean flag){
+	private synchronized void b(boolean flag){
 		if(p == null){
 			return;
 		}

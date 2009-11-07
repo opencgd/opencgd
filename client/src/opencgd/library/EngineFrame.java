@@ -1,6 +1,8 @@
 package opencgd.library;
 
-import java.awt.*;
+import java.awt.Event;
+import java.awt.Frame;
+import java.awt.Graphics;
 
 public class EngineFrame extends Frame {
 	

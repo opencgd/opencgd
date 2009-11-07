@@ -1,7 +1,8 @@
 package opencgd.games;
 
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.io.IOException;
 
 import opencgd.AbstractGame;
@@ -101,10 +102,6 @@ public class CyberWars extends AbstractGame {
 	private String i;
 	private int h;
 	private Color gd;
-	int cd;
-	int ed;
-	int dd;
-	int fd;
 	private int k;
 	private int n;
 	private int vb;
@@ -116,7 +113,7 @@ public class CyberWars extends AbstractGame {
 	private Font vd;
 	private Font ud;
 	private Font db;
-	static boolean ke = true;
+	
 	private int fc[] = {
 			0, 1, 2, 1
 	};
@@ -159,7 +156,7 @@ public class CyberWars extends AbstractGame {
 		nc = 5;
 	}
 	
-	public void a(int i1, int j1, int k1){
+	private void a(int i1, int j1, int k1){
 		if(i1 < 0 || j1 < 0 || i1 >= 15 || j1 >= 9){
 			return;
 		} else {
@@ -168,7 +165,7 @@ public class CyberWars extends AbstractGame {
 		}
 	}
 	
-	public int a(int i1, int j1, int k1, int l1){
+	private int a(int i1, int j1, int k1, int l1){
 		int i2 = i1 - k1;
 		if(i2 < 0){
 			i2 = -i2;
@@ -186,7 +183,7 @@ public class CyberWars extends AbstractGame {
 		return k2 + i2 + i2 + j2 + j2;
 	}
 	
-	public boolean b(int i1, int j1, int k1, int l1){
+	private boolean b(int i1, int j1, int k1, int l1){
 		if(i1 < 0 || j1 < 0 || i1 >= 15 || j1 >= 9){
 			return false;
 		}
@@ -233,29 +230,29 @@ public class CyberWars extends AbstractGame {
 		return true;
 	}
 	
-	public void b(){
+	private void b(){
 		super.connectionStream.setPacketID(246);
 		super.connectionStream.sendPacket();
 		n = 18;
 		vb = 5;
 	}
 	
-	public void c(){
+	private void c(){
 		super.connectionStream.setPacketID(250);
 		super.connectionStream.sendPacket();
 	}
 	
-	public void e(){
+	private void e(){
 		super.connectionStream.setPacketID(248);
 		super.connectionStream.sendPacket();
 	}
 	
-	public void f(){
+	private void f(){
 		super.connectionStream.setPacketID(253);
 		super.connectionStream.sendPacket();
 	}
 	
-	public void b(int i1, int j1, int k1){
+	private void b(int i1, int j1, int k1){
 		if(i1 == -1 || j1 == -1 || k1 != 1){
 			return;
 		}
@@ -274,14 +271,14 @@ public class CyberWars extends AbstractGame {
 		}
 	}
 	
-	public void a(int i1, int j1){
+	private void a(int i1, int j1){
 		super.connectionStream.setPacketID(249);
 		super.connectionStream.addByte(i1);
 		super.connectionStream.addByte(j1);
 		super.connectionStream.sendPacket();
 	}
 	
-	public void c(int i1, int j1, int k1){
+	private void c(int i1, int j1, int k1){
 		if(i1 == -1 || j1 == -1){
 			return;
 		}
@@ -300,7 +297,7 @@ public class CyberWars extends AbstractGame {
 		}
 	}
 	
-	public void d(int i1, int j1, int k1){
+	private void d(int i1, int j1, int k1){
 		if(i1 == -1 || j1 == -1){
 			return;
 		}
@@ -319,7 +316,7 @@ public class CyberWars extends AbstractGame {
 		}
 	}
 	
-	public void e(int i1, int j1, int k1){
+	private void e(int i1, int j1, int k1){
 		if(i1 == -1 || j1 == -1 || k1 != 1){
 			return;
 		}
@@ -337,7 +334,7 @@ public class CyberWars extends AbstractGame {
 		ne[0] = 2;
 	}
 	
-	public void b(int i1, int j1){
+	private void b(int i1, int j1){
 		super.connectionStream.setPacketID(255);
 		super.connectionStream.addByte(i1);
 		super.connectionStream.addByte(j1);
@@ -347,7 +344,7 @@ public class CyberWars extends AbstractGame {
 		n = 16;
 	}
 	
-	public void a(int i1){
+	private void a(int i1){
 		int j1 = yc[i1];
 		sb = i1;
 		if(o[j1] == 0){
@@ -360,7 +357,7 @@ public class CyberWars extends AbstractGame {
 		}
 	}
 	
-	public void f(int i1, int j1, int k1){
+	private void f(int i1, int j1, int k1){
 		if(k1 >= 21 && k1 <= 24){
 			return;
 		} else {
@@ -369,12 +366,12 @@ public class CyberWars extends AbstractGame {
 		}
 	}
 	
-	public void l(){
+	private void l(){
 		vb = 4;
 		n = 14;
 	}
 	
-	public void c(int i1, int j1){
+	private void c(int i1, int j1){
 		if(i1 < 0 || i1 >= qc + 16){
 			return;
 		}
@@ -387,7 +384,7 @@ public class CyberWars extends AbstractGame {
 		n = 22;
 	}
 	
-	public void b(int i1){
+	private void b(int i1){
 		if(i1 < 0 || i1 >= qc){
 			return;
 		} else {
@@ -398,7 +395,7 @@ public class CyberWars extends AbstractGame {
 		}
 	}
 	
-	public void a(Graphics g1, int i1, int j1, int k1, int l1, Color color){
+	private void a(Graphics g1, int i1, int j1, int k1, int l1, Color color){
 		int i2 = color.getRed();
 		int j2 = color.getGreen();
 		int k2 = color.getBlue();
@@ -427,7 +424,7 @@ public class CyberWars extends AbstractGame {
 		
 	}
 	
-	public void b(Graphics g1, int i1, int j1, int k1, int l1, Color color){
+	private void b(Graphics g1, int i1, int j1, int k1, int l1, Color color){
 		g1.setColor(Color.black);
 		g1.fillRect(i1, j1, k1, l1);
 		int i2 = color.getRed();
@@ -1377,7 +1374,7 @@ public class CyberWars extends AbstractGame {
 		}
 	}
 	
-	public void m(){
+	private void m(){
 		cb = new String[qc];
 		tb = new String[qc];
 		o = new int[qc];
@@ -1477,7 +1474,7 @@ public class CyberWars extends AbstractGame {
 		ae = new Font("Helvetica", 1, 13);
 	}
 	
-	public void a(int i1, int j1, boolean flag){
+	private void a(int i1, int j1, boolean flag){
 		if(ge[i1][j1] < 16){
 			int k1 = 0;
 			for(int l1 = 0; l1 < 15; l1++){
@@ -2333,5 +2330,4 @@ public class CyberWars extends AbstractGame {
 		}
 		
 	}
-	
 }

@@ -1,7 +1,11 @@
 package opencgd.library;
 
 import java.applet.Applet;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Event;
+import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.Image;
 
 public class EngineApplet extends Applet implements Runnable {
 	
@@ -327,7 +331,7 @@ public class EngineApplet extends Applet implements Runnable {
 		}
 	}
 	
-	public void a(int i1, int j1){
+	private void a(int i1, int j1){
 		b(i1, j1);
 	}
 	
@@ -340,7 +344,7 @@ public class EngineApplet extends Applet implements Runnable {
 		}
 	}
 	
-	public final void b(int i1, int j1){
+	private final void b(int i1, int j1){
 		if(b == null){
 			return;
 		} else {

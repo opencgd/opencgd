@@ -1,7 +1,7 @@
 package opencgd.games;
 
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.io.IOException;
 
 import opencgd.AbstractGame;
@@ -83,7 +83,7 @@ public class QuadLink extends AbstractGame {
 		opencgd.library.D.b(super.u, "Time-Remaining:" + k, o, 502, 20);
 	}
 	
-	public void a(int i1, int j1, int k1, int l1, int i2){
+	private void a(int i1, int j1, int k1, int l1, int i2){
 		j1 = 5 - j1;
 		int j2 = (b[0] + b[1]) / 2 - 16;
 		int k2 = (e[i1] + e[i1 + 1]) / 2;
@@ -100,7 +100,7 @@ public class QuadLink extends AbstractGame {
 		super.k.b((36 + l4) - j4 / 2, (36 + i5) - k4 / 2, j4, k4, k1 + 2);
 	}
 	
-	public void a(int i1, int j1, int k1, boolean flag){
+	private void a(int i1, int j1, int k1, boolean flag){
 		j1 = 5 - j1;
 		if(flag){
 			super.k.a(0, 0, 2);
@@ -117,7 +117,7 @@ public class QuadLink extends AbstractGame {
 		}
 	}
 	
-	public void a(int i1, int j1){
+	private void a(int i1, int j1){
 		i1 -= 42;
 		if((j1 -= 44) < b[0] || j1 >= b[6]){
 			a = -1;
@@ -153,7 +153,7 @@ public class QuadLink extends AbstractGame {
 		
 	}
 	
-	public void a(int i1){
+	private void a(int i1){
 		if(i1 < 0 || i1 > 6){
 			return;
 		}
@@ -198,7 +198,7 @@ public class QuadLink extends AbstractGame {
 		}
 	}
 	
-	public boolean a(int ai[][]){
+	private boolean a(int ai[][]){
 		for(int i1 = 0; i1 < 7; i1++){
 			for(int j1 = 0; j1 < 6; j1++){
 				int k1 = ai[i1][j1];

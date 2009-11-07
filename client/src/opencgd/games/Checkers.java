@@ -1,7 +1,7 @@
 package opencgd.games;
 
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.io.IOException;
 
 import opencgd.AbstractGame;
@@ -98,7 +98,7 @@ public class Checkers extends AbstractGame {
 		opencgd.library.D.b(super.u, "Time-Remaining:" + g, t, 502, 20);
 	}
 	
-	public void b(){
+	private void b(){
 		super.k.b = 290;
 		super.k.a(0, 0, 0);
 		super.k.b = 279;
@@ -114,7 +114,7 @@ public class Checkers extends AbstractGame {
 		super.k.b(6);
 	}
 	
-	public void b(int i1, int j1, int k1, int l1, int i2, int j2, int k2){
+	private void b(int i1, int j1, int k1, int l1, int i2, int j2, int k2){
 		j1 = 7 - j1;
 		l1 = 7 - l1;
 		int l2 = (b[j1] + b[j1 + 1]) / 2 + 4;
@@ -142,7 +142,7 @@ public class Checkers extends AbstractGame {
 		super.k.b(l5 - j6 / 2, i6 - k6 / 2 - 4 - k6 / 6, j6, k6, i2);
 	}
 	
-	public void a(int i1, int j1, int k1, int l1, int i2, int j2, int k2){
+	private void a(int i1, int j1, int k1, int l1, int i2, int j2, int k2){
 		j1 = 7 - j1;
 		l1 = 7 - l1;
 		int l2 = (b[j1] + b[j1 + 1]) / 2 + 4;
@@ -176,7 +176,7 @@ public class Checkers extends AbstractGame {
 		}
 	}
 	
-	public void a(int i1, int j1, int k1){
+	private void a(int i1, int j1, int k1){
 		j1 = 7 - j1;
 		int l1 = (b[j1] + b[j1 + 1]) / 2 + 4;
 		int i2 = (e[i1] + e[i1 + 1]) / 2;
@@ -187,7 +187,7 @@ public class Checkers extends AbstractGame {
 		super.k.b(k2 - l2 / 2, l1 - i3 / 2 - 4 - i3 / 6, l2, i3, k1);
 	}
 	
-	public void b(int i1, int j1, int k1){
+	private void b(int i1, int j1, int k1){
 		j1 = 7 - j1;
 		int l1 = (b[j1] + b[j1 + 1]) / 2 + 4;
 		int i2 = (e[i1] + e[i1 + 1]) / 2;
@@ -204,7 +204,7 @@ public class Checkers extends AbstractGame {
 		}
 	}
 	
-	public void a(int i1, int j1){
+	private void a(int i1, int j1){
 		int k1 = (u[i1][j1] + 4) / 2;
 		j1 = 7 - j1;
 		int l1 = (b[j1] + b[j1 + 1]) / 2 + 4;
@@ -216,7 +216,7 @@ public class Checkers extends AbstractGame {
 		super.k.b(k2 - l2 / 2, l1 - i3 / 2 - 4 - (k1 * i3) / 6, l2, i3, 3);
 	}
 	
-	public void b(int i1, int j1){
+	private void b(int i1, int j1){
 		i1 -= 6;
 		if((j1 -= 6) < b[0] || j1 >= b[8]){
 			a = -1;
@@ -253,7 +253,7 @@ public class Checkers extends AbstractGame {
 		
 	}
 	
-	public void c(int i1, int j1){
+	private void c(int i1, int j1){
 		if(i1 == -1 || j1 == -1 || g == 0){
 			return;
 		}
@@ -295,7 +295,7 @@ public class Checkers extends AbstractGame {
 		i = -1;
 	}
 	
-	public void c(){
+	private void c(){
 		if(j == -1){
 			return;
 		}
@@ -309,7 +309,7 @@ public class Checkers extends AbstractGame {
 		}
 	}
 	
-	public void d(int i1, int j1){
+	private void d(int i1, int j1){
 		if(i1 == -1 || j1 == -1){
 			return;
 		}
@@ -337,7 +337,7 @@ public class Checkers extends AbstractGame {
 		f();
 	}
 	
-	public void e(){
+	private void e(){
 		l = true;
 		q = 0;
 		for(int i1 = 0; i1 < 8; i1++){
@@ -391,7 +391,7 @@ public class Checkers extends AbstractGame {
 		
 	}
 	
-	public void f(){
+	private void f(){
 		int i1 = j;
 		int j1 = i;
 		q = 0;
