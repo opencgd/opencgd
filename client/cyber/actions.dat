@@ -1,0 +1,61 @@
+Name,Type,Probabilty,Alignment,CastRange,
+Strength,Defence,Speed,Resistance,Ranged,Ranged-strength,slime,flying,transport,description
+
+=Droid,0,80,-1,1,		3,2,1,3,0,0,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Tank,0,50,-2,1,		5,6,2,4,4,2,0,0,1,Placing your commander in this transport gives better protection & speed;
+=Hovership,0,60,-2,1,		2,5,5,4,0,0,0,1,1,Placing your commander in this transport gives better protection & speed;
+=Battlemech,0,10,-2,1,		9,9,3,5,3,4,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Buggy,0,90,-1,1,		2,2,4,4,0,0,0,0,1,Placing your commander in this transport gives better protection & speed;
+=Face Grabber,0,80,2,1,		2,2,3,4,0,0,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Alien,0,70,2,1,		3,3,2,5,0,0,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Laser Robot,0,60,-2,1,		5,1,2,4,5,4,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Probe,0,90,-1,1,		1,1,4,2,0,0,0,1,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Psi-Warrior,0,80,0,1,		2,3,1,7,0,0,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Psi-Lord,0,70,0,1,		3,3,2,7,2,1,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Mining Droid,0,60,-1,1,	5,6,1,4,2,2,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Drone,0,90,-1,1,		1,3,4,4,0,0,0,1,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Hover Tank,0,40,-2,1,		5,6,4,4,3,2,0,1,1,Placing your commander in this transport gives better protection & speed;
+=Floating Eye,0,50,1,1,      	4,3,6,3,0,0,0,1,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Tentacle,0,50,1,1,		8,8,1,6,0,0,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Acid Spitter,0,60,1,1,		5,6,1,5,3,3,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Alien Queen,0,10,2,1,		8,8,4,5,3,4,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Cyborg,0,50,0,1,		6,6,2,4,0,0,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Fire Hound,0,70,1,1,		1,3,3,5,0,0,0,0,1,Placing your commander on this mount gives better protection & speed;
+=Mutant Mount,0,60,2,1,		3,4,5,5,0,0,0,0,1,Placing your commander on this mount gives better protection & speed;
+=Slime-Blob,0,70,1,1,		3,2,1,3,0,0,1,0,0,This creatures slime ability means non-slime creatures can't attack it!;
+=Slime-Warrior,0,60,1,1,	4,2,2,4,0,0,1,0,0,This creatures slime ability means non-slime creatures can't attack it!;
+=Slime-Beast,0,50,2,1,		4,3,3,5,0,0,1,0,0,This creatures slime ability means non-slime creatures can't attack it!;
+=Flying Slime,0,40,2,1,		5,4,4,6,0,0,1,1,0,This creatures slime ability means non-slime creatures can't attack it!;
+=Sentry Robot,0,70,-1,1,	3,2,2,5,0,0,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Predator,0,20,2,1,		9,7,5,8,0,0,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Mutant,0,60,1,1,		6,6,1,5,0,0,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Spideroid,0,20,-2,1,		8,8,6,8,0,0,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+=Alien Hatchling,0,90,2,1,	2,3,1,0,0,0,0,0,0,Either attempt to beam this creature from your ship, or project a hologram.;
+
+=Gun Turrets,1,50,-1,0,		3,6,0,4,0,0,0,0,0,Places up to 8 gun turrets around your commander, which can then attack any creature standing adjacent to them.;
+=Subspace Beacons,1,90,-1,0, 	0,5,0,8,0,0,0,0,0,Places up to 8 subspace beacons around your commander, standing on these allows you to call for reinforcments, but your opponents can use them too!;
+=Fire,1,90,0,6,            	0,0,0,0,0,0,0,0,0,A raging fire, which slowly grows destroying any enemy creatures in its path.;
+=Alien Blob,1,90,1,6,     	0,7,0,3,0,0,0,0,0,This blob will slowly grow consuming enemy creatures, these can however be freed by destroying the blob directly on top of them.;
+=Fortress,1,60,-1,1,      	0,0,0,0,0,0,0,0,1,An impenetrable fortress which will protect your commander for a random number of rounds.;
+=Forcefield,1,90,-1,0,   	0,0,0,0,0,0,0,0,0,Places an indestructable forcefield around your commander, which blocks all but flying creatures.;
+
+=Light-sabre,2,60,-1,0,	  	2,0,0,0,0,0,0,0,0,Increases your commanders strength by 2 points.;
+=Force-shield,2,60,-1,0,   	0,2,0,0,0,0,0,0,0,Increases your commanders defence by 2 points.;
+=Symbiont,2,50,1,0,        	1,1,1,1,0,0,0,0,0,Increases your commanders attack, defence, movement and resistance!.;
+=Jetpack,2,50,-1,0,        	0,0,3,0,0,0,0,1,0,Allows your commander to fly, and increases movement by 3 points.;
+=Blaster,2,50,-1,0,        	0,0,0,0,3,3,0,0,0,Gives your commander a range 3 attack;
+=Force-armour,2,40,-1,0,   	0,3,0,0,0,0,0,0,0,Increases your commanders defence by 3 points.;
+
+=Virus,3,50,1,20,          	0,0,0,0,0,0,0,0,0,Infect a target alien creature with a virus, or target a commander and try to destroy ALL his/her alien creatures! Success depends on targets resistance.;
+=Electro-pulse,3,50,-1,20, 	0,0,0,0,0,0,0,0,0,Blast a target mech with an electro-pulse, or target a commander and try to destroy ALL his/her mechanoids! Success depends on targets resistance.;
+=Disrupter,3,100,0,6,      	0,0,0,0,0,0,0,0,0,Blast a target creatures within 6 squares, success depends on targets resistance and defence.;
+=Disintegrator,3,100,0,4,  	0,0,0,0,0,0,0,0,0,Blast a target creatures within 4 squares, success depends on targets resistance and defence.;
+=Mutate,3,70,1,4,         	0,0,0,0,0,0,0,0,0,Use alien technology to try and mutate either your own creature, or an opponents creature into something different!;
+=Mind Control,3,100,1,7,   	0,0,0,0,0,0,0,0,0,Take control of one of your opponents creatures! Success depends on targets resistance.;
+=Alien 1,3,80,3,0,        	0,0,0,0,0,0,0,0,0,Increases the alien influence, making alien-technology more likely to be succesful.;
+=Alien 2,3,70,6,0,        	0,0,0,0,0,0,0,0,0,Increases the alien influence, making alien-technology more likely to be succesful.;
+=Mechanoid 1,3,80,-3,0,         0,0,0,0,0,0,0,0,0,Increases the mechanoid influence, making mechanoid-technology more likely to be succesful.;
+=Mechanoid 2,3,70,-6,0,         0,0,0,0,0,0,0,0,0,Increases the mechanoid influence, making mechanoid-technology more likely to be succesful.;
+=Resurrect,3,60,1,4,	   	0,0,0,0,0,0,0,0,0,Use alien technology to try and ressurect a dead creature! Resurrected creatures fight on your side.;
+=Teleport,3,70,0,7,		0,0,0,0,0,0,0,0,0,Teleports your commander up to 7 spaces.;
+=HoloDetector,3,100,0,20,  	0,0,0,0,0,0,0,0,0,Use this action on creatures you think are holograms to destroy them. Unlike other actions you can this an unlimited number of times.;

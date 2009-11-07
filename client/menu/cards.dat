@@ -1,0 +1,25 @@
+Name,Type,Value,Weight,Friendly,Hostile,Strength,Ranged,Desc,Frequency
+
+=Chest,0,0,60,0,0,0,0,"A locked chest",1;
+=Gems,0,40,20,0,0,0,0,"",2;
+=Gold,0,20,20,0,0,0,0,"",7;
+=Silver,0,10,20,0,0,0,0,"",10;
+=MagicSword,0,30,0,0,0,2,0,"+2 Strength",1;
+=MagicBow,0,40,0,0,0,0,2,"+1 Ranged",1;
+=Helmet,0,10,0,0,0,1,0,"+1 Strength",2;
+=Cross,0,5,0,0,0,0,0,"kills ghosts&skeletons",1;
+=MagicStaff,0,40,0,0,0,0,3,"+2 Magic",1;
+=Potion,0,15,0,0,0,2,0,"+3 Strength (1 use)",3;
+=Dwarf,1,10,20,30,30,1,0,"",4;
+=Elf,1,20,60,50,15,3,1,"",4;
+=Wizard,1,30,0,15,15,2,4,"",3;
+=Troll,1,35,100,15,50,5,0,"",3;
+=Sorceress,1,25,0,20,40,2,1,"",2;
+=Ghost,1,150,0,0,70,5,0,"",4;
+=Skeleton,1,100,0,0,90,4,0,"",4;
+=Mummy,1,200,0,0,80,7,0,"",3;
+=Goblin,1,15,20,30,50,2,0,"",5;
+=Adventurer,1,22,40,40,20,3,0,"",5;
+=Sarcophagus,2,0,0,0,0,0,0,"25%=mummy 75%=gems",4;
+=Giant-Web,2,0,0,0,0,0,0,"50% chance of capture",2;
+=Earthquake,2,0,0,0,0,0,0,"Blocks exit",4;
