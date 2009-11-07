@@ -1068,16 +1068,18 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		qc = true;
 		int i1 = 0;
 		try{ // XXX Games
-			y.setPacketID(15);
-			y.sendPacket();
+			if(!TEST_MOVEMENT){
+				y.setPacketID(15);
+				y.sendPacket();
+			}
+			
 			if(games[kd] == null){
 				if(kd == 0){
 					games[kd] = new Checkers(); // Checkers (media done)
 				} else if(kd == 1){
 					games[kd] = new Chess(); // Chess (media done)
 				} else if(kd == 2){
-					games[kd] = new BattleCruisers(); // Battle Cruisers (media
-					// done)
+					games[kd] = new BattleCruisers(); // Battle Cruisers (media done)
 				} else if(kd == 3){
 					games[kd] = new QuadLink(); // Quadlink (media done)
 				} else if(kd == 4){
@@ -1087,8 +1089,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 					// (missing back.gif
 					// which I think are the
 					// monsters in the grid
-					// or the grid itself
-					// XXX)
+					// or the grid itself)
 				} else if(kd == 6){
 					games[kd] = new Mahjong(); // Mahjong (media done)
 				} else if(kd == 7){
@@ -1124,9 +1125,18 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		} else {
 			fe = false;
 		}
-		y.setPacketID(16);
-		y.addByte(kd + 1);
-		y.sendPacket();
+		
+		if(!TEST_MOVEMENT){
+			y.setPacketID(16);
+			y.addByte(kd + 1);
+			y.sendPacket();
+		} else {
+			gameScreen = kd + 3;
+			for(int j2 = 0; j2 < 3; j2++){
+				de[j2] = "";
+			}
+		}
+		
 		xc = -330;
 		ib = 0;
 		ad = 0;
@@ -2582,6 +2592,8 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 				y.addString("init: " + throwable + " screen:" + gameScreen);
 				y.sendPacket();
 			}
+			
+			throwable.printStackTrace();
 		}
 	}
 	
