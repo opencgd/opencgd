@@ -1274,6 +1274,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 	}
 	
 	private void n(){
+		//Disable these two calls below to move in offline mode
 		j();
 		o();
 		if(super.hh != 0 && super.e > 351){
@@ -1286,8 +1287,6 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 			pe = i1;
 			super.hh = 0;
 		}
-		
-		// System.out.println("te="+te+", se="+se+", pe="+pe);
 		
 		if(te == -1 || se == -1){
 			if(b > 0){
@@ -2158,7 +2157,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		g.a = 800;
 		g.kb = 4;
 		g.a(c, zc, a, b, qd, 0);
-		g.a(250, 145, 250, 145, 500);
+		g.setCamera(250, 145, 250, 145, 500);
 		g.a(-64, -32, 32);
 		if(!lowDetail){
 			zc = -80;
@@ -2181,6 +2180,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 			de[i1] = "";
 		}
 		
+		//Comment out the below for offline testing
 		y.setPacketID(16);
 		y.addByte(0);
 		y.sendPacket();
@@ -2331,8 +2331,10 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 			pc = 3;
 		}
 		
-		messageTop = "Sorry! Unable to connect to server";
-		messageBottom = "Please try later, or press any key to retry";
+		gameScreen = 1;
+		
+		//messageTop = "Sorry! Unable to connect to server";
+		//messageBottom = "Please try later, or press any key to retry";
 	}
 	
 	private void connectToServer(){
@@ -2465,7 +2467,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		g.b = 5;
 		g.a = 5000;
 		g.a(0, 0, 0, 0, 0, 0);
-		g.a(250, 145, 250, 145, 500);
+		g.setCamera(250, 145, 250, 145, 500);
 		g.kb = 20;
 		g.a(32, 0, 0);
 		graphics.setColor(Color.black);
@@ -2634,7 +2636,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 				y.sendPacket();
 			}
 			
-			// throwable.printStackTrace();
+			//throwable.printStackTrace();
 		}
 	}
 	

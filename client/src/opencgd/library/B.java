@@ -1662,7 +1662,7 @@ public class B {
 		
 	}
 	
-	public void a(int i1, int j1, int k1, int l1, int i2){
+	public void setCamera(int i1, int j1, int k1, int l1, int i2){
 		d = k1;
 		c = l1;
 		l = i1;
