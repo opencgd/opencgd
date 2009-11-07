@@ -28,6 +28,7 @@ import opencgd.library.F;
 public class OpenCGD extends opencgd.library.EngineApplet {
 	
 	private static final long serialVersionUID = -5350768759203686867L;
+	private static final boolean TEST_MOVEMENT = true;
 	private int p;
 	private String eb[] = {
 			"Non rated game", "Rated Game"
@@ -1274,9 +1275,11 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 	}
 	
 	private void n(){
-		//Disable these two calls below to move in offline mode
-		j();
-		o();
+		if(!TEST_MOVEMENT){
+			j();
+			o();
+		}
+		
 		if(super.hh != 0 && super.e > 351){
 			int i1 = (super.f - 3) / 46;
 			if(i1 < 0){
@@ -2180,10 +2183,11 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 			de[i1] = "";
 		}
 		
-		//Comment out the below for offline testing
-		y.setPacketID(16);
-		y.addByte(0);
-		y.sendPacket();
+		if(!TEST_MOVEMENT){
+			y.setPacketID(16);
+			y.addByte(0);
+			y.sendPacket();
+		}
 	}
 	
 	private void loadCastle(){
@@ -2331,10 +2335,12 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 			pc = 3;
 		}
 		
-		gameScreen = 1;
-		
-		//messageTop = "Sorry! Unable to connect to server";
-		//messageBottom = "Please try later, or press any key to retry";
+		if(TEST_MOVEMENT){
+			gameScreen = 1;
+		} else {
+			messageTop = "Sorry! Unable to connect to server";
+			messageBottom = "Please try later, or press any key to retry";
+		}
 	}
 	
 	private void connectToServer(){
