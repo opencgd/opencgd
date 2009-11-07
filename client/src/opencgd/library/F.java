@@ -52,36 +52,34 @@ public class F {
 	private static int g[];
 	private static byte yc[];
 	private static int k[];
-	public int qc;
-	public int o;
-	public boolean rc[];
-	public int zc[];
-	public int vc[];
-	public int oc[];
-	public int qb[];
-	public int rb[];
-	public int sb[];
-	public int nc[];
-	public int mc[];
-	public int ic[];
-	public int jc[];
-	public int kc[][];
-	public int lc[];
-	public int ub;
-	public int fb[];
-	public int ab[];
-	public int eb[];
-	public int bb[];
-	public int cb[];
-	public int db[];
-	public int w[];
-	public int y[];
-	public int sc[];
-	public int tc[];
-	public int uc[];
-	public int tb;
-	public int gc;
-	public int hc;
+	protected int qc;
+	protected int o;
+	protected boolean rc[];
+	protected int zc[];
+	protected int vc[];
+	protected int oc[];
+	protected int qb[];
+	protected int rb[];
+	protected int sb[];
+	protected int nc[];
+	protected int mc[];
+	protected int ic[];
+	protected int jc[];
+	protected int kc[][];
+	protected int lc[];
+	protected int ub;
+	protected int fb[];
+	private int ab[];
+	protected int eb[];
+	protected int bb[];
+	protected int cb[];
+	protected int db[];
+	protected int w[];
+	protected int y[];
+	protected int sc[];
+	protected int tc[];
+	protected int uc[];
+	protected int tb;
 	public Color t;
 	public Color u;
 	
@@ -1042,8 +1040,6 @@ public class F {
 	}
 	
 	public F(F af[], int i1){
-		hc = -1;
-		gc = -1;
 		vb = 0xbc614e;
 		s = 1;
 		int j1 = 0;
@@ -1091,8 +1087,6 @@ public class F {
 	}
 	
 	public F(String s1){
-		hc = -1;
-		gc = -1;
 		vb = 0xbc614e;
 		s = 1;
 		byte abyte0[] = null;
@@ -1167,8 +1161,6 @@ public class F {
 	}
 	
 	public F(Buffer g1, String s1){
-		hc = -1;
-		gc = -1;
 		vb = 0xbc614e;
 		s = 1;
 		byte abyte0[] = g1.i;
@@ -1286,8 +1278,6 @@ public class F {
 	}
 	
 	private F(int i1, int j1, boolean flag){
-		hc = -1;
-		gc = -1;
 		vb = 0xbc614e;
 		s = 1;
 		c(i1, j1);
@@ -1295,8 +1285,6 @@ public class F {
 	}
 	
 	public F(int i1, int j1){
-		hc = -1;
-		gc = -1;
 		vb = 0xbc614e;
 		s = 1;
 		c(i1, j1);

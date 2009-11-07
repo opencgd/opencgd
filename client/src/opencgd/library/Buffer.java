@@ -8,8 +8,8 @@ import java.net.Socket;
 
 public class Buffer implements Runnable {
 	
-	byte data[];
-	int offset;
+	private byte data[];
+	private int offset;
 	private boolean e;
 	private Thread a;
 	private int b;
@@ -17,28 +17,28 @@ public class Buffer implements Runnable {
 	private byte d[];
 	private String j;
 	private boolean k;
-	public static int openco;
-	public static int closeco;
-	static String p = "";
-	public byte i[];
-	boolean m;
-	public Socket f;
-	public OutputStream h;
-	public InputStream l;
+	private static int openco;
+	private static int closeco;
+	private static String p = "";
+	protected byte i[];
+	private boolean m;
+	private Socket f;
+	private OutputStream h;
+	private InputStream l;
 	final int n = 8192;
-	public static char cmap[];
-	public static int quotes = 34;
+	private static char cmap[];
+	private static int quotes = 34;
 	public static int bar = 124;
 	public static int space = 32;
 	public static int bslash = 92;
 	public static int slash = 47;
 	public static int fullstop = 46;
-	public static int minus = 45;
-	public static int comma = 44;
+	private static int minus = 45;
+	private static int comma = 44;
 	public static int plus = 43;
 	public static int star = 42;
-	public static int semi = 59;
-	public static int equals = 61;
+	private static int semi = 59;
+	private static int equals = 61;
 	
 	public void sendPacket(){
 		data[0] = (byte) ((offset - 2) / 256);
@@ -63,6 +63,8 @@ public class Buffer implements Runnable {
 		a(data, 0, offset, true);
 	}
 	
+	//FIXME Deprecation
+	@SuppressWarnings("deprecation")
 	public void addString(String s1){
 		s1.getBytes(0, s1.length(), data, offset);
 		offset += s1.length();
@@ -382,6 +384,8 @@ public class Buffer implements Runnable {
 		abyte1 = null;
 	}
 	
+	//FIXME Deprecation
+	@SuppressWarnings("deprecation")
 	public int b(String s1){
 		int i1 = i[0] * 256 + i[1];
 		byte abyte0[] = new byte[s1.length() + 1];

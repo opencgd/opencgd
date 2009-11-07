@@ -15,13 +15,10 @@ public class EngineApplet extends Applet implements Runnable {
 	public int g;
 	public int e;
 	public int f;
-	public boolean o;
 	public boolean downArrowKey;
 	public boolean upArrowKey;
 	public boolean rightArrowKey;
 	public boolean leftArrowKey;
-	public boolean w;
-	public boolean x;
 	private int k;
 	private boolean y;
 	private EngineFrame b;
@@ -38,13 +35,10 @@ public class EngineApplet extends Applet implements Runnable {
 		u = 384;
 		v = 20;
 		d = new long[10];
-		x = false;
-		w = false;
 		leftArrowKey = false;
 		rightArrowKey = false;
 		upArrowKey = false;
 		downArrowKey = false;
-		o = false;
 		r = "";
 		q = "";
 		jj = "";
@@ -90,7 +84,6 @@ public class EngineApplet extends Applet implements Runnable {
 			d[j2] = System.currentTimeMillis();
 		}
 		
-		long l1 = System.currentTimeMillis();
 		while(k >= 0){
 			if(k > 0){
 				k--;
@@ -150,6 +143,8 @@ public class EngineApplet extends Applet implements Runnable {
 		}
 	}
 	
+	//FIXME Deprecation
+	@SuppressWarnings("deprecation")
 	@Override
 	public final void destroy(){
 		System.out.println("Closing program");
@@ -190,8 +185,8 @@ public class EngineApplet extends Applet implements Runnable {
 	public final void init(){
 		y = true;
 		System.out.println("Started applet");
-		a = size().width;
-		u = size().height;
+		a = getSize().width;
+		u = getSize().height;
 		t = 1;
 		opencgd.library.D.a(this, a, u, y);
 		z = new Thread(this);
@@ -258,15 +253,6 @@ public class EngineApplet extends Applet implements Runnable {
 		if((char) i1 == 'm' || i1 == 1005){
 			downArrowKey = false;
 		}
-		if((char) i1 == ' '){
-			o = false;
-		}
-		if((char) i1 == '{'){
-			x = false;
-		}
-		if((char) i1 == '}'){
-			w = false;
-		}
 		return true;
 	}
 	
@@ -288,15 +274,6 @@ public class EngineApplet extends Applet implements Runnable {
 		}
 		if(i1 == 1005){
 			downArrowKey = true;
-		}
-		if((char) i1 == ' '){
-			o = true;
-		}
-		if((char) i1 == '{'){
-			x = true;
-		}
-		if((char) i1 == '}'){
-			w = true;
 		}
 		if((i1 >= 97 && i1 <= 122 || i1 >= 65 && i1 <= 90 || i1 >= 48 && i1 <= 57 || i1 == 32) && r.length() < 12){
 			r += (char) i1;

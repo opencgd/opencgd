@@ -8,44 +8,44 @@ import opencgd.AbstractGame;
 
 public class BattleCruisers extends AbstractGame {
 	
-	boolean t;
-	int u;
-	int y[];
-	int z[];
-	int r;
-	int n;
-	int o;
-	int p;
-	int q;
-	int bb;
-	int gb;
-	int eb;
-	int fb;
-	int hb;
-	int c;
-	int h;
-	int d;
-	int i;
-	int ab;
-	int v;
-	int s[] = {
+	private boolean t;
+	private int u;
+	private int y[];
+	private int z[];
+	private int r;
+	private int n;
+	private int o;
+	private int p;
+	private int q;
+	private int bb;
+	private int gb;
+	private int eb;
+	private int fb;
+	private int hb;
+	private int c;
+	private int h;
+	private int d;
+	private int i;
+	private int ab;
+	private int v;
+	private int s[] = {
 			2, 2, 3, 3, 4, 5
 	};
-	int x[] = {
+	private int x[] = {
 			2, 2, 3, 3, 4, 5
 	};
-	int a;
-	int f;
-	int db[][];
-	int m;
-	int l;
-	int k;
-	Color w;
-	Font cb;
-	int b;
-	int g;
-	int e;
-	int j;
+	private int a;
+	private int f;
+	private int db[][];
+	private int m;
+	private int l;
+	private int k;
+	private Color w;
+	private Font cb;
+	private int b;
+	private int g;
+	private int e;
+	private int j;
 	
 	public BattleCruisers(){
 		j = 25;

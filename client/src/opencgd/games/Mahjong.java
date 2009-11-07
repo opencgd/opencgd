@@ -8,52 +8,52 @@ import opencgd.AbstractGame;
 
 public class Mahjong extends AbstractGame {
 	
-	boolean n;
-	boolean o;
-	int j[];
-	int k[][];
-	boolean bb;
-	String z[];
-	int y[];
-	int ab;
-	int p;
-	int q;
-	int u;
-	int v;
-	boolean w;
-	int t[];
-	int x;
-	int r;
-	int i;
-	int h;
-	int g;
-	int l[] = {
+	private boolean n;
+	private boolean o;
+	private int j[];
+	private int k[][];
+	private boolean bb;
+	private String z[];
+	private int y[];
+	private int ab;
+	private int p;
+	private int q;
+	private int u;
+	private int v;
+	private boolean w;
+	private int t[];
+	private int x;
+	private int r;
+	private int i;
+	private int h;
+	private int g;
+	private int l[] = {
 			0, 0, 0, 0, 0, 0, 0, 5, 5, 4, 4, 4, 5, 5
 	};
-	int b[] = {
+	private int b[] = {
 			196, 202, 206, 206, 206, 202, 196, 269, 276, 280, 282, 280, 276, 269
 	};
-	int e[] = {
+	private int e[] = {
 			87, 146, 209, 273, 340, 403, 460, 97, 153, 213, 272, 334, 394, 447
 	};
-	int c[] = {
+	private int c[] = {
 			135, 139, 144, 148, 144, 139, 135, 212, 221, 226, 230, 226, 221, 212
 	};
-	int f[] = {
+	private int f[] = {
 			35, 93, 155, 223, 290, 355, 417, 50, 105, 162, 224, 286, 346, 406
 	};
-	int m[] = {
+	private int m[] = {
 			6, 4, 2, 0, -2, -4, -6, 6, 4, 2, 0, -2, -4, -6
 	};
-	int a[] = {
+	private int a[] = {
 			140, 147, 151, 152, 151, 147, 140, 219, 226, 232, 234, 232, 226, 219
 	};
-	int d[] = {
+	private int d[] = {
 			41, 101, 165, 231, 297, 361, 421, 55, 109, 170, 231, 293, 352, 408
 	};
-	Color s;
-	Font db;
-	Font cb;
+	private Color s;
+	private Font db;
+	private Font cb;
 	
 	public Mahjong(){
 		cb = new Font("Helvetica", 1, 13);

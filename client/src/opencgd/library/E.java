@@ -12,21 +12,20 @@ public class E implements ImageObserver, ImageProducer {
 	public int f;
 	public int b;
 	public int c;
-	public boolean i[];
-	public int n[];
-	public int m[];
-	public int a[];
-	public int d[];
+	private boolean i[];
+	private int n[];
+	private int m[];
+	private int a[];
+	private int d[];
 	public int q[];
 	public int h[];
-	public int k[][];
-	public Image s;
-	ImageConsumer p;
+	private int k[][];
+	private Image s;
+	private ImageConsumer p;
 	public int l[];
-	ColorModel o;
-	public int j;
-	public int r;
-	public int g;
+	private ColorModel o;
+	private int r;
+	private int g;
 	
 	public boolean imageUpdate(Image image, int i1, int j1, int k1, int l1, int i2){
 		return true;
@@ -942,7 +941,6 @@ public class E implements ImageObserver, ImageProducer {
 		o = new DirectColorModel(32, 0xff000000, 0xff000, 255);
 		g = i1;
 		r = j1;
-		j = i1 * j1;
 		l = new int[i1 * j1];
 		k = new int[k1][];
 		i = new boolean[k1];

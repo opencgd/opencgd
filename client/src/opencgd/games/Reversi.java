@@ -8,29 +8,27 @@ import opencgd.AbstractGame;
 
 public class Reversi extends AbstractGame {
 	
-	boolean j;
-	boolean f;
-	int a;
-	int c;
-	int m[][];
-	int i;
-	int h;
-	int g;
-	Color k;
-	Font l;
-	int d[] = {
+	private boolean j;
+	private boolean f;
+	private int a;
+	private int c;
+	private int m[][];
+	private int i;
+	private int h;
+	private int g;
+	private Font l;
+	private int d[] = {
 			32, 85, 141, 197, 253, 308, 363, 419, 472
 	};
-	int e[] = {
+	private int e[] = {
 			115, 148, 182, 216, 250, 285, 319, 353, 386
 	};
-	int b[] = {
+	private int b[] = {
 			14, 31, 53, 75, 101, 131, 164, 202, 245
 	};
 	
 	public Reversi(){
 		l = new Font("Helvetica", 1, 13);
-		k = new Color(150, 150, 150);
 		h = 30;
 		m = new int[8][8];
 		f = false;

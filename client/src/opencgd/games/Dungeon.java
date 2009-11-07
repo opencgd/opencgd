@@ -8,44 +8,40 @@ import opencgd.AbstractGame;
 
 public class Dungeon extends AbstractGame {
 	
-	String h;
-	int k[];
-	int b[];
-	int d[];
-	int t[][];
-	int j;
-	int g;
-	int f;
-	int e;
-	int o;
-	int l;
-	int p;
-	int m;
-	int n;
-	int x;
-	int ab;
-	int y;
-	int w;
-	int z;
-	int u[];
-	int v[];
-	int a[] = {
+	private String h;
+	private int k[];
+	private int b[];
+	private int d[];
+	private int t[][];
+	private int j;
+	private int g;
+	private int f;
+	private int e;
+	private int o;
+	private int l;
+	private int p;
+	private int m;
+	private int n;
+	private int x;
+	private int ab;
+	private int y;
+	private int w;
+	private int z;
+	private int u[];
+	private int v[];
+	private int a[] = {
 			-18, -14, -14, 1, -3, -3
 	};
-	int c[] = {
+	private int c[] = {
 			-6, 6, -18, -6, 6, -18
 	};
-	int i[] = {
+	private int i[] = {
 			0, 1, 2, 1
 	};
-	Font s;
-	Font r;
-	Font q;
+	private Font r;
 	
 	public Dungeon(){
-		q = new Font("Helvetica", 1, 16);
 		r = new Font("Helvetica", 1, 13);
-		s = new Font("Helvetica", 1, 11);
 		v = new int[7];
 		u = new int[7];
 		x = 20;

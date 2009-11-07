@@ -8,48 +8,47 @@ import opencgd.AbstractGame;
 
 public class Chess extends AbstractGame {
 	
-	boolean j;
-	boolean g;
-	boolean v;
-	int z;
-	int ab;
-	boolean bb;
-	boolean cb;
-	boolean u;
-	boolean n;
-	int ib;
-	int fb;
-	int jb;
-	int kb;
-	int gb;
-	int hb;
-	int lb;
-	int m;
-	int k;
-	int l;
-	int w[];
-	int x[];
-	int y;
-	int q[];
-	int r[];
-	int o[];
-	int p[];
-	int s;
-	int a;
-	int c;
-	int eb[][];
-	int i;
-	int h;
-	int f;
-	Color t;
-	Font db;
-	int d[] = {
+	private boolean j;
+	private boolean g;
+	private boolean v;
+	private int z;
+	private int ab;
+	private boolean bb;
+	private boolean cb;
+	private boolean u;
+	private boolean n;
+	private int ib;
+	private int fb;
+	private int jb;
+	private int kb;
+	private int gb;
+	private int hb;
+	private int lb;
+	private int k;
+	private int l;
+	private int w[];
+	private int x[];
+	private int y;
+	private int q[];
+	private int r[];
+	private int o[];
+	private int p[];
+	private int s;
+	private int a;
+	private int c;
+	private int eb[][];
+	private int i;
+	private int h;
+	private int f;
+	private Color t;
+	private Font db;
+	private int d[] = {
 			22, 78, 136, 194, 250, 308, 366, 422, 480
 	};
-	int e[] = {
+	private int e[] = {
 			110, 145, 180, 215, 250, 285, 320, 355, 390
 	};
-	int b[] = {
+	private int b[] = {
 			22, 43, 65, 91, 119, 151, 188, 230, 278
 	};
 	

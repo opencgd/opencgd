@@ -8,16 +8,16 @@ import java.awt.image.PixelGrabber;
 
 public class B {
 	
-	boolean h;
-	int gb[];
-	int hb[];
-	int y[];
-	int u[];
-	public int cc[];
-	int e[];
-	boolean g[];
-	int i[][];
-	int o;
+	private boolean h;
+	private int gb[];
+	private int hb[];
+	private int y[];
+	private int u[];
+	private int cc[];
+	private int e[];
+	private boolean g[];
+	private int i[][];
+	private int o;
 	public static final int focus = 8;
 	public static final int scale = 5;
 	public static final int detpow = 4;
@@ -58,14 +58,14 @@ public class B {
 	private int cb;
 	private int db;
 	private int eb;
-	public int rb;
-	public double sb;
-	public int f[];
-	public int j;
-	public int ub;
+	private int rb;
+	private double sb;
+	private int f[];
+	private int j;
+	private int ub;
 	public int kb;
 	public int a;
-	public int n;
+	private int n;
 	public int b;
 	
 	public void a(int i1, int j1, int k1){

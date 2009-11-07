@@ -8,37 +8,34 @@ import opencgd.AbstractGame;
 
 public class QuadLink extends AbstractGame {
 	
-	int i;
-	int h;
-	int f;
-	int g;
-	boolean m;
-	int t;
-	int q;
-	int r;
-	int s;
-	int u;
-	int a;
-	int c;
-	int p[][];
-	int l;
-	int k;
-	int j;
-	Color n;
-	Font o;
-	int d[] = {
+	private int i;
+	private int h;
+	private int f;
+	private int g;
+	private boolean m;
+	private int t;
+	private int q;
+	private int r;
+	private int s;
+	private int u;
+	private int c;
+	private int p[][];
+	private int l;
+	private int k;
+	private int j;
+	private Font o;
+	private int d[] = {
 			1, 61, 122, 183, 246, 309, 371, 431
 	};
-	int e[] = {
+	private int e[] = {
 			68, 110, 151, 193, 235, 277, 319, 361
 	};
-	int b[] = {
+	private int b[] = {
 			1, 26, 59, 94, 134, 181, 232
 	};
 	
 	public QuadLink(){
 		o = new Font("Helvetica", 1, 13);
-		n = new Color(150, 150, 150);
 		k = 60;
 		p = new int[7][6];
 		m = false;

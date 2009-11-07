@@ -8,89 +8,88 @@ import opencgd.AbstractGame;
 
 public class Crypt extends AbstractGame {
 	
-	boolean l;
-	int f;
-	int mb;
-	int nb;
-	int ob;
-	int pb;
-	int zb;
-	int vb;
-	int qb;
-	int rb;
-	int ub;
-	int bc;
-	int dc;
-	int sb;
-	int tb;
-	int cc;
-	int ac;
-	int h;
-	int k;
-	int i;
-	int j;
-	int c[];
-	int r[][];
-	String w[];
-	int u[];
-	int t;
-	int v;
-	int ic[] = {
+	private boolean l;
+	private int f;
+	private int mb;
+	private int nb;
+	private int ob;
+	private int pb;
+	private int zb;
+	private int vb;
+	private int qb;
+	private int rb;
+	private int ub;
+	private int bc;
+	private int dc;
+	private int sb;
+	private int tb;
+	private int ac;
+	private int h;
+	private int k;
+	private int i;
+	private int j;
+	private int c[];
+	private int r[][];
+	private String w[];
+	private int u[];
+	private int t;
+	private int v;
+	private int ic[] = {
 			119, 119, 119, 204, 204, 204
 	};
-	int jc[] = {
+	private int jc[] = {
 			140, 260, 380, 140, 260, 380
 	};
-	int o;
-	int p;
-	int xb;
-	int yb[];
-	int wb[][];
-	int ab;
-	int lb[];
-	int kb[];
-	int fc[];
-	int gc[];
-	int hb[];
-	int ib[];
-	int jb[];
-	String hc[];
-	String ec[];
-	int y;
-	int gb;
-	int z;
-	int wc;
-	int yc;
-	int zc;
-	int uc;
-	int vc;
-	int xc;
-	int ad;
-	int kc;
-	int lc;
-	int fb[];
-	int a[];
-	int b[];
-	boolean cb[][];
-	int tc[][];
-	int sc[][];
-	int x;
-	int s;
-	int g;
-	int e;
-	int d;
-	int q[] = {
+	private int o;
+	private int p;
+	private int xb;
+	private int yb[];
+	private int wb[][];
+	private int ab;
+	private int lb[];
+	private int kb[];
+	private int fc[];
+	private int gc[];
+	private int hb[];
+	private int ib[];
+	private int jb[];
+	private String hc[];
+	private String ec[];
+	private int y;
+	private int gb;
+	private int z;
+	private int wc;
+	private int yc;
+	private int zc;
+	private int uc;
+	private int vc;
+	private int xc;
+	private int ad;
+	private int kc;
+	private int lc;
+	private int fb[];
+	private int a[];
+	private int b[];
+	private boolean cb[][];
+	private int tc[][];
+	private int sc[][];
+	private int x;
+	private int s;
+	private int g;
+	private int e;
+	private int d;
+	private int q[] = {
 			0, 1, 2, 1
 	};
-	int m[] = {
+	private int m[] = {
 			13, 28, 40, 27, 46, 26
 	};
-	int n[] = {
+	private int n[] = {
 			84, 28, 95, 59, 64, 74
 	};
-	Color db;
-	Color eb;
-	int mc[][] = {
+	private Color db;
+	private Color eb;
+	private int mc[][] = {
 			{
 				12
 			}, {
@@ -123,12 +122,12 @@ public class Crypt extends AbstractGame {
 				16
 			}
 	};
-	Color bb;
-	Font oc;
-	Font pc;
-	Font qc;
-	Font rc;
-	Font nc;
+	private Color bb;
+	private Font oc;
+	private Font pc;
+	private Font qc;
+	private Font rc;
+	private Font nc;
 	
 	public Crypt(){
 		nc = new Font("Helvetica", 1, 9);
@@ -897,7 +896,7 @@ public class Crypt extends AbstractGame {
 			if(ac == super.q){
 				cb[i2][i3] = true;
 			}
-			cc = super.connectionStream.b(super.ab, 7);
+			super.connectionStream.b(super.ab, 7);
 			dc = super.connectionStream.b(super.ab, 9);
 			bc = super.connectionStream.b(super.ab, 11);
 			tb = super.ab[13];

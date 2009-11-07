@@ -8,138 +8,124 @@ import opencgd.AbstractGame;
 
 public class CyberWars extends AbstractGame {
 	
-	int jc;
-	int hc;
-	int ic;
-	int zc;
-	int nc;
-	int mc;
-	int kb[];
-	int mb;
-	int ib;
-	int jb;
-	int lb;
-	int eb;
-	int gb;
-	int fb;
-	int hb;
-	int xc;
-	int pe;
-	int a;
-	int be;
-	int kd;
-	int ld;
-	int md;
-	int c;
-	int d;
-	int e;
-	String bc;
-	int ac;
-	int yb;
-	int zb;
-	int cc;
-	int ie;
-	int oc;
-	int pc;
-	int rc;
-	int sc;
-	int je;
-	int sd[];
-	int od[];
-	int qd[];
-	int pd[];
-	int rd[];
-	int td[];
-	int nd[];
-	int uc;
-	int ob;
-	int pb;
-	int qb;
-	int ne[];
-	int oe[];
-	int le[];
-	int me[];
-	boolean vc;
-	int dc;
-	int ec;
-	int bd;
-	int rb;
-	int w;
-	int x;
-	int l;
-	int ab;
-	int j;
-	int kc;
-	int lc;
-	int f;
-	int ce[][];
-	int de[][];
-	int ee[][];
-	int fe[][];
-	int ge[][];
-	int z;
-	int yc[];
-	int bb[];
-	boolean hd;
-	int sb;
-	int p[];
-	int nb[];
-	int s[];
-	int t[];
-	int v[];
-	int u[];
-	int r[];
-	int ub[];
-	int q[];
-	int wb[];
-	int xb[];
-	int y[];
-	int o[];
-	String tb[];
-	String cb[];
-	int qc;
-	Color m;
-	String i;
-	int h;
-	Color gd;
-	Color b;
+	private int jc;
+	private int hc;
+	private int ic;
+	private int zc;
+	private int nc;
+	private int mc;
+	private int kb[];
+	private int mb;
+	private int ib;
+	private int jb;
+	private int lb;
+	private int eb;
+	private int gb;
+	private int fb;
+	private int hb;
+	private int xc;
+	private int pe;
+	private int a;
+	private int be;
+	private int kd;
+	private int ld;
+	private int md;
+	private int c;
+	private int d;
+	private int e;
+	private String bc;
+	private int ac;
+	private int yb;
+	private int zb;
+	private int cc;
+	private int ie;
+	private int oc;
+	private int pc;
+	private int rc;
+	private int sc;
+	private int je;
+	private int sd[];
+	private int od[];
+	private int qd[];
+	private int pd[];
+	private int rd[];
+	private int td[];
+	private int nd[];
+	private int uc;
+	private int ob;
+	private int pb;
+	private int qb;
+	private int ne[];
+	private int oe[];
+	private int le[];
+	private int me[];
+	private boolean vc;
+	private int dc;
+	private int ec;
+	private int bd;
+	private int rb;
+	private int w;
+	private int x;
+	private int l;
+	private int ab;
+	private int j;
+	private int kc;
+	private int lc;
+	private int f;
+	private int ce[][];
+	private int de[][];
+	private int ee[][];
+	private int fe[][];
+	private int ge[][];
+	private int z;
+	private int yc[];
+	private int bb[];
+	private boolean hd;
+	private int sb;
+	private int p[];
+	private int nb[];
+	private int s[];
+	private int t[];
+	private int v[];
+	private int u[];
+	private int r[];
+	private int ub[];
+	private int q[];
+	private int wb[];
+	private int xb[];
+	private int y[];
+	private int o[];
+	private String tb[];
+	private String cb[];
+	private int qc;
+	private String i;
+	private int h;
+	private Color gd;
 	int cd;
 	int ed;
 	int dd;
 	int fd;
-	int k;
-	int n;
-	String gc;
-	String tc;
-	int vb;
-	Font ae;
-	Font zd;
-	Font yd;
-	Font wd;
-	Font xd;
-	Font vd;
-	Font ud;
-	Font db;
-	Font he;
-	Font wc;
-	Font id;
-	Font jd;
+	private int k;
+	private int n;
+	private int vb;
+	private Font ae;
+	private Font zd;
+	private Font yd;
+	private Font wd;
+	private Font xd;
+	private Font vd;
+	private Font ud;
+	private Font db;
 	static boolean ke = true;
-	boolean ad;
-	int fc[] = {
+	private int fc[] = {
 			0, 1, 2, 1
 	};
-	boolean g;
+	private boolean g;
 	
 	public CyberWars(){
 		g = false;
-		ad = false;
-		tc = "";
-		gc = "";
-		b = new Color(250, 250, 250);
 		gd = new Color(230, 230, 230);
 		i = "";
-		m = Color.red;
 		qc = 55;
 		hd = false;
 		bb = new int[18];
@@ -1481,10 +1467,6 @@ public class CyberWars extends AbstractGame {
 		super.k.a("cyber/bullets.gif", 250, true, 36, 32, 32);
 		super.k.a("cyber/select.gif", 286, true, 18, 32, 32);
 		m();
-		jd = new Font("TimesRoman", 0, 16);
-		id = new Font("TimesRoman", 0, 12);
-		he = new Font("TimesRoman", 0, 36);
-		wc = new Font("TimesRoman", 0, 24);
 		db = new Font("TimesRoman", 0, 18);
 		ud = new Font("Helvetica", 1, 30);
 		vd = new Font("Helvetica", 1, 20);
@@ -1623,7 +1605,6 @@ public class CyberWars extends AbstractGame {
 			if(i1 == 250){
 				h = 50;
 				i = "Action Failed";
-				m = Color.magenta;
 				int j2 = super.connectionStream.a(super.ab[1]);
 				int i9 = super.connectionStream.a(super.ab[2]);
 				oe[0] = 15;
@@ -1635,7 +1616,6 @@ public class CyberWars extends AbstractGame {
 			if(i1 == 249){
 				h = 50;
 				i = "Action Succeeded";
-				m = Color.white;
 				int k2 = super.connectionStream.a(super.ab[1]);
 				int j9 = super.connectionStream.a(super.ab[2]);
 				int k15 = super.connectionStream.a(super.ab[3]);
@@ -1659,7 +1639,6 @@ public class CyberWars extends AbstractGame {
 			if(i1 == 248){
 				h = 50;
 				i = "Beam Down Failure";
-				m = Color.magenta;
 				int l2 = super.connectionStream.a(super.ab[1]);
 				int k9 = super.connectionStream.a(super.ab[2]);
 				oe[0] = 31;
@@ -1672,7 +1651,6 @@ public class CyberWars extends AbstractGame {
 				// spell cast
 				h = 50;
 				i = "Target cannot move";
-				m = Color.cyan;
 				oe[0] = 0;
 				return;
 			}
@@ -1694,7 +1672,6 @@ public class CyberWars extends AbstractGame {
 				// spell cast
 				h = 50;
 				i = "Target has already moved";
-				m = Color.cyan;
 				oe[0] = 0;
 				return;
 			}
@@ -1995,7 +1972,6 @@ public class CyberWars extends AbstractGame {
 						fe[l5][j12] = super.connectionStream.a(super.ab[3]);
 						h = 64;
 						i = "Mind Control Success";
-						m = Color.magenta;
 						return;
 					}
 					if(i1 == 225){
@@ -2008,13 +1984,11 @@ public class CyberWars extends AbstractGame {
 						ne[0] = 5;
 						h = 64;
 						i = "Mind Control Failure";
-						m = Color.magenta;
 						return;
 					}
 					if(i1 == 224){
 						h = 50;
 						i = "Destroying Hologram";
-						m = Color.white;
 						ie = 48;
 						int j6 = super.connectionStream.a(super.ab[1]);
 						int l12 = super.connectionStream.a(super.ab[2]);
@@ -2035,7 +2009,6 @@ public class CyberWars extends AbstractGame {
 						if(i1 == 223){
 							h = 50;
 							i = "Not A Hologram";
-							m = Color.magenta;
 							int k6 = super.connectionStream.a(super.ab[1]);
 							int i13 = super.connectionStream.a(super.ab[2]);
 							oe[0] = 48;
@@ -2047,13 +2020,11 @@ public class CyberWars extends AbstractGame {
 						if(i1 == 222){
 							h = 50;
 							i = "Slime cannot be attacked!";
-							m = Color.cyan;
 							return;
 						}
 						if(i1 == 221){
 							h = 50;
 							i = "Resurrect Succeeded";
-							m = Color.white;
 							int l6 = super.connectionStream.a(super.ab[1]);
 							int j13 = super.connectionStream.a(super.ab[2]);
 							int i17 = super.connectionStream.a(super.ab[3]);
@@ -2070,13 +2041,11 @@ public class CyberWars extends AbstractGame {
 						if(i1 == 220){
 							h = 50;
 							i = "Action Succeeded";
-							m = Color.white;
 							return;
 						}
 						if(i1 == 219){
 							h = 50;
 							i = "Action Succeeded";
-							m = Color.white;
 							int i7 = super.connectionStream.a(super.ab[1]);
 							int k13 = super.connectionStream.a(super.ab[2]);
 							int j17 = super.connectionStream.a(super.ab[3]);
@@ -2147,7 +2116,6 @@ public class CyberWars extends AbstractGame {
 								ne[0] = 2;
 								h = 50;
 								i = super.n[k7] + " gained an action";
-								m = Color.white;
 								xc = 60;
 								return;
 							}

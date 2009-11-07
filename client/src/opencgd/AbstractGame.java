@@ -10,36 +10,34 @@ import opencgd.library.EngineApplet;
 
 public abstract class AbstractGame {
 	
-	Font z;
-	Color r;
-	int x;
-	int g;
+	private Font z;
+	private Color r;
+	private int x;
+	private int g;
 	protected String v[];
 	public int q;
 	public OpenCGD w;
-	int s;
+	private int s;
 	public int p;
-	int e[];
+	private int e[];
 	public String n[];
 	public int m;
 	public int a;
-	public int o;
-	int c;
-	int b;
-	int i;
-	int j;
+	private int o;
+	private int c;
+	private int b;
+	private int i;
+	private int j;
 	public byte ab[];
 	public Buffer connectionStream;
-	public boolean d;
-	public Image h;
-	public Image l;
+	private Image h;
+	private Image l;
 	public E k;
 	public Graphics t;
-	public Image y;
+	private Image y;
 	public Graphics u;
 	
 	protected AbstractGame(){
-		d = false;
 		c = 75;
 		o = 500;
 		p = 2;
@@ -292,7 +290,6 @@ public abstract class AbstractGame {
 		i = w.jb;
 		b = w.m;
 		c = w.n;
-		d = w.lowDetail;
 		s = w.kd;
 		g = 0;
 		for(int j1 = 0; j1 < 3; j1++){

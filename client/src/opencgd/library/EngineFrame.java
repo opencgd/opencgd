@@ -5,18 +5,19 @@ import java.awt.*;
 public class EngineFrame extends Frame {
 	
 	private static final long serialVersionUID = -5103227993732234369L;
-	Graphics e;
-	EngineApplet f;
-	int c;
-	int b;
-	int d;
-	int a;
+	private EngineApplet f;
+	private int c;
+	private int b;
+	private int d;
+	private int a;
 	
 	@Override
 	public final void paint(Graphics g){
 		f.paint(g);
 	}
 	
+	//FIXME Deprecation
+	@SuppressWarnings("deprecation")
 	@Override
 	public boolean handleEvent(Event event){
 		if(event.id == 401){
@@ -77,6 +78,5 @@ public class EngineFrame extends Frame {
 		setVisible(true);
 		toFront();
 		setSize(a, d);
-		e = getGraphics();
 	}
 }

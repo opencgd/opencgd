@@ -8,48 +8,48 @@ import opencgd.AbstractGame;
 
 public class MysteryMonster extends AbstractGame {
 	
-	int x;
-	int r;
-	int o;
-	int p;
-	int hb;
-	String gb;
-	static boolean u[][];
-	static String t[];
-	static int s;
-	int m;
-	int n;
-	int y;
-	int e;
-	int f;
-	boolean fb[][];
-	int a;
-	int g;
-	int q;
-	int l;
-	int k;
-	int j;
-	Color v;
-	Color z;
-	Color w;
-	Font eb[];
-	Font ab;
-	Font bb;
-	Font cb;
-	Font db;
-	int b[] = {
+	private int x;
+	private int r;
+	private int o;
+	private int p;
+	private int hb;
+	private String gb;
+	private static boolean u[][];
+	private static String t[];
+	private static int s;
+	private int m;
+	private int n;
+	private int y;
+	private int e;
+	private int f;
+	private boolean fb[][];
+	private int a;
+	private int g;
+	private int q;
+	private int l;
+	private int k;
+	private int j;
+	private Color v;
+	private Color z;
+	private Color w;
+	private Font eb[];
+	private Font ab;
+	private Font bb;
+	private Font cb;
+	private Font db;
+	private int b[] = {
 			101, 156, 215, 277
 	};
-	int c[] = {
+	private int c[] = {
 			59, 112, 168, 227
 	};
-	int h[] = {
+	private int h[] = {
 			8, 68, 130, 192, 254, 316, 375
 	};
-	int i[] = {
+	private int i[] = {
 			35, 87, 142, 198, 253, 309, 361
 	};
-	int d[] = {
+	private int d[] = {
 			56, 106, 162, 221, 280
 	};
 	

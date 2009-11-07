@@ -11,22 +11,23 @@ import java.net.URL;
 public class D extends Dialog {
 	
 	private static final long serialVersionUID = 5661356917194069265L;
-	Button h;
-	public static String abspath = "";
-	private static Font e;
+	private Button h;
+	private static String abspath = "";
 	private static Font f;
-	public static int hsscore[];
-	public static String hsname[];
+	private static int hsscore[];
+	private static String hsname[];
 	private static String a[];
 	private static String b[];
 	private static int d;
 	private static int c_int_static_fld;
-	public static int height;
-	public static int width;
-	public static Graphics g;
-	public static Applet app;
-	public static Component c_java_awt_Component_static_fld;
+	protected static int height;
+	protected static int width;
+	protected static Graphics g;
+	private static Applet app;
+	protected static Component c_java_awt_Component_static_fld;
 	
+	//FIXME Deprecation
+	@SuppressWarnings("deprecation")
 	@Override
 	public boolean action(Event event, Object obj){
 		if(event.target == h){
@@ -37,6 +38,8 @@ public class D extends Dialog {
 		}
 	}
 	
+	//FIXME Deprecation
+	@SuppressWarnings("deprecation")
 	@Override
 	public boolean handleEvent(Event event){
 		if(event.id == 201){
@@ -89,6 +92,8 @@ public class D extends Dialog {
 		return null;
 	}
 	
+	//FIXME Deprecation
+	@SuppressWarnings("deprecation")
 	public static void a(String s, int i){
 		String s1 = " ";
 		int k = 0;
@@ -347,6 +352,8 @@ public class D extends Dialog {
 		return image;
 	}
 	
+	//FIXME Deprecation
+	@SuppressWarnings("deprecation")
 	public static void a(int i, int j, String s){
 		hsname = new String[j * 50];
 		hsscore = new int[j * 50];
@@ -377,6 +384,8 @@ public class D extends Dialog {
 		}
 	}
 	
+	//FIXME Deprecation
+	@SuppressWarnings("deprecation")
 	public static void a(String s, int i, int j, int k, String s1){
 		String s2 = "";
 		int l = 0xbc614e;
@@ -457,6 +466,5 @@ public class D extends Dialog {
 		app = flag ? (Applet) component : null;
 		g = component.getGraphics();
 		f = new Font("TimesRoman", 0, 15);
-		e = new Font("Helvetica", 1, 13);
 	}
 }

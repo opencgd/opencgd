@@ -8,46 +8,44 @@ import opencgd.AbstractGame;
 
 public class Pairs extends AbstractGame {
 	
-	int l;
-	int t;
-	int r;
-	int s;
-	int j;
-	int u;
-	int k[];
-	int q[][];
-	int e;
-	int d;
-	int c;
-	int i[] = {
+	private int l;
+	private int t;
+	private int r;
+	private int s;
+	private int j;
+	private int u;
+	private int k[];
+	private int q[][];
+	private int e;
+	private int d;
+	private int c;
+	private int i[] = {
 			-16, -12, -6, 0
 	};
-	int h[] = {
+	private int h[] = {
 			30, 16, 5, 0
 	};
-	int f[] = {
+	private int f[] = {
 			24, 24, 24, 21
 	};
-	int g[] = {
+	private int g[] = {
 			43, 34, 24, 16
 	};
-	int m[] = {
+	private int m[] = {
 			45, 43, 41, 39
 	};
-	int a[] = {
+	private int a[] = {
 			38, 97, 154, 210
 	};
-	int b[] = {
+	private int b[] = {
 			48, 115, 176, 234
 	};
-	Font p;
-	Font o;
-	Font n;
+	private Font o;
+	private Font n;
 	
 	public Pairs(){
 		n = new Font("Helvetica", 1, 16);
 		o = new Font("Helvetica", 1, 13);
-		p = new Font("Helvetica", 1, 11);
 		d = 60;
 		q = new int[9][4];
 		k = new int[6];

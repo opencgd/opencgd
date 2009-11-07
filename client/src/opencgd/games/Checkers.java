@@ -8,40 +8,40 @@ import opencgd.AbstractGame;
 
 public class Checkers extends AbstractGame {
 	
-	boolean s;
-	boolean l;
-	int y;
-	int v;
-	int z;
-	int ab;
-	int w;
-	int x;
-	int bb;
-	int o;
-	int p;
-	int k;
-	int i;
-	int j;
-	int m[];
-	int n[];
-	int q;
-	int a;
-	int c;
-	int u[][];
-	int h;
-	int g;
-	int f;
-	int r[] = {
+	private boolean s;
+	private boolean l;
+	private int y;
+	private int v;
+	private int z;
+	private int ab;
+	private int w;
+	private int x;
+	private int bb;
+	private int o;
+	private int p;
+	private int k;
+	private int i;
+	private int j;
+	private int m[];
+	private int n[];
+	private int q;
+	private int a;
+	private int c;
+	private int u[][];
+	private int h;
+	private int g;
+	private int f;
+	private int r[] = {
 			1, 4, 2, 5
 	};
-	Font t;
-	int d[] = {
+	private Font t;
+	private int d[] = {
 			22, 78, 136, 194, 250, 308, 366, 422, 480
 	};
-	int e[] = {
+	private int e[] = {
 			110, 145, 180, 215, 250, 285, 320, 355, 390
 	};
-	int b[] = {
+	private int b[] = {
 			22, 43, 65, 91, 119, 151, 188, 230, 278
 	};
 	
