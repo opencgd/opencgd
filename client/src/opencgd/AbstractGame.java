@@ -148,8 +148,8 @@ public abstract class AbstractGame {
 				connectionStream.a(j, ab);
 				i = connectionStream.a(ab[0]);
 				if(i == 5){
-					m = connectionStream.b(ab, 1);
-					q = connectionStream.b(ab, 3);
+					m = connectionStream.getShort(ab, 1);
+					q = connectionStream.getShort(ab, 3);
 					System.out.println("Got id: " + q);
 					int i1 = (j - 5) / 18;
 					a = 0;
@@ -158,8 +158,8 @@ public abstract class AbstractGame {
 					}
 					
 					for(int i3 = 0; i3 < i1; i3++){
-						int k3 = connectionStream.b(ab, 5 + i3 * 18);
-						e[k3] = connectionStream.b(ab, 7 + i3 * 18);
+						int k3 = connectionStream.getShort(ab, 5 + i3 * 18);
+						e[k3] = connectionStream.getShort(ab, 7 + i3 * 18);
 						n[k3] = (new String(ab, 11 + i3 * 18, 12)).trim();
 						if(k3 + 1 > a){
 							a = k3 + 1;
@@ -191,7 +191,7 @@ public abstract class AbstractGame {
 					}
 					
 					int k2 = connectionStream.a(ab[1]);
-					int j3 = connectionStream.b(ab, 2);
+					int j3 = connectionStream.getShort(ab, 2);
 					String s3 = new String(ab, 4, j - 4);
 					w.gameScreen = 2;
 					w.sb = 2;
@@ -215,7 +215,7 @@ public abstract class AbstractGame {
 						v[i2] = "";
 					}
 					
-					int l2 = connectionStream.b(ab, 1);
+					int l2 = connectionStream.getShort(ab, 1);
 					String s2 = new String(ab, 3, j - 3);
 					w.gameScreen = 2;
 					w.sb = 2;

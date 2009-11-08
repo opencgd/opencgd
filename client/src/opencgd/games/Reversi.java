@@ -280,8 +280,8 @@ public class Reversi extends AbstractGame {
 	@Override
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
-			g = super.connectionStream.b(super.ab, 1);
-			h = super.connectionStream.b(super.ab, 3);
+			g = super.connectionStream.getShort(super.ab, 1);
+			h = super.connectionStream.getShort(super.ab, 3);
 			return;
 		}
 		if(i1 == 254){

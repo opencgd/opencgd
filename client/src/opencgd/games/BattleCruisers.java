@@ -530,19 +530,19 @@ public class BattleCruisers extends AbstractGame {
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
 			v = 0;
-			l = super.connectionStream.b(super.ab, 1);
+			l = super.connectionStream.getShort(super.ab, 1);
 			return;
 		}
 		if(i1 == 254){
 			v = 1;
-			k = super.connectionStream.b(super.ab, 1);
-			l = super.connectionStream.b(super.ab, 3);
+			k = super.connectionStream.getShort(super.ab, 1);
+			l = super.connectionStream.getShort(super.ab, 3);
 			return;
 		}
 		if(i1 == 253){
 			f();
 			for(int k1 = 0; k1 < 6; k1++){
-				c(super.connectionStream.b(super.ab, 1 + k1 * 6), super.connectionStream.b(super.ab, 3 + k1 * 6), super.connectionStream.b(super.ab, 5 + k1 * 6), x[k1]);
+				c(super.connectionStream.getShort(super.ab, 1 + k1 * 6), super.connectionStream.getShort(super.ab, 3 + k1 * 6), super.connectionStream.getShort(super.ab, 5 + k1 * 6), x[k1]);
 			}
 			
 			return;

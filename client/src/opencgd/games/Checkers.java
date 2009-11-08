@@ -497,8 +497,8 @@ public class Checkers extends AbstractGame {
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
 			l = false;
-			int k1 = super.connectionStream.b(super.ab, 1);
-			int i2 = super.connectionStream.b(super.ab, 3);
+			int k1 = super.connectionStream.getShort(super.ab, 1);
+			int i2 = super.connectionStream.getShort(super.ab, 3);
 			if(i2 > g){
 				s = false;
 			}

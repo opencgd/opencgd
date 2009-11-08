@@ -282,8 +282,8 @@ public class Dungeon extends AbstractGame {
 	@Override
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
-			e = super.connectionStream.b(super.ab, 1);
-			f = super.connectionStream.b(super.ab, 3);
+			e = super.connectionStream.getShort(super.ab, 1);
+			f = super.connectionStream.getShort(super.ab, 3);
 			j = 0;
 			return;
 		}
@@ -349,8 +349,8 @@ public class Dungeon extends AbstractGame {
 				return;
 			}
 			if(i1 == 251){
-				e = super.connectionStream.b(super.ab, 1);
-				f = super.connectionStream.b(super.ab, 3);
+				e = super.connectionStream.getShort(super.ab, 1);
+				f = super.connectionStream.getShort(super.ab, 3);
 				j = 1;
 				return;
 			}

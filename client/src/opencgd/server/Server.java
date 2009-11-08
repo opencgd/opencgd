@@ -62,7 +62,7 @@ public class Server {
 			
 			final Frame frame = (Frame) e.getMessage();
 			final ChannelBuffer buf = ChannelBuffers.dynamicBuffer();
-			buf.writeShort((short) frame.getSize());
+			buf.writeShort((short) (frame.getSize()+1));
 			buf.writeByte((byte) frame.getID());
 			buf.writeBytes(frame.getData());
 			Channels.write(ctx, e.getFuture(), buf, e.getRemoteAddress());
@@ -103,15 +103,64 @@ public class Server {
 		 */
 		@Override
 		public void messageReceived(ChannelHandlerContext ctx, MessageEvent e){
-			final Frame frame = (Frame) e.getMessage();
+			final FrameReader frame = new FrameReader((Frame) e.getMessage());
 			
-			System.out.println("Received packet ID="+frame.getID()+", Size="+frame.getSize()+1);
+			if(frame.getID() != 4){ //Stop the console spam
+				System.out.println("Received packet ID="+frame.getID()+", Size="+frame.getSize());
+			}
+			
+			/*
+			 * YES,
+			 * This is messy, but it's only for testing right now.
+			 */
 			
 			if(frame.getID() == 0){
-				Frame response = new Frame();
+				final String compound = new String(frame.getData());
+				final String username = compound.substring(0, 12).trim();
+				final String password = compound.substring(12, compound.length()).trim();
+				System.out.println("U="+username+", P="+password);
+				
+				FrameWriter response = new FrameWriter();
 				response.setID(0); //0=accept, 1=criticizeNewbie, 2=serverFull, 3=idiotUser, 4 or higher = confused client
 				
-				ctx.getChannel().write(response);
+				ctx.getChannel().write(response.createFrame());
+			} else if(frame.getID() == 3){
+				System.out.println("Chat message: "+new String(frame.getData()));
+			} else if(frame.getID() == 16){
+				int game = frame.readByte();
+				
+				if(game == 0){
+					System.out.println("Game change: ENTER LOBBY");
+					//close interface
+				} else {
+					//entering in a new game
+					game--;
+					System.out.println("Game change: "+game);
+				}
+			} else if(frame.getID() == 15){
+				System.out.println("Showing interface");
+				//opened interface
+				
+				FrameWriter response = new FrameWriter();
+				response.setID(5);
+				response.addShort(4); //number of players
+				response.addShort(3); //current player's ID
+				
+				for(int i = 0; i < 4; i++){
+					response.addShort(i); //index
+					response.addShort(0); //rating
+					response.addShort(0); //score
+					
+					String name = "bob"+i;
+					
+					while(name.length() < 12){
+						name += ' ';
+					}
+					
+					response.addBytes(name.getBytes());
+				}
+				
+				ctx.getChannel().write(response.createFrame());
 			}
 		}
 		

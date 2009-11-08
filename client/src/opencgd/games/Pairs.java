@@ -227,9 +227,9 @@ public class Pairs extends AbstractGame {
 	@Override
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
-			c = super.connectionStream.b(super.ab, 1);
-			d = super.connectionStream.b(super.ab, 3);
-			j = super.connectionStream.b(super.ab, 5);
+			c = super.connectionStream.getShort(super.ab, 1);
+			d = super.connectionStream.getShort(super.ab, 3);
+			j = super.connectionStream.getShort(super.ab, 5);
 			return;
 		}
 		if(i1 == 254){
@@ -243,7 +243,7 @@ public class Pairs extends AbstractGame {
 			
 			b();
 			for(int j2 = 0; j2 < 6; j2++){
-				k[j2] = super.connectionStream.b(super.ab, k1);
+				k[j2] = super.connectionStream.getShort(super.ab, k1);
 				k1 += 2;
 			}
 			
@@ -251,10 +251,10 @@ public class Pairs extends AbstractGame {
 		}
 		if(i1 == 253){
 			u = 1;
-			s = super.connectionStream.b(super.ab, 1);
-			r = super.connectionStream.b(super.ab, 3);
-			t = super.connectionStream.b(super.ab, 5);
-			l = super.connectionStream.b(super.ab, 7);
+			s = super.connectionStream.getShort(super.ab, 1);
+			r = super.connectionStream.getShort(super.ab, 3);
+			t = super.connectionStream.getShort(super.ab, 5);
+			l = super.connectionStream.getShort(super.ab, 7);
 			q[s][r] = 0;
 			b();
 		}

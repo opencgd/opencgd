@@ -295,16 +295,16 @@ public class QuadLink extends AbstractGame {
 	@Override
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
-			j = super.connectionStream.b(super.ab, 1);
-			k = super.connectionStream.b(super.ab, 3);
+			j = super.connectionStream.getShort(super.ab, 1);
+			k = super.connectionStream.getShort(super.ab, 3);
 			if(j != super.q){
 				m = false;
 				return;
 			}
 		} else if(i1 == 254){
-			r = super.connectionStream.b(super.ab, 1);
-			q = super.connectionStream.b(super.ab, 3);
-			t = super.connectionStream.b(super.ab, 5);
+			r = super.connectionStream.getShort(super.ab, 1);
+			q = super.connectionStream.getShort(super.ab, 3);
+			t = super.connectionStream.getShort(super.ab, 5);
 			s = u = (5 - q) * 24 + 16;
 		}
 	}

@@ -412,8 +412,8 @@ public class MysteryMonster extends AbstractGame {
 	@Override
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
-			j = super.connectionStream.b(super.ab, 1);
-			k = super.connectionStream.b(super.ab, 3);
+			j = super.connectionStream.getShort(super.ab, 1);
+			k = super.connectionStream.getShort(super.ab, 3);
 			if(j != q){
 				b();
 				return;
@@ -425,7 +425,7 @@ public class MysteryMonster extends AbstractGame {
 				return;
 			}
 			if(i1 == 253){
-				x = super.connectionStream.b(super.ab, 1);
+				x = super.connectionStream.getShort(super.ab, 1);
 				fb[x % 6][x / 6] = true;
 				b();
 			}

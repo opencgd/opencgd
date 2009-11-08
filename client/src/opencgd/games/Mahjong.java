@@ -545,8 +545,8 @@ public class Mahjong extends AbstractGame {
 	@Override
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
-			g = super.connectionStream.b(super.ab, 1);
-			h = super.connectionStream.b(super.ab, 3);
+			g = super.connectionStream.getShort(super.ab, 1);
+			h = super.connectionStream.getShort(super.ab, 3);
 			r = 0;
 			if(g != super.q){
 				w = false;
@@ -555,19 +555,19 @@ public class Mahjong extends AbstractGame {
 			return;
 		}
 		if(i1 == 254){
-			v = super.connectionStream.b(super.ab, 1);
+			v = super.connectionStream.getShort(super.ab, 1);
 			u = 0;
 			for(int k1 = 0; k1 < 14; k1++){
-				t[k1] = super.connectionStream.b(super.ab, k1 * 2 + 3);
+				t[k1] = super.connectionStream.getShort(super.ab, k1 * 2 + 3);
 			}
 			
 			return;
 		}
 		if(i1 == 253){
-			g = super.connectionStream.b(super.ab, 1);
-			h = super.connectionStream.b(super.ab, 3);
-			x = super.connectionStream.b(super.ab, 5);
-			q = super.connectionStream.b(super.ab, 7);
+			g = super.connectionStream.getShort(super.ab, 1);
+			h = super.connectionStream.getShort(super.ab, 3);
+			x = super.connectionStream.getShort(super.ab, 5);
+			q = super.connectionStream.getShort(super.ab, 7);
 			r = 1;
 			w = false;
 			if(!bb){
@@ -576,8 +576,8 @@ public class Mahjong extends AbstractGame {
 			}
 		} else {
 			if(i1 == 252 && p > 0){
-				int l1 = super.connectionStream.b(super.ab, 1);
-				int j2 = super.connectionStream.b(super.ab, 3);
+				int l1 = super.connectionStream.getShort(super.ab, 1);
+				int j2 = super.connectionStream.getShort(super.ab, 3);
 				int l2 = super.q - g;
 				if(l2 <= 0){
 					l2 += 10;
@@ -602,11 +602,11 @@ public class Mahjong extends AbstractGame {
 				}
 			}
 			if(i1 == 251){
-				int i2 = super.connectionStream.b(super.ab, 1);
-				int k2 = super.connectionStream.b(super.ab, 3);
+				int i2 = super.connectionStream.getShort(super.ab, 1);
+				int k2 = super.connectionStream.getShort(super.ab, 3);
 				j[i2] = k2;
 				for(int i3 = 0; i3 < k2; i3++){
-					k[i2][i3] = super.connectionStream.b(super.ab, 5 + i3 * 2);
+					k[i2][i3] = super.connectionStream.getShort(super.ab, 5 + i3 * 2);
 				}
 				
 			}

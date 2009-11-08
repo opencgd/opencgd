@@ -648,7 +648,7 @@ public class Buffer implements Runnable {
 		return a(abyte0[i1]) * 0x1000000 + a(abyte0[i1 + 1]) * 0x10000 + a(abyte0[i1 + 2]) * 256 + a(abyte0[i1 + 3]);
 	}
 	
-	public int b(byte abyte0[], int i1){
+	public int getShort(byte abyte0[], int i1){
 		return a(abyte0[i1]) * 256 + a(abyte0[i1 + 1]);
 	}
 	

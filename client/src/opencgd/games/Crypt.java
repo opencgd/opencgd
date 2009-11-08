@@ -697,9 +697,9 @@ public class Crypt extends AbstractGame {
 	@Override
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
-			d = super.connectionStream.b(super.ab, 1);
-			e = super.connectionStream.b(super.ab, 3);
-			f = super.connectionStream.b(super.ab, 5);
+			d = super.connectionStream.getShort(super.ab, 1);
+			e = super.connectionStream.getShort(super.ab, 3);
+			f = super.connectionStream.getShort(super.ab, 5);
 			ab = 0;
 			if(d != s || ab != x){
 				s = d;
@@ -741,12 +741,12 @@ public class Crypt extends AbstractGame {
 			return;
 		}
 		if(i1 == 252){
-			d = super.connectionStream.b(super.ab, 1);
-			e = super.connectionStream.b(super.ab, 3);
+			d = super.connectionStream.getShort(super.ab, 1);
+			e = super.connectionStream.getShort(super.ab, 3);
 			ab = 1;
-			p = super.connectionStream.b(super.ab, 5);
-			o = super.connectionStream.b(super.ab, 7);
-			f = super.connectionStream.b(super.ab, 9);
+			p = super.connectionStream.getShort(super.ab, 5);
+			o = super.connectionStream.getShort(super.ab, 7);
+			f = super.connectionStream.getShort(super.ab, 9);
 			if(d != s || ab != x){
 				s = d;
 				x = ab;
@@ -827,17 +827,17 @@ public class Crypt extends AbstractGame {
 			return;
 		}
 		if(i1 == 251){
-			int k1 = super.connectionStream.b(super.ab, 1);
-			int k2 = super.connectionStream.b(super.ab, 3);
-			int l3 = super.connectionStream.b(super.ab, 5);
-			int k4 = super.connectionStream.b(super.ab, 7);
+			int k1 = super.connectionStream.getShort(super.ab, 1);
+			int k2 = super.connectionStream.getShort(super.ab, 3);
+			int l3 = super.connectionStream.getShort(super.ab, 5);
+			int k4 = super.connectionStream.getShort(super.ab, 7);
 			tc[k1][k2] = l3;
 			yb[l3] = k4;
 			if(l3 + 1 > xb){
 				xb = l3 + 1;
 			}
 			for(int i5 = 0; i5 < k4; i5++){
-				wb[l3][i5] = super.connectionStream.b(super.ab, 9 + i5 * 2);
+				wb[l3][i5] = super.connectionStream.getShort(super.ab, 9 + i5 * 2);
 			}
 			
 			b();
@@ -862,19 +862,19 @@ public class Crypt extends AbstractGame {
 			return;
 		}
 		if(i1 == 249){
-			ac = super.connectionStream.b(super.ab, 1);
-			int i2 = super.connectionStream.b(super.ab, 3);
-			int i3 = super.connectionStream.b(super.ab, 5);
+			ac = super.connectionStream.getShort(super.ab, 1);
+			int i2 = super.connectionStream.getShort(super.ab, 3);
+			int i3 = super.connectionStream.getShort(super.ab, 5);
 			if(ac == super.q){
 				cb[i2][i3] = true;
 			}
-			super.connectionStream.b(super.ab, 7);
-			dc = super.connectionStream.b(super.ab, 9);
-			bc = super.connectionStream.b(super.ab, 11);
+			super.connectionStream.getShort(super.ab, 7);
+			dc = super.connectionStream.getShort(super.ab, 9);
+			bc = super.connectionStream.getShort(super.ab, 11);
 			tb = super.ab[13];
 			sb = super.ab[14];
-			ub = super.connectionStream.b(super.ab, 15);
-			rb = super.connectionStream.b(super.ab, 17);
+			ub = super.connectionStream.getShort(super.ab, 15);
+			rb = super.connectionStream.getShort(super.ab, 17);
 			qb = super.ab[19];
 			pb = super.ab[20];
 			ob = super.ab[21];
@@ -882,7 +882,7 @@ public class Crypt extends AbstractGame {
 			mb = super.ab[23];
 			vb = super.ab[24];
 			if(vb == 1){
-				zb = super.connectionStream.b(super.ab, 25);
+				zb = super.connectionStream.getShort(super.ab, 25);
 			}
 			h = 200;
 			return;
