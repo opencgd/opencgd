@@ -1,4 +1,4 @@
-package opencgd.server;
+package opencgd.server.io;
 
 public class FrameWriter extends Frame  {
 	

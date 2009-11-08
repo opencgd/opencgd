@@ -1,4 +1,4 @@
-package opencgd.server;
+package opencgd.server.io;
 
 public class Frame {
 
@@ -11,7 +11,7 @@ public class Frame {
 		this.data = data;
 	}
 	
-	protected Frame(){
+	public Frame(){
 		
 	}
 	

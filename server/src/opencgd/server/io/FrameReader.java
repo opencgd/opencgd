@@ -1,4 +1,4 @@
-package opencgd.server;
+package opencgd.server.io;
 
 import java.io.UnsupportedEncodingException;
 
