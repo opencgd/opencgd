@@ -1,4 +1,4 @@
-package opencgd.library;
+package opencgd.client.library;
 
 import java.applet.Applet;
 import java.awt.BorderLayout;

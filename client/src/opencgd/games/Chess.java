@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
 
-import opencgd.AbstractGame;
+import opencgd.client.AbstractGame;
 
 public class Chess extends AbstractGame {
 	
@@ -166,7 +166,7 @@ public class Chess extends AbstractGame {
 		super.k.a(super.u, 6, 6, false);
 		if(j){
 			super.u.setColor(Color.white);
-			opencgd.library.D.a(super.u, "Select Piece", db, 256, 76);
+			opencgd.client.library.D.a(super.u, "Select Piece", db, 256, 76);
 		}
 		super.u.setFont(db);
 		super.u.setColor(Color.white);
@@ -177,7 +177,7 @@ public class Chess extends AbstractGame {
 		} else {
 			super.u.drawString(super.n[f] + "'s turn - Please wait", 10, 20);
 		}
-		opencgd.library.D.b(super.u, "Time-Remaining:" + h, db, 502, 20);
+		opencgd.client.library.D.b(super.u, "Time-Remaining:" + h, db, 502, 20);
 	}
 	
 	private void b(){
@@ -742,36 +742,36 @@ public class Chess extends AbstractGame {
 			}
 		}
 		if(!j){
-			b(((opencgd.library.EngineApplet) (super.w)).f, ((opencgd.library.EngineApplet) (super.w)).e);
-			if(f == super.q && c != -1 && l == -1 && ((opencgd.library.EngineApplet) (super.w)).hh == 1){
+			b(((opencgd.client.library.EngineApplet) (super.w)).f, ((opencgd.client.library.EngineApplet) (super.w)).e);
+			if(f == super.q && c != -1 && l == -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 				d(c, a);
 			}
-			if(f == super.q && l != -1 && ((opencgd.library.EngineApplet) (super.w)).hh == 2){
+			if(f == super.q && l != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 2){
 				c();
 			}
-			if(f == super.q && l != -1 && ((opencgd.library.EngineApplet) (super.w)).hh == 1){
+			if(f == super.q && l != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 				c(c, a);
 			}
 			
-			((opencgd.library.EngineApplet) (super.w)).hh = 0;
+			((opencgd.client.library.EngineApplet) (super.w)).hh = 0;
 		}
-		if(j && ((opencgd.library.EngineApplet) (super.w)).hh == 1){
-			if(((opencgd.library.EngineApplet) (super.w)).f > 155 && ((opencgd.library.EngineApplet) (super.w)).f < 205){
+		if(j && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f > 155 && ((opencgd.client.library.EngineApplet) (super.w)).f < 205){
 				super.connectionStream.setPacketID(254);
 				super.connectionStream.addByte(2);
 				super.connectionStream.sendPacket();
 			}
-			if(((opencgd.library.EngineApplet) (super.w)).f > 205 && ((opencgd.library.EngineApplet) (super.w)).f < 255){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f > 205 && ((opencgd.client.library.EngineApplet) (super.w)).f < 255){
 				super.connectionStream.setPacketID(254);
 				super.connectionStream.addByte(3);
 				super.connectionStream.sendPacket();
 			}
-			if(((opencgd.library.EngineApplet) (super.w)).f > 255 && ((opencgd.library.EngineApplet) (super.w)).f < 305){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f > 255 && ((opencgd.client.library.EngineApplet) (super.w)).f < 305){
 				super.connectionStream.setPacketID(254);
 				super.connectionStream.addByte(4);
 				super.connectionStream.sendPacket();
 			}
-			if(((opencgd.library.EngineApplet) (super.w)).f > 305 && ((opencgd.library.EngineApplet) (super.w)).f < 355){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f > 305 && ((opencgd.client.library.EngineApplet) (super.w)).f < 355){
 				super.connectionStream.setPacketID(254);
 				super.connectionStream.addByte(5);
 				super.connectionStream.sendPacket();

@@ -1,4 +1,4 @@
-package opencgd.library;
+package opencgd.client.library;
 
 import java.io.DataInputStream;
 import java.io.FileOutputStream;
@@ -178,7 +178,7 @@ public class F {
 			fileoutputstream.close();
 			return;
 		} catch(Exception _ex){
-			opencgd.library.D.b("Error! Unable to save file");
+			opencgd.client.library.D.b("Error! Unable to save file");
 		}
 	}
 	
@@ -222,7 +222,7 @@ public class F {
 			fileoutputstream.close();
 			return;
 		} catch(Exception _ex){
-			opencgd.library.D.b("Error! Unable to save file");
+			opencgd.client.library.D.b("Error! Unable to save file");
 		}
 	}
 	
@@ -1087,7 +1087,7 @@ public class F {
 		s = 1;
 		byte abyte0[] = null;
 		try{
-			java.io.InputStream inputstream = opencgd.library.D.a(s1);
+			java.io.InputStream inputstream = opencgd.client.library.D.a(s1);
 			DataInputStream datainputstream = new DataInputStream(inputstream);
 			abyte0 = new byte[3];
 			wc = 0;
@@ -1100,7 +1100,7 @@ public class F {
 			}
 			datainputstream.close();
 		} catch(IOException _ex){
-			opencgd.library.D.b("Unable to load file!");
+			opencgd.client.library.D.b("Unable to load file!");
 		}
 		int l1 = a(abyte0);
 		int i2 = a(abyte0);

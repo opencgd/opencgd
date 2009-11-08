@@ -5,7 +5,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.io.IOException;
 
-import opencgd.AbstractGame;
+import opencgd.client.AbstractGame;
 
 public class CyberWars extends AbstractGame {
 	
@@ -488,13 +488,13 @@ public class CyberWars extends AbstractGame {
 				} else {
 					c1 = '\024';
 				}
-				if(((opencgd.library.EngineApplet) (super.w)).e >= 20 && ((opencgd.library.EngineApplet) (super.w)).f >= c1 && ((opencgd.library.EngineApplet) (super.w)).f <= c1 + 55 && ((opencgd.library.EngineApplet) (super.w)).e <= 60){
+				if(((opencgd.client.library.EngineApplet) (super.w)).e >= 20 && ((opencgd.client.library.EngineApplet) (super.w)).f >= c1 && ((opencgd.client.library.EngineApplet) (super.w)).f <= c1 + 55 && ((opencgd.client.library.EngineApplet) (super.w)).e <= 60){
 					flag = true;
 				}
 			}
-			if(((opencgd.library.EngineApplet) (super.w)).f > 16 && ((opencgd.library.EngineApplet) (super.w)).e > 13 && ((opencgd.library.EngineApplet) (super.w)).f < 496 && ((opencgd.library.EngineApplet) (super.w)).e < 297 && f == bd && !flag){
-				x = (((opencgd.library.EngineApplet) (super.w)).f - 16) / 32;
-				w = (((opencgd.library.EngineApplet) (super.w)).e - 9) / 32;
+			if(((opencgd.client.library.EngineApplet) (super.w)).f > 16 && ((opencgd.client.library.EngineApplet) (super.w)).e > 13 && ((opencgd.client.library.EngineApplet) (super.w)).f < 496 && ((opencgd.client.library.EngineApplet) (super.w)).e < 297 && f == bd && !flag){
+				x = (((opencgd.client.library.EngineApplet) (super.w)).f - 16) / 32;
+				w = (((opencgd.client.library.EngineApplet) (super.w)).e - 9) / 32;
 				rb = 1;
 				if(n == 17 && wb[ab] > 0){
 					if(a(ec, dc, x, w) / 2 > wb[ab]){
@@ -722,7 +722,7 @@ public class CyberWars extends AbstractGame {
 				super.u.setFont(ae);
 				super.u.drawString("Your Turn - Click on creature", 12, 12);
 				super.u.setColor(gd);
-				if(((opencgd.library.EngineApplet) (super.w)).f > 210 && ((opencgd.library.EngineApplet) (super.w)).e <= 13 && ((opencgd.library.EngineApplet) (super.w)).f < 360){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f > 210 && ((opencgd.client.library.EngineApplet) (super.w)).e <= 13 && ((opencgd.client.library.EngineApplet) (super.w)).f < 360){
 					super.u.setColor(Color.red);
 				}
 				super.u.drawString("Click here to end turn", 215, 12);
@@ -735,7 +735,7 @@ public class CyberWars extends AbstractGame {
 				super.u.setFont(ae);
 				super.u.drawString(s14, 12, 12);
 				super.u.setColor(gd);
-				if(((opencgd.library.EngineApplet) (super.w)).f > 210 && ((opencgd.library.EngineApplet) (super.w)).e <= 13 && ((opencgd.library.EngineApplet) (super.w)).f < 360){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f > 210 && ((opencgd.client.library.EngineApplet) (super.w)).e <= 13 && ((opencgd.client.library.EngineApplet) (super.w)).f < 360){
 					super.u.setColor(Color.red);
 				}
 				super.u.drawString("Click here to abort", 225, 12);
@@ -744,7 +744,7 @@ public class CyberWars extends AbstractGame {
 				super.u.setFont(ae);
 				super.u.drawString("Engaged To Enemy!", 12, 12);
 				super.u.setColor(gd);
-				if(((opencgd.library.EngineApplet) (super.w)).f > 210 && ((opencgd.library.EngineApplet) (super.w)).e <= 13 && ((opencgd.library.EngineApplet) (super.w)).f < 360){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f > 210 && ((opencgd.client.library.EngineApplet) (super.w)).e <= 13 && ((opencgd.client.library.EngineApplet) (super.w)).f < 360){
 					super.u.setColor(Color.red);
 				}
 				super.u.drawString("Click here to abort", 225, 12);
@@ -759,7 +759,7 @@ public class CyberWars extends AbstractGame {
 				super.u.setFont(ae);
 				super.u.drawString("Ranged Combat: " + k9, 12, 12);
 				super.u.setColor(gd);
-				if(((opencgd.library.EngineApplet) (super.w)).f > 210 && ((opencgd.library.EngineApplet) (super.w)).e <= 13 && ((opencgd.library.EngineApplet) (super.w)).f < 360){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f > 210 && ((opencgd.client.library.EngineApplet) (super.w)).e <= 13 && ((opencgd.client.library.EngineApplet) (super.w)).f < 360){
 					super.u.setColor(Color.red);
 				}
 				super.u.drawString("Click here to abort", 225, 12);
@@ -794,9 +794,9 @@ public class CyberWars extends AbstractGame {
 				
 			}
 			
-			if(((opencgd.library.EngineApplet) (super.w)).f > 16 && ((opencgd.library.EngineApplet) (super.w)).e > 13 && ((opencgd.library.EngineApplet) (super.w)).f < 496 && ((opencgd.library.EngineApplet) (super.w)).e < 297 && f == bd){
-				x = (((opencgd.library.EngineApplet) (super.w)).f - 16) / 32;
-				w = (((opencgd.library.EngineApplet) (super.w)).e - 9) / 32;
+			if(((opencgd.client.library.EngineApplet) (super.w)).f > 16 && ((opencgd.client.library.EngineApplet) (super.w)).e > 13 && ((opencgd.client.library.EngineApplet) (super.w)).f < 496 && ((opencgd.client.library.EngineApplet) (super.w)).e < 297 && f == bd){
+				x = (((opencgd.client.library.EngineApplet) (super.w)).f - 16) / 32;
+				w = (((opencgd.client.library.EngineApplet) (super.w)).e - 9) / 32;
 				rb = 1;
 				super.k.a(x * 32 + 10, w * 32 + 2, rb + 286);
 			}
@@ -825,7 +825,7 @@ public class CyberWars extends AbstractGame {
 			} else {
 				super.u.setFont(ae);
 				super.u.setColor(gd);
-				if(((opencgd.library.EngineApplet) (super.w)).e <= 13 && ((opencgd.library.EngineApplet) (super.w)).f > 8 && ((opencgd.library.EngineApplet) (super.w)).f < 192){
+				if(((opencgd.client.library.EngineApplet) (super.w)).e <= 13 && ((opencgd.client.library.EngineApplet) (super.w)).f > 8 && ((opencgd.client.library.EngineApplet) (super.w)).f < 192){
 					super.u.setColor(Color.red);
 				}
 				super.u.drawString("Back to previous screen", 12, 12);
@@ -842,7 +842,7 @@ public class CyberWars extends AbstractGame {
 			if(zc >= 16){
 				int l4 = zc - 16;
 				super.u.setColor(gd);
-				opencgd.library.D.a(super.u, cb[l4], ud, 256, 34);
+				opencgd.client.library.D.a(super.u, cb[l4], ud, 256, 34);
 				String as[] = {
 						"Beam-down", "Special", "Equip-commander", "Special"
 				};
@@ -850,7 +850,7 @@ public class CyberWars extends AbstractGame {
 						"Mechanoid (2)", "Mechanoid (1)", "Neutral", "Alien (1)", "Alien (2)"
 				};
 				if(o[l4] != 0){
-					opencgd.library.D.a(super.u, "Action type: " + as[o[l4]], vd, 256, 104);
+					opencgd.client.library.D.a(super.u, "Action type: " + as[o[l4]], vd, 256, 104);
 					int k11 = y[l4];
 					if(xb[l4] > 0 && a > 0){
 						k11 += 10 * (a / pe);
@@ -861,16 +861,16 @@ public class CyberWars extends AbstractGame {
 					if(k11 > 100){
 						k11 = 100;
 					}
-					opencgd.library.D.a(super.u, "Success Probability: " + k11 + "%", vd, 256, 127);
+					opencgd.client.library.D.a(super.u, "Success Probability: " + k11 + "%", vd, 256, 127);
 					int l12 = xb[l4];
 					if(l12 >= 3 || l12 <= -3){
 						l12 /= 3;
 					}
-					opencgd.library.D.a(super.u, "Alignment: " + as1[l12 + 2], vd, 256, 149);
-					opencgd.library.D.a(super.u, "Range: " + wb[l4], vd, 256, 171);
+					opencgd.client.library.D.a(super.u, "Alignment: " + as1[l12 + 2], vd, 256, 149);
+					opencgd.client.library.D.a(super.u, "Range: " + wb[l4], vd, 256, 171);
 				}
 				if(o[l4] == 0){
-					opencgd.library.D.a(super.u, "Action type: " + as[o[l4]], vd, 256, 64);
+					opencgd.client.library.D.a(super.u, "Action type: " + as[o[l4]], vd, 256, 64);
 					int l11 = y[l4];
 					if(xb[l4] > 0 && a > 0){
 						l11 += 10 * (a / pe);
@@ -881,15 +881,15 @@ public class CyberWars extends AbstractGame {
 					if(l11 > 100){
 						l11 = 100;
 					}
-					opencgd.library.D.a(super.u, "Beam-down Probability: " + l11 + "%", vd, 256, 87);
-					opencgd.library.D.a(super.u, "Alignment: " + as1[xb[l4] + 2], vd, 256, 109);
-					opencgd.library.D.a(super.u, "Range: " + wb[l4], vd, 256, 131);
+					opencgd.client.library.D.a(super.u, "Beam-down Probability: " + l11 + "%", vd, 256, 87);
+					opencgd.client.library.D.a(super.u, "Alignment: " + as1[xb[l4] + 2], vd, 256, 109);
+					opencgd.client.library.D.a(super.u, "Range: " + wb[l4], vd, 256, 131);
 					super.u.setFont(db);
-					opencgd.library.D.a(super.u, "Strength:" + q[l4], wd, 181, 157);
-					opencgd.library.D.a(super.u, "Defence:" + ub[l4], wd, 181, 182);
-					opencgd.library.D.a(super.u, "Speed:" + r[l4], wd, 181, 207);
-					opencgd.library.D.a(super.u, "Resistance:" + u[l4], wd, 331, 157);
-					opencgd.library.D.a(super.u, "Combat-Range:" + v[l4], wd, 331, 182);
+					opencgd.client.library.D.a(super.u, "Strength:" + q[l4], wd, 181, 157);
+					opencgd.client.library.D.a(super.u, "Defence:" + ub[l4], wd, 181, 182);
+					opencgd.client.library.D.a(super.u, "Speed:" + r[l4], wd, 181, 207);
+					opencgd.client.library.D.a(super.u, "Resistance:" + u[l4], wd, 331, 157);
+					opencgd.client.library.D.a(super.u, "Combat-Range:" + v[l4], wd, 331, 182);
 					String s15 = "";
 					if(s[l4] == 1){
 						s15 = s15 + "(Slime)";
@@ -903,21 +903,21 @@ public class CyberWars extends AbstractGame {
 					if(s15 == ""){
 						s15 = "(no special)";
 					}
-					opencgd.library.D.a(super.u, s15, wd, 331, 207);
+					opencgd.client.library.D.a(super.u, s15, wd, 331, 207);
 					k1 = 230;
 				}
 				s1 = tb[l4];
 			} else {
 				int i5 = zc;
 				super.u.setColor(gd);
-				opencgd.library.D.a(super.u, "Commander", ud, 256, 41);
-				opencgd.library.D.a(super.u, "Name: " + super.n[i5], vd, 256, 64);
+				opencgd.client.library.D.a(super.u, "Commander", ud, 256, 41);
+				opencgd.client.library.D.a(super.u, "Name: " + super.n[i5], vd, 256, 64);
 				super.u.setFont(db);
-				opencgd.library.D.a(super.u, "Strength:" + nd[i5], db, 181, 107);
-				opencgd.library.D.a(super.u, "Defence:" + td[i5], db, 181, 132);
-				opencgd.library.D.a(super.u, "Speed:" + rd[i5], db, 181, 157);
-				opencgd.library.D.a(super.u, "Resistance:" + pd[i5], db, 331, 107);
-				opencgd.library.D.a(super.u, "Combat-Range:" + qd[i5], db, 331, 132);
+				opencgd.client.library.D.a(super.u, "Strength:" + nd[i5], db, 181, 107);
+				opencgd.client.library.D.a(super.u, "Defence:" + td[i5], db, 181, 132);
+				opencgd.client.library.D.a(super.u, "Speed:" + rd[i5], db, 181, 157);
+				opencgd.client.library.D.a(super.u, "Resistance:" + pd[i5], db, 331, 107);
+				opencgd.client.library.D.a(super.u, "Combat-Range:" + qd[i5], db, 331, 132);
 				String s13 = "";
 				if(sd[i5] == 1){
 					s13 = s13 + "(Flying)";
@@ -925,7 +925,7 @@ public class CyberWars extends AbstractGame {
 				if(s13 == ""){
 					s13 = "(no special)";
 				}
-				opencgd.library.D.a(super.u, s13, db, 331, 157);
+				opencgd.client.library.D.a(super.u, s13, db, 331, 157);
 				k1 = 200;
 				s1 = "Commanders, are the most important piece in the game. Kill all the enemy command" + "ers to win!";
 			}
@@ -933,7 +933,7 @@ public class CyberWars extends AbstractGame {
 			int j7 = 0;
 			for(int l9 = 0; l9 < s1.length(); l9++){
 				if(j7 > 32 && s1.charAt(l9) == ' '){
-					opencgd.library.D.a(super.u, s6, db, 256, k1 + 7);
+					opencgd.client.library.D.a(super.u, s6, db, 256, k1 + 7);
 					k1 += 17;
 					s6 = "";
 					j7 = 0;
@@ -944,15 +944,15 @@ public class CyberWars extends AbstractGame {
 			}
 			
 			if(j7 > 0){
-				opencgd.library.D.a(super.u, s6, db, 256, k1 + 7);
+				opencgd.client.library.D.a(super.u, s6, db, 256, k1 + 7);
 			}
 			super.u.setColor(gd);
-			if(((opencgd.library.EngineApplet) (super.w)).e < 295 && ((opencgd.library.EngineApplet) (super.w)).e > 275 && ((opencgd.library.EngineApplet) (super.w)).f > 64 && ((opencgd.library.EngineApplet) (super.w)).f < 192){
+			if(((opencgd.client.library.EngineApplet) (super.w)).e < 295 && ((opencgd.client.library.EngineApplet) (super.w)).e > 275 && ((opencgd.client.library.EngineApplet) (super.w)).f > 64 && ((opencgd.client.library.EngineApplet) (super.w)).f < 192){
 				super.u.setColor(Color.red);
 			}
-			opencgd.library.D.a(super.u, "Back to previous screen", yd, 120, 285);
+			opencgd.client.library.D.a(super.u, "Back to previous screen", yd, 120, 285);
 			super.u.setColor(gd);
-			opencgd.library.D.a(super.u, "Time-Remaining:" + j, yd, 392, 285);
+			opencgd.client.library.D.a(super.u, "Time-Remaining:" + j, yd, 392, 285);
 		}
 		if(vb == 2){
 			super.k.a(0, 0, 0);
@@ -1017,7 +1017,7 @@ public class CyberWars extends AbstractGame {
 					super.u.drawRect(l7, j10, 34, 34);
 					super.u.setColor(color2);
 					if(hd){
-						opencgd.library.D.a(super.u, cb[i13], ae, l7 + 93, j10 + 18);
+						opencgd.client.library.D.a(super.u, cb[i13], ae, l7 + 93, j10 + 18);
 					}
 					if((j10 += 34) > 230){
 						j10 = 46;
@@ -1027,46 +1027,46 @@ public class CyberWars extends AbstractGame {
 			}
 			
 			super.u.setColor(color1);
-			opencgd.library.D.a(super.u, "Choose an action - For more info right click an icon", xd, 256, 34);
+			opencgd.client.library.D.a(super.u, "Choose an action - For more info right click an icon", xd, 256, 34);
 			int j13 = a / pe;
 			super.u.setColor(color2);
 			if(j13 == 0){
-				opencgd.library.D.a(super.u, "World alignment - Neutral", yd, 256, 267);
+				opencgd.client.library.D.a(super.u, "World alignment - Neutral", yd, 256, 267);
 			} else if(j13 < 0){
-				opencgd.library.D.a(super.u, "World alignment - Mechanoid " + -j13, yd, 256, 267);
+				opencgd.client.library.D.a(super.u, "World alignment - Mechanoid " + -j13, yd, 256, 267);
 			} else if(j13 > 0){
-				opencgd.library.D.a(super.u, "World alignment - Alien " + j13, yd, 256, 267);
+				opencgd.client.library.D.a(super.u, "World alignment - Alien " + j13, yd, 256, 267);
 			}
 			if(n == 12){
 				super.u.setColor(color2);
-				if(((opencgd.library.EngineApplet) (super.w)).e > 275 && ((opencgd.library.EngineApplet) (super.w)).e < 295 && ((opencgd.library.EngineApplet) (super.w)).f > 64 && ((opencgd.library.EngineApplet) (super.w)).f < 192){
+				if(((opencgd.client.library.EngineApplet) (super.w)).e > 275 && ((opencgd.client.library.EngineApplet) (super.w)).e < 295 && ((opencgd.client.library.EngineApplet) (super.w)).f > 64 && ((opencgd.client.library.EngineApplet) (super.w)).f < 192){
 					super.u.setColor(Color.red);
 				}
-				opencgd.library.D.a(super.u, "View Game-Board", yd, 120, 285);
+				opencgd.client.library.D.a(super.u, "View Game-Board", yd, 120, 285);
 				super.u.setColor(color2);
-				if(((opencgd.library.EngineApplet) (super.w)).e > 275 && ((opencgd.library.EngineApplet) (super.w)).e < 295 && ((opencgd.library.EngineApplet) (super.w)).f > 192 && ((opencgd.library.EngineApplet) (super.w)).f < 320){
+				if(((opencgd.client.library.EngineApplet) (super.w)).e > 275 && ((opencgd.client.library.EngineApplet) (super.w)).e < 295 && ((opencgd.client.library.EngineApplet) (super.w)).f > 192 && ((opencgd.client.library.EngineApplet) (super.w)).f < 320){
 					super.u.setColor(Color.red);
 				}
-				opencgd.library.D.a(super.u, "Skip-Action", yd, 256, 285);
+				opencgd.client.library.D.a(super.u, "Skip-Action", yd, 256, 285);
 				super.u.setColor(color2);
-				opencgd.library.D.a(super.u, "Time-Remaining:" + j, yd, 392, 285);
+				opencgd.client.library.D.a(super.u, "Time-Remaining:" + j, yd, 392, 285);
 			}
 			if(n == 15){
 				super.u.setColor(Color.white);
-				if(((opencgd.library.EngineApplet) (super.w)).e > 275 && ((opencgd.library.EngineApplet) (super.w)).e < 295 && ((opencgd.library.EngineApplet) (super.w)).f > 64 && ((opencgd.library.EngineApplet) (super.w)).f < 192){
+				if(((opencgd.client.library.EngineApplet) (super.w)).e > 275 && ((opencgd.client.library.EngineApplet) (super.w)).e < 295 && ((opencgd.client.library.EngineApplet) (super.w)).f > 64 && ((opencgd.client.library.EngineApplet) (super.w)).f < 192){
 					super.u.setColor(Color.red);
 				}
-				opencgd.library.D.a(super.u, "Project Hologram", yd, 120, 285);
+				opencgd.client.library.D.a(super.u, "Project Hologram", yd, 120, 285);
 				super.u.setColor(Color.white);
-				if(((opencgd.library.EngineApplet) (super.w)).e > 275 && ((opencgd.library.EngineApplet) (super.w)).e < 295 && ((opencgd.library.EngineApplet) (super.w)).f > 192 && ((opencgd.library.EngineApplet) (super.w)).f < 320){
+				if(((opencgd.client.library.EngineApplet) (super.w)).e > 275 && ((opencgd.client.library.EngineApplet) (super.w)).e < 295 && ((opencgd.client.library.EngineApplet) (super.w)).f > 192 && ((opencgd.client.library.EngineApplet) (super.w)).f < 320){
 					super.u.setColor(Color.red);
 				}
-				opencgd.library.D.a(super.u, "Beam-down", yd, 256, 285);
+				opencgd.client.library.D.a(super.u, "Beam-down", yd, 256, 285);
 				super.u.setColor(Color.white);
-				if(((opencgd.library.EngineApplet) (super.w)).e > 275 && ((opencgd.library.EngineApplet) (super.w)).e < 295 && ((opencgd.library.EngineApplet) (super.w)).f > 320 && ((opencgd.library.EngineApplet) (super.w)).f < 448){
+				if(((opencgd.client.library.EngineApplet) (super.w)).e > 275 && ((opencgd.client.library.EngineApplet) (super.w)).e < 295 && ((opencgd.client.library.EngineApplet) (super.w)).f > 320 && ((opencgd.client.library.EngineApplet) (super.w)).f < 448){
 					super.u.setColor(Color.red);
 				}
-				opencgd.library.D.a(super.u, "Cancel", yd, 392, 285);
+				opencgd.client.library.D.a(super.u, "Cancel", yd, 392, 285);
 			}
 			if(n == 16){
 				super.u.setColor(color2);
@@ -1076,9 +1076,9 @@ public class CyberWars extends AbstractGame {
 				} else {
 					s16 = cb[yc[sb]];
 				}
-				opencgd.library.D.a(super.u, "Selected:" + s16, zd, 104, 285);
-				opencgd.library.D.a(super.u, "Awaiting other players", zd, 272, 285);
-				opencgd.library.D.a(super.u, "Time-Remaining:" + j, zd, 424, 285);
+				opencgd.client.library.D.a(super.u, "Selected:" + s16, zd, 104, 285);
+				opencgd.client.library.D.a(super.u, "Awaiting other players", zd, 272, 285);
+				opencgd.client.library.D.a(super.u, "Time-Remaining:" + j, zd, 424, 285);
 			}
 		}
 	}
@@ -1187,9 +1187,9 @@ public class CyberWars extends AbstractGame {
 		if(lb < 0){
 			lb++;
 		}
-		if(((opencgd.library.EngineApplet) (super.w)).hh == 2){
-			int k1 = ((opencgd.library.EngineApplet) (super.w)).f;
-			int j2 = ((opencgd.library.EngineApplet) (super.w)).e;
+		if(((opencgd.client.library.EngineApplet) (super.w)).hh == 2){
+			int k1 = ((opencgd.client.library.EngineApplet) (super.w)).f;
+			int j2 = ((opencgd.client.library.EngineApplet) (super.w)).e;
 			if(vb == 4 || vb == 5 || vb == 6){
 				int i3 = x;
 				int l3 = w;
@@ -1233,9 +1233,9 @@ public class CyberWars extends AbstractGame {
 					return;
 				}
 			}
-		} else if(((opencgd.library.EngineApplet) (super.w)).hh == 1){
-			int l1 = ((opencgd.library.EngineApplet) (super.w)).f;
-			int k2 = ((opencgd.library.EngineApplet) (super.w)).e;
+		} else if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
+			int l1 = ((opencgd.client.library.EngineApplet) (super.w)).f;
+			int k2 = ((opencgd.client.library.EngineApplet) (super.w)).e;
 			if(n == 19 && de[pb][ob] != 255){
 				char c1;
 				if(pb < 7){
@@ -1396,7 +1396,7 @@ public class CyberWars extends AbstractGame {
 		}
 		
 		try{
-			opencgd.library.Buffer g1 = new opencgd.library.Buffer("cyber/actions.dat");
+			opencgd.client.library.Buffer g1 = new opencgd.client.library.Buffer("cyber/actions.dat");
 			for(int k1 = 0; k1 < qc; k1++){
 				g1.m();
 				cb[k1] = g1.getString();

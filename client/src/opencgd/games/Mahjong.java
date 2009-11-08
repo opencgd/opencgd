@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
 
-import opencgd.AbstractGame;
+import opencgd.client.AbstractGame;
 
 public class Mahjong extends AbstractGame {
 	
@@ -210,17 +210,17 @@ public class Mahjong extends AbstractGame {
 		}
 		if(o && g == super.q && r == 0){
 			super.u.setColor(Color.white);
-			if(((opencgd.library.EngineApplet) (super.w)).f >= 156 && ((opencgd.library.EngineApplet) (super.w)).f <= 356 && ((opencgd.library.EngineApplet) (super.w)).e >= 118 && ((opencgd.library.EngineApplet) (super.w)).e <= 134){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f >= 156 && ((opencgd.client.library.EngineApplet) (super.w)).f <= 356 && ((opencgd.client.library.EngineApplet) (super.w)).e >= 118 && ((opencgd.client.library.EngineApplet) (super.w)).e <= 134){
 				super.u.setColor(Color.red);
 			}
-			opencgd.library.D.a(super.u, "Click here to declare kong", cb, 256, 126);
+			opencgd.client.library.D.a(super.u, "Click here to declare kong", cb, 256, 126);
 		}
 		if(n && g == super.q && r == 0){
 			super.u.setColor(Color.white);
-			if(((opencgd.library.EngineApplet) (super.w)).f >= 156 && ((opencgd.library.EngineApplet) (super.w)).f <= 356 && ((opencgd.library.EngineApplet) (super.w)).e >= 118 && ((opencgd.library.EngineApplet) (super.w)).e <= 134){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f >= 156 && ((opencgd.client.library.EngineApplet) (super.w)).f <= 356 && ((opencgd.client.library.EngineApplet) (super.w)).e >= 118 && ((opencgd.client.library.EngineApplet) (super.w)).e <= 134){
 				super.u.setColor(Color.red);
 			}
-			opencgd.library.D.a(super.u, "Click here to declare mahjong!", cb, 256, 126);
+			opencgd.client.library.D.a(super.u, "Click here to declare mahjong!", cb, 256, 126);
 		}
 		super.u.setFont(cb);
 		super.u.setColor(Color.white);
@@ -233,16 +233,16 @@ public class Mahjong extends AbstractGame {
 				super.u.drawString(super.n[g] + "'s turn - Please wait", 10, 20);
 			}
 		}
-		opencgd.library.D.b(super.u, "Time-Remaining:" + h, cb, 502, 20);
+		opencgd.client.library.D.b(super.u, "Time-Remaining:" + h, cb, 502, 20);
 	}
 	
 	@Override
 	public void d(){
 		i++;
 		u++;
-		if(g == super.q && ((opencgd.library.EngineApplet) (super.w)).hh == 1 && !w && r == 0 && h > 0){
+		if(g == super.q && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && !w && r == 0 && h > 0){
 			for(int i1 = 0; i1 < 14; i1++){
-				if(((opencgd.library.EngineApplet) (super.w)).f - 6 <= f[i1] || ((opencgd.library.EngineApplet) (super.w)).f - 6 >= e[i1] || ((opencgd.library.EngineApplet) (super.w)).e - 6 <= c[i1] || ((opencgd.library.EngineApplet) (super.w)).e - 6 >= b[i1] || t[i1] == 0){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 <= f[i1] || ((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= e[i1] || ((opencgd.client.library.EngineApplet) (super.w)).e - 6 <= c[i1] || ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= b[i1] || t[i1] == 0){
 					continue;
 				}
 				t[i1] = 0;
@@ -255,14 +255,14 @@ public class Mahjong extends AbstractGame {
 			
 		}
 		if(r == 1 && p > 0 && h > 0){
-			if(((opencgd.library.EngineApplet) (super.w)).e > 45 && ((opencgd.library.EngineApplet) (super.w)).f > 20 && ((opencgd.library.EngineApplet) (super.w)).f < 400){
-				ab = (((opencgd.library.EngineApplet) (super.w)).e - 45) / 15;
-				if(((opencgd.library.EngineApplet) (super.w)).hh == 1 && ab < p){
+			if(((opencgd.client.library.EngineApplet) (super.w)).e > 45 && ((opencgd.client.library.EngineApplet) (super.w)).f > 20 && ((opencgd.client.library.EngineApplet) (super.w)).f < 400){
+				ab = (((opencgd.client.library.EngineApplet) (super.w)).e - 45) / 15;
+				if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && ab < p){
 					super.connectionStream.setPacketID(254);
 					super.connectionStream.addShort(y[ab]);
 					super.connectionStream.sendPacket();
 					p = 0;
-				} else if(((opencgd.library.EngineApplet) (super.w)).hh == 1 && ab == p){
+				} else if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && ab == p){
 					super.connectionStream.setPacketID(254);
 					super.connectionStream.addShort(0);
 					super.connectionStream.sendPacket();
@@ -302,12 +302,12 @@ public class Mahjong extends AbstractGame {
 				n = true;
 				o = false;
 			}
-			if(o && g == super.q && r == 0 && ((opencgd.library.EngineApplet) (super.w)).hh == 1){
+			if(o && g == super.q && r == 0 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 				super.connectionStream.setPacketID(253);
 				super.connectionStream.sendPacket();
 				return;
 			}
-			if(n && g == super.q && r == 0 && ((opencgd.library.EngineApplet) (super.w)).hh == 1){
+			if(n && g == super.q && r == 0 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 				super.connectionStream.setPacketID(252);
 				super.connectionStream.sendPacket();
 			}

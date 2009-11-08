@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
 
-import opencgd.AbstractGame;
+import opencgd.client.AbstractGame;
 
 public class QuadLink extends AbstractGame {
 	
@@ -80,7 +80,7 @@ public class QuadLink extends AbstractGame {
 		} else {
 			super.u.drawString(super.n[j] + "'s turn - Please wait", 10, 20);
 		}
-		opencgd.library.D.b(super.u, "Time-Remaining:" + k, o, 502, 20);
+		opencgd.client.library.D.b(super.u, "Time-Remaining:" + k, o, 502, 20);
 	}
 	
 	private void a(int i1, int j1, int k1, int l1, int i2){
@@ -192,8 +192,8 @@ public class QuadLink extends AbstractGame {
 		if(i > 0){
 			i--;
 		}
-		a(((opencgd.library.EngineApplet) (super.w)).f, ((opencgd.library.EngineApplet) (super.w)).e);
-		if(j == super.q && c != -1 && ((opencgd.library.EngineApplet) (super.w)).hh == 1){
+		a(((opencgd.client.library.EngineApplet) (super.w)).f, ((opencgd.client.library.EngineApplet) (super.w)).e);
+		if(j == super.q && c != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 			a(c);
 		}
 	}

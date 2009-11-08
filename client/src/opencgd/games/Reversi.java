@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
 
-import opencgd.AbstractGame;
+import opencgd.client.AbstractGame;
 
 public class Reversi extends AbstractGame {
 	
@@ -65,7 +65,7 @@ public class Reversi extends AbstractGame {
 		} else {
 			super.u.drawString(super.n[g] + "'s turn - Please wait", 10, 20);
 		}
-		opencgd.library.D.b(super.u, "Time-Remaining:" + h, l, 502, 20);
+		opencgd.client.library.D.b(super.u, "Time-Remaining:" + h, l, 502, 20);
 	}
 	
 	private void b(){
@@ -216,8 +216,8 @@ public class Reversi extends AbstractGame {
 	@Override
 	public void d(){
 		i++;
-		a(((opencgd.library.EngineApplet) (super.w)).f, ((opencgd.library.EngineApplet) (super.w)).e);
-		if(g == super.q && c != -1 && ((opencgd.library.EngineApplet) (super.w)).hh == 1){
+		a(((opencgd.client.library.EngineApplet) (super.w)).f, ((opencgd.client.library.EngineApplet) (super.w)).e);
+		if(g == super.q && c != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 			c(c, a);
 		}
 		if(i % 4 == 0){

@@ -1,4 +1,4 @@
-package opencgd.library;
+package opencgd.client.library;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -227,10 +227,10 @@ public class B {
 	private int a(Image image, int ai[], int i1, int j1){
 		if(j1 > 0){
 			i1 = (i1 + j1) / 2;
-			opencgd.library.D.a(i1);
+			opencgd.client.library.D.a(i1);
 		}
-		image.getWidth(opencgd.library.D.c_java_awt_Component_static_fld);
-		int k1 = image.getHeight(opencgd.library.D.c_java_awt_Component_static_fld);
+		image.getWidth(opencgd.client.library.D.c_java_awt_Component_static_fld);
+		int k1 = image.getHeight(opencgd.client.library.D.c_java_awt_Component_static_fld);
 		int l1 = k1 / 128;
 		o = l1;
 		i = new int[l1][];
@@ -275,7 +275,7 @@ public class B {
 			}
 			a(i2);
 			if(j1 > 0){
-				opencgd.library.D.a(i1 + ((j1 - i1) * (i2 + 1)) / l1);
+				opencgd.client.library.D.a(i1 + ((j1 - i1) * (i2 + 1)) / l1);
 			}
 		}
 		
@@ -285,7 +285,7 @@ public class B {
 	}
 	
 	public int a(String s1, int ai[], int i1, int j1){
-		Image image = opencgd.library.D.c(s1);
+		Image image = opencgd.client.library.D.c(s1);
 		return a(image, ai, i1, j1);
 	}
 	

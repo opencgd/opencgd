@@ -1,4 +1,4 @@
-package opencgd.library;
+package opencgd.client.library;
 
 import java.applet.Applet;
 import java.awt.Color;
@@ -52,7 +52,7 @@ public class EngineApplet extends Applet implements Runnable {
 	@Override
 	public final void paint(Graphics g1){
 		if(t == 2){
-			opencgd.library.D.a();
+			opencgd.client.library.D.a();
 			return;
 		}
 		if(t == 0){
@@ -63,7 +63,7 @@ public class EngineApplet extends Applet implements Runnable {
 	@Override
 	public final void update(Graphics g1){
 		if(t == 2){
-			opencgd.library.D.a();
+			opencgd.client.library.D.a();
 			return;
 		}
 		if(t == 0){
@@ -74,9 +74,9 @@ public class EngineApplet extends Applet implements Runnable {
 	public final void run(){
 		if(t == 1){
 			t = 2;
-			opencgd.library.D.g.setColor(Color.black);
-			opencgd.library.D.g.fillRect(0, 0, opencgd.library.D.width, opencgd.library.D.height);
-			opencgd.library.D.a(0);
+			opencgd.client.library.D.g.setColor(Color.black);
+			opencgd.client.library.D.g.fillRect(0, 0, opencgd.client.library.D.width, opencgd.client.library.D.height);
+			opencgd.client.library.D.a(0);
 			b();
 			t = 0;
 		}
@@ -192,7 +192,7 @@ public class EngineApplet extends Applet implements Runnable {
 		a = getSize().width;
 		u = getSize().height;
 		t = 1;
-		opencgd.library.D.a(this, a, u, y);
+		opencgd.client.library.D.a(this, a, u, y);
 		z = new Thread(this);
 		z.start();
 	}
@@ -351,7 +351,7 @@ public class EngineApplet extends Applet implements Runnable {
 			b.setSize(i1, j1);
 			a = i1;
 			u = j1;
-			opencgd.library.D.a(b, a, u, false);
+			opencgd.client.library.D.a(b, a, u, false);
 			return;
 		}
 	}
@@ -363,7 +363,7 @@ public class EngineApplet extends Applet implements Runnable {
 			a = i1;
 			u = j1;
 			b = new EngineFrame(this, i1, j1, s1, flag, y);
-			opencgd.library.D.a(b, a, u, false);
+			opencgd.client.library.D.a(b, a, u, false);
 			return;
 		}
 	}
@@ -375,7 +375,7 @@ public class EngineApplet extends Applet implements Runnable {
 		u = j1;
 		b = new EngineFrame(this, i1, j1, s1, flag, false);
 		t = 1;
-		opencgd.library.D.a(b, a, u, y);
+		opencgd.client.library.D.a(b, a, u, y);
 		z = new Thread(this);
 		z.start();
 	}

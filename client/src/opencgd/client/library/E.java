@@ -1,4 +1,4 @@
-package opencgd.library;
+package opencgd.client.library;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -661,7 +661,7 @@ public class E implements ImageObserver, ImageProducer {
 	public void a(String s1, int i1, boolean flag, int j1, int k1, int l1){
 		Image image = null;
 		for(int i2 = 0; i2 < 5; i2++){
-			image = opencgd.library.D.c(s1);
+			image = opencgd.client.library.D.c(s1);
 			if(image != null){
 				break;
 			}
@@ -671,8 +671,8 @@ public class E implements ImageObserver, ImageProducer {
 		}
 		
 		try{
-			int j2 = image.getWidth(opencgd.library.D.c_java_awt_Component_static_fld);
-			int k2 = image.getHeight(opencgd.library.D.c_java_awt_Component_static_fld);
+			int j2 = image.getWidth(opencgd.client.library.D.c_java_awt_Component_static_fld);
+			int k2 = image.getHeight(opencgd.client.library.D.c_java_awt_Component_static_fld);
 			int ai[] = new int[j2 * k2];
 			PixelGrabber pixelgrabber = new PixelGrabber(image, 0, 0, j2, k2, ai, 0, j2);
 			try{
@@ -711,7 +711,7 @@ public class E implements ImageObserver, ImageProducer {
 	public void a(String s1, int i1, boolean flag){
 		Image image = null;
 		for(int j1 = 0; j1 < 5; j1++){
-			image = opencgd.library.D.c(s1);
+			image = opencgd.client.library.D.c(s1);
 			if(image != null){
 				break;
 			}

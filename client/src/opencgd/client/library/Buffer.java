@@ -1,4 +1,4 @@
-package opencgd.library;
+package opencgd.client.library;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -756,7 +756,7 @@ public class Buffer implements Runnable {
 		j = "error in twriter";
 		e = true;
 		offset = 3;
-		l = opencgd.library.D.a(s1);
+		l = opencgd.client.library.D.a(s1);
 	}
 	
 	public Buffer(Socket socket) throws IOException{

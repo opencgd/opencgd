@@ -1,4 +1,4 @@
-package opencgd;
+package opencgd.client;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -6,10 +6,10 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.io.IOException;
 
-import opencgd.library.Buffer;
-import opencgd.library.D;
-import opencgd.library.E;
-import opencgd.library.EngineApplet;
+import opencgd.client.library.Buffer;
+import opencgd.client.library.D;
+import opencgd.client.library.E;
+import opencgd.client.library.EngineApplet;
 
 public abstract class AbstractGame {
 	
@@ -80,8 +80,8 @@ public abstract class AbstractGame {
 		u.drawImage(h, s * 46 + 3, 352, w);
 		u.setColor(Color.white);
 		u.setFont(w.t);
-		if(((opencgd.library.EngineApplet) (w)).jj != null){
-			u.drawString(((opencgd.library.EngineApplet) (w)).jj, 8, 349);
+		if(((opencgd.client.library.EngineApplet) (w)).jj != null){
+			u.drawString(((opencgd.client.library.EngineApplet) (w)).jj, 8, 349);
 		}
 		for(int i1 = 0; i1 < 3; i1++){
 			if(v[i1] != null){
@@ -96,12 +96,12 @@ public abstract class AbstractGame {
 			u.fillRect(166, 115, 180, 60);
 			u.setColor(Color.black);
 			u.drawRect(166, 115, 180, 60);
-			opencgd.library.D.a(u, "Are you sure you", z, 256, 125);
-			opencgd.library.D.a(u, "want to resign?", z, 256, 145);
-			if(((opencgd.library.EngineApplet) (w)).f > 206 && ((opencgd.library.EngineApplet) (w)).e > 150 && ((opencgd.library.EngineApplet) (w)).f < 246 && ((opencgd.library.EngineApplet) (w)).e < 170){
+			opencgd.client.library.D.a(u, "Are you sure you", z, 256, 125);
+			opencgd.client.library.D.a(u, "want to resign?", z, 256, 145);
+			if(((opencgd.client.library.EngineApplet) (w)).f > 206 && ((opencgd.client.library.EngineApplet) (w)).e > 150 && ((opencgd.client.library.EngineApplet) (w)).f < 246 && ((opencgd.client.library.EngineApplet) (w)).e < 170){
 				u.setColor(Color.red);
 			}
-			opencgd.library.D.a(u, "YES", z, 226, 165);
+			opencgd.client.library.D.a(u, "YES", z, 226, 165);
 			u.setColor(Color.black);
 			if(((EngineApplet) (w)).f > 266 && ((EngineApplet) (w)).e > 150 && ((EngineApplet) (w)).f < 306 && ((EngineApplet) (w)).e < 170){
 				u.setColor(Color.red);

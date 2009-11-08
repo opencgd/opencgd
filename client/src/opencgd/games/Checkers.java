@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
 
-import opencgd.AbstractGame;
+import opencgd.client.AbstractGame;
 
 public class Checkers extends AbstractGame {
 	
@@ -95,7 +95,7 @@ public class Checkers extends AbstractGame {
 		} else {
 			super.u.drawString(super.n[f] + "'s turn - Please wait", 10, 20);
 		}
-		opencgd.library.D.b(super.u, "Time-Remaining:" + g, t, 502, 20);
+		opencgd.client.library.D.b(super.u, "Time-Remaining:" + g, t, 502, 20);
 	}
 	
 	private void b(){
@@ -446,14 +446,14 @@ public class Checkers extends AbstractGame {
 				b();
 			}
 		}
-		b(((opencgd.library.EngineApplet) (super.w)).f, ((opencgd.library.EngineApplet) (super.w)).e);
-		if(f == super.q && c != -1 && j == -1 && ((opencgd.library.EngineApplet) (super.w)).hh == 1){
+		b(((opencgd.client.library.EngineApplet) (super.w)).f, ((opencgd.client.library.EngineApplet) (super.w)).e);
+		if(f == super.q && c != -1 && j == -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 			d(c, a);
 		}
-		if(f == super.q && j != -1 && ((opencgd.library.EngineApplet) (super.w)).hh == 2){
+		if(f == super.q && j != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 2){
 			c();
 		}
-		if(f == super.q && j != -1 && ((opencgd.library.EngineApplet) (super.w)).hh == 1){
+		if(f == super.q && j != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 			c(c, a);
 		}
 		super.w.hh = 0;

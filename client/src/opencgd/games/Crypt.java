@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
 
-import opencgd.AbstractGame;
+import opencgd.client.AbstractGame;
 
 public class Crypt extends AbstractGame {
 	
@@ -188,27 +188,27 @@ public class Crypt extends AbstractGame {
 		}
 		if(ab == 0 && h == 0 && d == super.q){
 			super.k.a(425, 220, 70, 70, bb, 160, false);
-			if(((opencgd.library.EngineApplet) (super.w)).f - 6 >= 453 && ((opencgd.library.EngineApplet) (super.w)).f - 6 < 466 && ((opencgd.library.EngineApplet) (super.w)).e - 6 >= 248 && ((opencgd.library.EngineApplet) (super.w)).e - 6 < 261){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 453 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < 466 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 248 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < 261){
 				super.k.a(446, 241, 42);
 			} else {
 				super.k.a(446, 241, 37);
 			}
-			if(((opencgd.library.EngineApplet) (super.w)).f - 6 >= 433 && ((opencgd.library.EngineApplet) (super.w)).f - 6 < 460 && ((opencgd.library.EngineApplet) (super.w)).e - 6 >= 220 && ((opencgd.library.EngineApplet) (super.w)).e - 6 < 247){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 433 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < 460 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 220 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < 247){
 				super.k.a(433, 220, 38);
 			} else {
 				super.k.a(433, 220, 33);
 			}
-			if(((opencgd.library.EngineApplet) (super.w)).f - 6 >= 468 && ((opencgd.library.EngineApplet) (super.w)).f - 6 < 495 && ((opencgd.library.EngineApplet) (super.w)).e - 6 >= 228 && ((opencgd.library.EngineApplet) (super.w)).e - 6 <= 255){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 468 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < 495 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 228 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 <= 255){
 				super.k.a(468, 228, 39);
 			} else {
 				super.k.a(468, 228, 34);
 			}
-			if(((opencgd.library.EngineApplet) (super.w)).f - 6 >= 425 && ((opencgd.library.EngineApplet) (super.w)).f - 6 < 452 && ((opencgd.library.EngineApplet) (super.w)).e - 6 >= 255 && ((opencgd.library.EngineApplet) (super.w)).e - 6 <= 282){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 425 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < 452 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 255 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 <= 282){
 				super.k.a(425, 255, 41);
 			} else {
 				super.k.a(425, 255, 36);
 			}
-			if(((opencgd.library.EngineApplet) (super.w)).f - 6 >= 460 && ((opencgd.library.EngineApplet) (super.w)).f - 6 < 487 && ((opencgd.library.EngineApplet) (super.w)).e - 6 >= 263 && ((opencgd.library.EngineApplet) (super.w)).e - 6 < 290){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 460 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < 487 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 263 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < 290){
 				super.k.a(460, 263, 40);
 			} else {
 				super.k.a(460, 263, 35);
@@ -266,7 +266,7 @@ public class Crypt extends AbstractGame {
 		}
 		if(ab == 1 && h == 0){
 			super.u.setColor(Color.black);
-			opencgd.library.D.a(super.u, "Room Contents", oc, 317, 105);
+			opencgd.client.library.D.a(super.u, "Room Contents", oc, 317, 105);
 			if(d == super.q){
 				super.u.setColor(Color.white);
 				super.u.setFont(qc);
@@ -322,7 +322,7 @@ public class Crypt extends AbstractGame {
 			}
 		} else if(h > 0){
 			super.u.setColor(Color.black);
-			opencgd.library.D.a(super.u, super.n[ac] + " is engaged in combat!", pc, 317, 105);
+			opencgd.client.library.D.a(super.u, super.n[ac] + " is engaged in combat!", pc, 317, 105);
 			String s1 = ".Fighting Enemy.";
 			if(h > 100){
 				for(int j5 = 0; j5 < (200 - h) / 10; j5++){
@@ -330,8 +330,8 @@ public class Crypt extends AbstractGame {
 				}
 				
 			}
-			opencgd.library.D.a(super.u, s1, pc, 320, 140);
-			opencgd.library.D.a(super.u, super.n[ac] + "'s total strength is: " + rb, qc, 320, 160);
+			opencgd.client.library.D.a(super.u, s1, pc, 320, 140);
+			opencgd.client.library.D.a(super.u, super.n[ac] + "'s total strength is: " + rb, qc, 320, 160);
 			String s2 = "";
 			if(nb != -1){
 				s2 = s2 + ec[nb] + " strength:" + tb;
@@ -342,8 +342,8 @@ public class Crypt extends AbstractGame {
 			if(ub != 0){
 				s2 = s2 + ", ranged combat:" + ub;
 			}
-			opencgd.library.D.a(super.u, "(" + s2 + ")", rc, 320, 175);
-			opencgd.library.D.a(super.u, "Opponents total strength is: " + bc, qc, 320, 195);
+			opencgd.client.library.D.a(super.u, "(" + s2 + ")", rc, 320, 175);
+			opencgd.client.library.D.a(super.u, "Opponents total strength is: " + bc, qc, 320, 195);
 			String s4 = "";
 			if(pb != -1){
 				s4 = s4 + ec[pb] + " strength:" + kb[pb];
@@ -354,26 +354,26 @@ public class Crypt extends AbstractGame {
 			if(dc != 0){
 				s4 = s4 + " and ranged combat:" + dc;
 			}
-			opencgd.library.D.a(super.u, "(" + s4 + ")", rc, 320, 210);
+			opencgd.client.library.D.a(super.u, "(" + s4 + ")", rc, 320, 210);
 			if(qb == 4){
-				opencgd.library.D.a(super.u, "Bonus of +1 for suprise & +3 for potion", qc, 320, 230);
+				opencgd.client.library.D.a(super.u, "Bonus of +1 for suprise & +3 for potion", qc, 320, 230);
 			} else if(qb == 3){
-				opencgd.library.D.a(super.u, "Bonus +3 for strength potion", qc, 320, 230);
+				opencgd.client.library.D.a(super.u, "Bonus +3 for strength potion", qc, 320, 230);
 			} else if(qb > 0){
-				opencgd.library.D.a(super.u, "Bonus of +1 for suprise attack", qc, 320, 230);
+				opencgd.client.library.D.a(super.u, "Bonus of +1 for suprise attack", qc, 320, 230);
 			} else if(qb < 0){
-				opencgd.library.D.a(super.u, "Penalty of -1 for suprise attack", qc, 320, 230);
+				opencgd.client.library.D.a(super.u, "Penalty of -1 for suprise attack", qc, 320, 230);
 			}
 			if(h < 100){
 				if(vb == 0){
-					opencgd.library.D.a(super.u, super.n[ac] + " has won the battle!", pc, 320, 260);
+					opencgd.client.library.D.a(super.u, super.n[ac] + " has won the battle!", pc, 320, 260);
 				} else if(vb == 1){
 					if(!l){
 						l = true;
 					}
-					opencgd.library.D.a(super.u, "Enemy has killed " + super.n[ac] + "'s " + ec[zb], pc, 320, 260);
+					opencgd.client.library.D.a(super.u, "Enemy has killed " + super.n[ac] + "'s " + ec[zb], pc, 320, 260);
 				} else {
-					opencgd.library.D.a(super.u, "Battle drawn - Neither side won", pc, 320, 260);
+					opencgd.client.library.D.a(super.u, "Battle drawn - Neither side won", pc, 320, 260);
 				}
 			} else {
 				l = false;
@@ -390,7 +390,7 @@ public class Crypt extends AbstractGame {
 		} else {
 			super.u.drawString(super.n[d] + "'s turn - Please wait", 10, 20);
 		}
-		opencgd.library.D.b(super.u, "Tiles-Left:" + f + "    Time-Remaining:" + e, qc, 502, 20);
+		opencgd.client.library.D.b(super.u, "Tiles-Left:" + f + "    Time-Remaining:" + e, qc, 502, 20);
 	}
 	
 	private void a(int i1){
@@ -517,10 +517,10 @@ public class Crypt extends AbstractGame {
 		if(ad == 0 && gb > 0){
 			gb = 0;
 		}
-		if(((opencgd.library.EngineApplet) (super.w)).hh == 1 && j == -1){
+		if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && j == -1){
 			for(int i1 = 0; i1 < 7; i1++){
 				for(int l1 = 1; l1 < 5; l1++){
-					if(((opencgd.library.EngineApplet) (super.w)).e - 6 <= 29 + 10 * l1 && ((opencgd.library.EngineApplet) (super.w)).e - 6 >= 20 + 10 * l1 && ((opencgd.library.EngineApplet) (super.w)).f - 6 >= 5 + 70 * i1 && ((opencgd.library.EngineApplet) (super.w)).f - 6 <= 74 + 70 * i1 && r[i1][l1] != -1){
+					if(((opencgd.client.library.EngineApplet) (super.w)).e - 6 <= 29 + 10 * l1 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 20 + 10 * l1 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 5 + 70 * i1 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 <= 74 + 70 * i1 && r[i1][l1] != -1){
 						j = i1;
 						i = l1;
 						k = hb[r[i1][l1]];
@@ -529,10 +529,10 @@ public class Crypt extends AbstractGame {
 				
 			}
 			
-		} else if(((opencgd.library.EngineApplet) (super.w)).hh == 1 && j != -1){
+		} else if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && j != -1){
 			for(int j1 = 0; j1 < 7; j1++){
 				for(int i2 = 1; i2 < 5; i2++){
-					if(((opencgd.library.EngineApplet) (super.w)).e - 6 < 29 + 10 * i2 && ((opencgd.library.EngineApplet) (super.w)).e - 6 >= 20 + 10 * i2 && ((opencgd.library.EngineApplet) (super.w)).f - 6 >= 5 + 70 * j1 && ((opencgd.library.EngineApplet) (super.w)).f - 6 < 74 + 70 * j1){
+					if(((opencgd.client.library.EngineApplet) (super.w)).e - 6 < 29 + 10 * i2 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 20 + 10 * i2 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 5 + 70 * j1 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < 74 + 70 * j1){
 						int j2 = r[j1][i2];
 						if(j2 != -1 && i2 > 0 && j != j1 && j != -1 && hb[j2] + c[j1] >= k && hb[j2] <= k + c[j]){
 							super.connectionStream.setPacketID(253);
@@ -556,7 +556,7 @@ public class Crypt extends AbstractGame {
 				
 			}
 			
-			if(((opencgd.library.EngineApplet) (super.w)).f - 6 >= 5 && ((opencgd.library.EngineApplet) (super.w)).f - 6 <= 74 && ((opencgd.library.EngineApplet) (super.w)).e - 6 >= 70 && ((opencgd.library.EngineApplet) (super.w)).e - 6 <= 79 && j != -1){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 5 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 <= 74 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 70 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 <= 79 && j != -1){
 				super.connectionStream.setPacketID(253);
 				super.connectionStream.addShort(j);
 				super.connectionStream.addShort(i);
@@ -567,24 +567,24 @@ public class Crypt extends AbstractGame {
 			}
 			j = -1;
 		}
-		if(d == super.q && ((opencgd.library.EngineApplet) (super.w)).hh == 1 && h == 0 && e > 0){
-			if(((opencgd.library.EngineApplet) (super.w)).f - 6 >= 433 && ((opencgd.library.EngineApplet) (super.w)).f - 6 < 460 && ((opencgd.library.EngineApplet) (super.w)).e - 6 >= 220 && ((opencgd.library.EngineApplet) (super.w)).e - 6 < 247){
+		if(d == super.q && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && h == 0 && e > 0){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 433 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < 460 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 220 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < 247){
 				super.connectionStream.setPacketID(255);
 				super.connectionStream.addByte(0);
 				super.connectionStream.sendPacket();
-			} else if(((opencgd.library.EngineApplet) (super.w)).f - 6 >= 468 && ((opencgd.library.EngineApplet) (super.w)).f - 6 < 495 && ((opencgd.library.EngineApplet) (super.w)).e - 6 >= 228 && ((opencgd.library.EngineApplet) (super.w)).e - 6 <= 255){
+			} else if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 468 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < 495 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 228 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 <= 255){
 				super.connectionStream.setPacketID(255);
 				super.connectionStream.addByte(1);
 				super.connectionStream.sendPacket();
-			} else if(((opencgd.library.EngineApplet) (super.w)).f - 6 >= 425 && ((opencgd.library.EngineApplet) (super.w)).f - 6 < 452 && ((opencgd.library.EngineApplet) (super.w)).e - 6 >= 255 && ((opencgd.library.EngineApplet) (super.w)).e - 6 <= 282){
+			} else if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 425 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < 452 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 255 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 <= 282){
 				super.connectionStream.setPacketID(255);
 				super.connectionStream.addByte(3);
 				super.connectionStream.sendPacket();
-			} else if(((opencgd.library.EngineApplet) (super.w)).f - 6 >= 460 && ((opencgd.library.EngineApplet) (super.w)).f - 6 < 487 && ((opencgd.library.EngineApplet) (super.w)).e - 6 >= 263 && ((opencgd.library.EngineApplet) (super.w)).e - 6 < 290){
+			} else if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 460 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < 487 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 263 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < 290){
 				super.connectionStream.setPacketID(255);
 				super.connectionStream.addByte(2);
 				super.connectionStream.sendPacket();
-			} else if(((opencgd.library.EngineApplet) (super.w)).f - 6 >= 453 && ((opencgd.library.EngineApplet) (super.w)).f - 6 < 466 && ((opencgd.library.EngineApplet) (super.w)).e - 6 >= 248 && ((opencgd.library.EngineApplet) (super.w)).e - 6 < 261){
+			} else if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 453 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < 466 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 248 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < 261){
 				super.connectionStream.setPacketID(255);
 				super.connectionStream.addByte(4);
 				super.connectionStream.sendPacket();
@@ -593,9 +593,9 @@ public class Crypt extends AbstractGame {
 		t = -1;
 		if(ab == 1 && d == super.q && h == 0){
 			for(int k1 = 0; k1 < v; k1++){
-				if(((opencgd.library.EngineApplet) (super.w)).f > 16 && ((opencgd.library.EngineApplet) (super.w)).f < 126 && ((opencgd.library.EngineApplet) (super.w)).e > 106 + k1 * 12 && ((opencgd.library.EngineApplet) (super.w)).e < 118 + k1 * 12){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f > 16 && ((opencgd.client.library.EngineApplet) (super.w)).f < 126 && ((opencgd.client.library.EngineApplet) (super.w)).e > 106 + k1 * 12 && ((opencgd.client.library.EngineApplet) (super.w)).e < 118 + k1 * 12){
 					t = k1;
-					if(((opencgd.library.EngineApplet) (super.w)).hh == 1){
+					if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 						super.connectionStream.setPacketID(254);
 						super.connectionStream.addShort(u[t]);
 						super.connectionStream.sendPacket();
@@ -658,7 +658,7 @@ public class Crypt extends AbstractGame {
 		lb = new int[y];
 		int i1 = 0;
 		try{
-			opencgd.library.Buffer buffer = new opencgd.library.Buffer("crypt/cards.dat");
+			opencgd.client.library.Buffer buffer = new opencgd.client.library.Buffer("crypt/cards.dat");
 			for(i1 = 0; i1 < y; i1++){
 				buffer.m();
 				ec[i1] = buffer.getString();

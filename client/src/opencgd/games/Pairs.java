@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
 
-import opencgd.AbstractGame;
+import opencgd.client.AbstractGame;
 
 public class Pairs extends AbstractGame {
 	
@@ -106,7 +106,7 @@ public class Pairs extends AbstractGame {
 					int j3 = (250 + i2 * (l2 - 4)) - 36;
 					int l3 = a[j1];
 					int i4 = 19 + j1;
-					if(((opencgd.library.EngineApplet) (super.w)).f - 6 > j3 + 16 && ((opencgd.library.EngineApplet) (super.w)).f - 6 < j3 + 55 && ((opencgd.library.EngineApplet) (super.w)).e - 6 > l3 + 10 && ((opencgd.library.EngineApplet) (super.w)).e - 6 < l3 + 67 && q[l2][j1] != 0){
+					if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 > j3 + 16 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < j3 + 55 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 > l3 + 10 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < l3 + 67 && q[l2][j1] != 0){
 						if(j1 == 0){
 							l3 += 3;
 							j3++;
@@ -143,7 +143,7 @@ public class Pairs extends AbstractGame {
 		} else {
 			super.u.drawString(super.n[c] + "'s turn - Please wait", 10, 20);
 		}
-		opencgd.library.D.b(super.u, "Time-Remaining:" + d, o, 502, 20);
+		opencgd.client.library.D.b(super.u, "Time-Remaining:" + d, o, 502, 20);
 	}
 	
 	private void b(){
@@ -184,13 +184,13 @@ public class Pairs extends AbstractGame {
 				b();
 			}
 		}
-		if(c == super.q && u == 0 && ((opencgd.library.EngineApplet) (super.w)).hh == 1 && d > 0){
+		if(c == super.q && u == 0 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && d > 0){
 			for(int i1 = 0; i1 < 4; i1++){
 				int j1 = m[i1];
 				for(int k1 = 0; k1 < 9; k1++){
 					int l1 = (250 + j1 * (k1 - 4)) - 36;
 					int i2 = a[i1];
-					if(((opencgd.library.EngineApplet) (super.w)).f - 6 > l1 + 16 && ((opencgd.library.EngineApplet) (super.w)).f - 6 < l1 + 55 && ((opencgd.library.EngineApplet) (super.w)).e - 6 > i2 + 10 && ((opencgd.library.EngineApplet) (super.w)).e - 6 < i2 + 67 && q[k1][i1] != 0){
+					if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 > l1 + 16 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < l1 + 55 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 > i2 + 10 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < i2 + 67 && q[k1][i1] != 0){
 						super.connectionStream.setPacketID(255);
 						super.connectionStream.addByte(k1);
 						super.connectionStream.addByte(i1);

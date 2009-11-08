@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
 
-import opencgd.AbstractGame;
+import opencgd.client.AbstractGame;
 
 public class BattleCruisers extends AbstractGame {
 	
@@ -100,7 +100,7 @@ public class BattleCruisers extends AbstractGame {
 		super.k.a(super.u, 6, 6, false);
 		if(v == 1 && r > 0){
 			super.u.setColor(Color.white);
-			opencgd.library.D.a(super.u, "You sunk a " + n + " ship!", cb, 256, 126);
+			opencgd.client.library.D.a(super.u, "You sunk a " + n + " ship!", cb, 256, 126);
 		}
 		super.u.setFont(cb);
 		super.u.setColor(Color.white);
@@ -118,10 +118,10 @@ public class BattleCruisers extends AbstractGame {
 			if(s1.length() > 0){
 				super.u.drawString("Place ships by clicking and dragging on the grid below", 10, 20);
 				super.u.drawString("Ships Remaining: " + s1, 10, 35);
-				if(((opencgd.library.EngineApplet) (super.w)).e >= 25 && ((opencgd.library.EngineApplet) (super.w)).e <= 35 && ((opencgd.library.EngineApplet) (super.w)).f > 305){
+				if(((opencgd.client.library.EngineApplet) (super.w)).e >= 25 && ((opencgd.client.library.EngineApplet) (super.w)).e <= 35 && ((opencgd.client.library.EngineApplet) (super.w)).f > 305){
 					super.u.setColor(Color.red);
 				}
-				opencgd.library.D.b(super.u, "Click here to place randomly", cb, 502, 35);
+				opencgd.client.library.D.b(super.u, "Click here to place randomly", cb, 502, 35);
 				super.u.setColor(Color.white);
 				t = false;
 			} else {
@@ -140,7 +140,7 @@ public class BattleCruisers extends AbstractGame {
 				super.u.drawString("Your remaining ships are shown below", 10, 35);
 			}
 		}
-		opencgd.library.D.b(super.u, "Time-Remaining:" + l, cb, 502, 20);
+		opencgd.client.library.D.b(super.u, "Time-Remaining:" + l, cb, 502, 20);
 	}
 	
 	private void a(int i1, int j1){
@@ -261,7 +261,7 @@ public class BattleCruisers extends AbstractGame {
 	@Override
 	public void d(){
 		m++;
-		b(((opencgd.library.EngineApplet) (super.w)).f, ((opencgd.library.EngineApplet) (super.w)).e);
+		b(((opencgd.client.library.EngineApplet) (super.w)).f, ((opencgd.client.library.EngineApplet) (super.w)).e);
 		if(r > 0){
 			r--;
 		}
@@ -293,21 +293,21 @@ public class BattleCruisers extends AbstractGame {
 			}
 		}
 		if(v == 0){
-			if(((opencgd.library.EngineApplet) (super.w)).e >= 25 && ((opencgd.library.EngineApplet) (super.w)).e <= 35 && ((opencgd.library.EngineApplet) (super.w)).f > 305 && ((opencgd.library.EngineApplet) (super.w)).hh == 1 && !t){
+			if(((opencgd.client.library.EngineApplet) (super.w)).e >= 25 && ((opencgd.client.library.EngineApplet) (super.w)).e <= 35 && ((opencgd.client.library.EngineApplet) (super.w)).f > 305 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && !t){
 				e();
 			}
-			b(((opencgd.library.EngineApplet) (super.w)).f, ((opencgd.library.EngineApplet) (super.w)).e);
-			if(f != -1 && ab == 0 && ((opencgd.library.EngineApplet) (super.w)).g != 0){
+			b(((opencgd.client.library.EngineApplet) (super.w)).f, ((opencgd.client.library.EngineApplet) (super.w)).e);
+			if(f != -1 && ab == 0 && ((opencgd.client.library.EngineApplet) (super.w)).g != 0){
 				d(f, a);
 			}
-			if(f != -1 && ab == 0 && ((opencgd.library.EngineApplet) (super.w)).g == 1){
+			if(f != -1 && ab == 0 && ((opencgd.client.library.EngineApplet) (super.w)).g == 1){
 				ab = 1;
 				i = f;
 				d = a;
 			}
 			if(f != -1 && ab == 1){
 				b(i, d, f, a);
-				if(((opencgd.library.EngineApplet) (super.w)).g == 0){
+				if(((opencgd.client.library.EngineApplet) (super.w)).g == 0){
 					ab = 0;
 					a(i, d, h, c, true);
 					return;
@@ -318,12 +318,12 @@ public class BattleCruisers extends AbstractGame {
 			return;
 		}
 		if(v == 1){
-			if(r > 0 && ((opencgd.library.EngineApplet) (super.w)).hh == 1){
+			if(r > 0 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 				r = 0;
-				((opencgd.library.EngineApplet) (super.w)).g = 0;
-				((opencgd.library.EngineApplet) (super.w)).hh = 0;
+				((opencgd.client.library.EngineApplet) (super.w)).g = 0;
+				((opencgd.client.library.EngineApplet) (super.w)).hh = 0;
 			}
-			if(k == super.q && f != -1 && ((opencgd.library.EngineApplet) (super.w)).g == 1 && k == super.q){
+			if(k == super.q && f != -1 && ((opencgd.client.library.EngineApplet) (super.w)).g == 1 && k == super.q){
 				c(f, a);
 			}
 		}

@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
 
-import opencgd.AbstractGame;
+import opencgd.client.AbstractGame;
 
 public class MysteryMonster extends AbstractGame {
 	
@@ -80,7 +80,7 @@ public class MysteryMonster extends AbstractGame {
 			if(i1 > 13){
 				i1 = 13;
 			}
-			opencgd.library.D.a(super.u, gb, eb[i1], 256, 15);
+			opencgd.client.library.D.a(super.u, gb, eb[i1], 256, 15);
 		}
 		if(j == super.q && r == 1){
 			super.u.setFont(ab);
@@ -96,7 +96,7 @@ public class MysteryMonster extends AbstractGame {
 			super.u.drawString("you lose the game", 389, 136);
 			super.u.setFont(bb);
 			super.u.setColor(Color.black);
-			if(((opencgd.library.EngineApplet) (super.w)).f > 390 && ((opencgd.library.EngineApplet) (super.w)).e > 273 && ((opencgd.library.EngineApplet) (super.w)).f < 475 && ((opencgd.library.EngineApplet) (super.w)).e < 285){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f > 390 && ((opencgd.client.library.EngineApplet) (super.w)).e > 273 && ((opencgd.client.library.EngineApplet) (super.w)).f < 475 && ((opencgd.client.library.EngineApplet) (super.w)).e < 285){
 				super.u.setColor(z);
 			}
 			super.u.drawString("Make guess!", 390, 283);
@@ -107,7 +107,7 @@ public class MysteryMonster extends AbstractGame {
 			super.u.setFont(cb);
 			for(int j1 = 0; j1 < 9; j1++){
 				super.u.setColor(Color.black);
-				if(((opencgd.library.EngineApplet) (super.w)).f > 390 && ((opencgd.library.EngineApplet) (super.w)).e > 40 + j1 * 12 && ((opencgd.library.EngineApplet) (super.w)).e < 52 + j1 * 12 && ((opencgd.library.EngineApplet) (super.w)).f < 490){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f > 390 && ((opencgd.client.library.EngineApplet) (super.w)).e > 40 + j1 * 12 && ((opencgd.client.library.EngineApplet) (super.w)).e < 52 + j1 * 12 && ((opencgd.client.library.EngineApplet) (super.w)).f < 490){
 					super.u.setColor(z);
 				}
 				if(n == j1 + f){
@@ -117,7 +117,7 @@ public class MysteryMonster extends AbstractGame {
 			}
 			
 			super.u.setColor(Color.black);
-			if(((opencgd.library.EngineApplet) (super.w)).f > 390 && ((opencgd.library.EngineApplet) (super.w)).e > 150 && ((opencgd.library.EngineApplet) (super.w)).f < 420 && ((opencgd.library.EngineApplet) (super.w)).e < 160){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f > 390 && ((opencgd.client.library.EngineApplet) (super.w)).e > 150 && ((opencgd.client.library.EngineApplet) (super.w)).f < 420 && ((opencgd.client.library.EngineApplet) (super.w)).e < 160){
 				super.u.setColor(z);
 			}
 			if(y == 1){
@@ -125,7 +125,7 @@ public class MysteryMonster extends AbstractGame {
 			}
 			super.u.drawString("AND", 390, 160);
 			super.u.setColor(Color.black);
-			if(((opencgd.library.EngineApplet) (super.w)).f > 423 && ((opencgd.library.EngineApplet) (super.w)).e > 150 && ((opencgd.library.EngineApplet) (super.w)).f < 448 && ((opencgd.library.EngineApplet) (super.w)).e < 160){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f > 423 && ((opencgd.client.library.EngineApplet) (super.w)).e > 150 && ((opencgd.client.library.EngineApplet) (super.w)).f < 448 && ((opencgd.client.library.EngineApplet) (super.w)).e < 160){
 				super.u.setColor(z);
 			}
 			if(y == 2){
@@ -133,7 +133,7 @@ public class MysteryMonster extends AbstractGame {
 			}
 			super.u.drawString("OR", 423, 160);
 			super.u.setColor(Color.black);
-			if(((opencgd.library.EngineApplet) (super.w)).f > 450 && ((opencgd.library.EngineApplet) (super.w)).e > 150 && ((opencgd.library.EngineApplet) (super.w)).f < 490 && ((opencgd.library.EngineApplet) (super.w)).e < 160){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f > 450 && ((opencgd.client.library.EngineApplet) (super.w)).e > 150 && ((opencgd.client.library.EngineApplet) (super.w)).f < 490 && ((opencgd.client.library.EngineApplet) (super.w)).e < 160){
 				super.u.setColor(z);
 			}
 			if(y != 0){
@@ -142,7 +142,7 @@ public class MysteryMonster extends AbstractGame {
 			if(y != 0){
 				for(int k1 = 0; k1 < 9; k1++){
 					super.u.setColor(Color.black);
-					if(((opencgd.library.EngineApplet) (super.w)).f > 390 && ((opencgd.library.EngineApplet) (super.w)).e > 164 + k1 * 12 && ((opencgd.library.EngineApplet) (super.w)).e < 176 + k1 * 12 && ((opencgd.library.EngineApplet) (super.w)).f < 490){
+					if(((opencgd.client.library.EngineApplet) (super.w)).f > 390 && ((opencgd.client.library.EngineApplet) (super.w)).e > 164 + k1 * 12 && ((opencgd.client.library.EngineApplet) (super.w)).e < 176 + k1 * 12 && ((opencgd.client.library.EngineApplet) (super.w)).f < 490){
 						super.u.setColor(z);
 					}
 					if(m == k1 + e){
@@ -153,7 +153,7 @@ public class MysteryMonster extends AbstractGame {
 				
 			}
 			super.u.setColor(Color.black);
-			if(((opencgd.library.EngineApplet) (super.w)).f > 390 && ((opencgd.library.EngineApplet) (super.w)).e > 273 && ((opencgd.library.EngineApplet) (super.w)).f < 475 && ((opencgd.library.EngineApplet) (super.w)).e < 285){
+			if(((opencgd.client.library.EngineApplet) (super.w)).f > 390 && ((opencgd.client.library.EngineApplet) (super.w)).e > 273 && ((opencgd.client.library.EngineApplet) (super.w)).f < 475 && ((opencgd.client.library.EngineApplet) (super.w)).e < 285){
 				super.u.setColor(z);
 			}
 			super.u.drawString("Ask question!", 390, 283);
@@ -168,7 +168,7 @@ public class MysteryMonster extends AbstractGame {
 			} else {
 				super.u.drawString(super.n[j] + "'s turn - Please wait", 10, 20);
 			}
-			opencgd.library.D.b(super.u, "Time-Remaining:" + k, bb, 502, 20);
+			opencgd.client.library.D.b(super.u, "Time-Remaining:" + k, bb, 502, 20);
 		}
 	}
 	
@@ -253,8 +253,8 @@ public class MysteryMonster extends AbstractGame {
 		if(hb > 0){
 			hb--;
 		}
-		if(((opencgd.library.EngineApplet) (super.w)).hh == 1){
-			a(((opencgd.library.EngineApplet) (super.w)).f, ((opencgd.library.EngineApplet) (super.w)).e);
+		if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
+			a(((opencgd.client.library.EngineApplet) (super.w)).f, ((opencgd.client.library.EngineApplet) (super.w)).e);
 			if(g != -1){
 				fb[g][a] = !fb[g][a];
 				if(g == x % 6 && a == x / 6){
@@ -278,49 +278,49 @@ public class MysteryMonster extends AbstractGame {
 			}
 		}
 		if(j == super.q){
-			if(((opencgd.library.EngineApplet) (super.w)).g == 1 && (l & 3) == 0){
-				if(((opencgd.library.EngineApplet) (super.w)).f - 6 > 486 && ((opencgd.library.EngineApplet) (super.w)).e - 6 > 34 && ((opencgd.library.EngineApplet) (super.w)).f - 6 <= 495 && ((opencgd.library.EngineApplet) (super.w)).e - 6 < 88 && f > 0){
+			if(((opencgd.client.library.EngineApplet) (super.w)).g == 1 && (l & 3) == 0){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 > 486 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 > 34 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 <= 495 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < 88 && f > 0){
 					f--;
 				}
-				if(((opencgd.library.EngineApplet) (super.w)).f - 6 > 486 && ((opencgd.library.EngineApplet) (super.w)).e - 6 > 88 && ((opencgd.library.EngineApplet) (super.w)).f - 6 <= 495 && ((opencgd.library.EngineApplet) (super.w)).e - 6 < 142 && f < s - 9){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 > 486 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 > 88 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 <= 495 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < 142 && f < s - 9){
 					f++;
 				}
-				if(((opencgd.library.EngineApplet) (super.w)).f - 6 > 486 && ((opencgd.library.EngineApplet) (super.w)).e - 6 > 158 && ((opencgd.library.EngineApplet) (super.w)).f - 6 <= 495 && ((opencgd.library.EngineApplet) (super.w)).e - 6 < 212 && e > 0){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 > 486 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 > 158 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 <= 495 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < 212 && e > 0){
 					e--;
 				}
-				if(((opencgd.library.EngineApplet) (super.w)).f - 6 > 486 && ((opencgd.library.EngineApplet) (super.w)).e - 6 > 212 && ((opencgd.library.EngineApplet) (super.w)).f - 6 <= 495 && ((opencgd.library.EngineApplet) (super.w)).e - 6 < 266 && e < s - 9){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 > 486 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 > 212 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 <= 495 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < 266 && e < s - 9){
 					e++;
 				}
 			}
-			if(((opencgd.library.EngineApplet) (super.w)).hh == 1){
-				if(((opencgd.library.EngineApplet) (super.w)).f > 390 && ((opencgd.library.EngineApplet) (super.w)).e > 150 && ((opencgd.library.EngineApplet) (super.w)).f < 420 && ((opencgd.library.EngineApplet) (super.w)).e < 160){
+			if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f > 390 && ((opencgd.client.library.EngineApplet) (super.w)).e > 150 && ((opencgd.client.library.EngineApplet) (super.w)).f < 420 && ((opencgd.client.library.EngineApplet) (super.w)).e < 160){
 					y = 1;
 				}
-				if(((opencgd.library.EngineApplet) (super.w)).f > 423 && ((opencgd.library.EngineApplet) (super.w)).e > 150 && ((opencgd.library.EngineApplet) (super.w)).f < 448 && ((opencgd.library.EngineApplet) (super.w)).e < 160){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f > 423 && ((opencgd.client.library.EngineApplet) (super.w)).e > 150 && ((opencgd.client.library.EngineApplet) (super.w)).f < 448 && ((opencgd.client.library.EngineApplet) (super.w)).e < 160){
 					y = 2;
 				}
-				if(((opencgd.library.EngineApplet) (super.w)).f > 450 && ((opencgd.library.EngineApplet) (super.w)).e > 150 && ((opencgd.library.EngineApplet) (super.w)).f < 490 && ((opencgd.library.EngineApplet) (super.w)).e < 160){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f > 450 && ((opencgd.client.library.EngineApplet) (super.w)).e > 150 && ((opencgd.client.library.EngineApplet) (super.w)).f < 490 && ((opencgd.client.library.EngineApplet) (super.w)).e < 160){
 					y = 0;
 				}
 			}
-			if(((opencgd.library.EngineApplet) (super.w)).hh == 1){
+			if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 				for(int j1 = 0; j1 < 9; j1++){
-					if(((opencgd.library.EngineApplet) (super.w)).f > 390 && ((opencgd.library.EngineApplet) (super.w)).e > 40 + j1 * 12 && ((opencgd.library.EngineApplet) (super.w)).e < 52 + j1 * 12 && ((opencgd.library.EngineApplet) (super.w)).f < 490){
+					if(((opencgd.client.library.EngineApplet) (super.w)).f > 390 && ((opencgd.client.library.EngineApplet) (super.w)).e > 40 + j1 * 12 && ((opencgd.client.library.EngineApplet) (super.w)).e < 52 + j1 * 12 && ((opencgd.client.library.EngineApplet) (super.w)).f < 490){
 						n = j1 + f;
 					}
 				}
 				
 				if(y != 0){
 					for(int l1 = 0; l1 < 9; l1++){
-						if(((opencgd.library.EngineApplet) (super.w)).f > 390 && ((opencgd.library.EngineApplet) (super.w)).e > 164 + l1 * 12 && ((opencgd.library.EngineApplet) (super.w)).e < 176 + l1 * 12 && ((opencgd.library.EngineApplet) (super.w)).f < 490){
+						if(((opencgd.client.library.EngineApplet) (super.w)).f > 390 && ((opencgd.client.library.EngineApplet) (super.w)).e > 164 + l1 * 12 && ((opencgd.client.library.EngineApplet) (super.w)).e < 176 + l1 * 12 && ((opencgd.client.library.EngineApplet) (super.w)).f < 490){
 							m = l1 + e;
 						}
 					}
 					
 				}
 			}
-			if(((opencgd.library.EngineApplet) (super.w)).hh == 1 && r != 1 && k > 0){
-				if(((opencgd.library.EngineApplet) (super.w)).f > 390 && ((opencgd.library.EngineApplet) (super.w)).e > 273 && ((opencgd.library.EngineApplet) (super.w)).f < 475 && ((opencgd.library.EngineApplet) (super.w)).e < 285){
+			if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && r != 1 && k > 0){
+				if(((opencgd.client.library.EngineApplet) (super.w)).f > 390 && ((opencgd.client.library.EngineApplet) (super.w)).e > 273 && ((opencgd.client.library.EngineApplet) (super.w)).f < 475 && ((opencgd.client.library.EngineApplet) (super.w)).e < 285){
 					super.connectionStream.setPacketID(255);
 					super.connectionStream.addByte(n);
 					super.connectionStream.addByte(y);
@@ -328,7 +328,7 @@ public class MysteryMonster extends AbstractGame {
 					super.connectionStream.sendPacket();
 					return;
 				}
-			} else if(((opencgd.library.EngineApplet) (super.w)).hh == 1 && r == 1 && k > 0 && ((opencgd.library.EngineApplet) (super.w)).f > 390 && ((opencgd.library.EngineApplet) (super.w)).e > 273 && ((opencgd.library.EngineApplet) (super.w)).f < 475 && ((opencgd.library.EngineApplet) (super.w)).e < 285){
+			} else if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && r == 1 && k > 0 && ((opencgd.client.library.EngineApplet) (super.w)).f > 390 && ((opencgd.client.library.EngineApplet) (super.w)).e > 273 && ((opencgd.client.library.EngineApplet) (super.w)).f < 475 && ((opencgd.client.library.EngineApplet) (super.w)).e < 285){
 				super.connectionStream.setPacketID(254);
 				super.connectionStream.addByte(p);
 				super.connectionStream.addByte(o);
@@ -389,7 +389,7 @@ public class MysteryMonster extends AbstractGame {
 	private static void c(){
 		int i1 = 0;
 		try{
-			opencgd.library.Buffer g1 = new opencgd.library.Buffer("monster/questions.dat");
+			opencgd.client.library.Buffer g1 = new opencgd.client.library.Buffer("monster/questions.dat");
 			s = g1.getInt();
 			t = new String[s];
 			u = new boolean[s][24];

@@ -1,4 +1,4 @@
-package opencgd;
+package opencgd.client;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -8,6 +8,11 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
 
+import opencgd.client.library.B;
+import opencgd.client.library.Buffer;
+import opencgd.client.library.D;
+import opencgd.client.library.E;
+import opencgd.client.library.F;
 import opencgd.games.BattleCruisers;
 import opencgd.games.Checkers;
 import opencgd.games.Chess;
@@ -19,13 +24,8 @@ import opencgd.games.MysteryMonster;
 import opencgd.games.Pairs;
 import opencgd.games.QuadLink;
 import opencgd.games.Reversi;
-import opencgd.library.B;
-import opencgd.library.Buffer;
-import opencgd.library.D;
-import opencgd.library.E;
-import opencgd.library.F;
 
-public class OpenCGD extends opencgd.library.EngineApplet {
+public class OpenCGD extends opencgd.client.library.EngineApplet {
 	
 	private static final long serialVersionUID = -5350768759203686867L;
 	private int p;
