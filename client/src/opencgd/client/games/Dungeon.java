@@ -1,4 +1,4 @@
-package opencgd.games;
+package opencgd.client.games;
 
 import java.awt.Color;
 import java.awt.Font;

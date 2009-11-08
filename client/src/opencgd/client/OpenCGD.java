@@ -8,22 +8,22 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
 
+import opencgd.client.games.BattleCruisers;
+import opencgd.client.games.Checkers;
+import opencgd.client.games.Chess;
+import opencgd.client.games.Crypt;
+import opencgd.client.games.CyberWars;
+import opencgd.client.games.Dungeon;
+import opencgd.client.games.Mahjong;
+import opencgd.client.games.MysteryMonster;
+import opencgd.client.games.Pairs;
+import opencgd.client.games.QuadLink;
+import opencgd.client.games.Reversi;
 import opencgd.client.library.B;
 import opencgd.client.library.Buffer;
 import opencgd.client.library.D;
 import opencgd.client.library.E;
 import opencgd.client.library.F;
-import opencgd.games.BattleCruisers;
-import opencgd.games.Checkers;
-import opencgd.games.Chess;
-import opencgd.games.Crypt;
-import opencgd.games.CyberWars;
-import opencgd.games.Dungeon;
-import opencgd.games.Mahjong;
-import opencgd.games.MysteryMonster;
-import opencgd.games.Pairs;
-import opencgd.games.QuadLink;
-import opencgd.games.Reversi;
 
 public class OpenCGD extends opencgd.client.library.EngineApplet {
 	
