@@ -81,14 +81,14 @@ public class Chess extends AbstractGame {
 		super.k.b = 290;
 		super.k.a(0, 0, 25);
 		super.k.b = 279;
-		if(i % 20 < 10 && f == super.q && !n && lb == 0 && !j){
+		if(i % 20 < 10 && f == super.userID && !n && lb == 0 && !j){
 			for(int i1 = 0; i1 < y; i1++){
 				a(x[i1], w[i1]);
 			}
 			
 		}
 		if(lb == 0){
-			if(super.q == 0){
+			if(super.userID == 0){
 				for(int j1 = 0; j1 <= 7; j1++){
 					for(int i2 = 7; i2 >= 0; i2--){
 						if(eb[j1][i2] != 0){
@@ -112,7 +112,7 @@ public class Chess extends AbstractGame {
 		} else {
 			a(hb, gb, kb, jb, fb, lb, ib);
 			int l1 = (gb * lb + jb * (ib - lb)) / ib;
-			if(super.q == 0){
+			if(super.userID == 0){
 				for(int k2 = 0; k2 <= 7; k2++){
 					for(int k3 = 7; k3 > l1; k3--){
 						if(eb[k2][k3] != 0){
@@ -134,7 +134,7 @@ public class Chess extends AbstractGame {
 				
 			}
 			b(hb, gb, kb, jb, fb, lb, ib);
-			if(super.q == 0){
+			if(super.userID == 0){
 				for(int i3 = 0; i3 <= 7; i3++){
 					for(int i4 = l1; i4 >= 0; i4--){
 						if(eb[i3][i4] != 0){
@@ -172,7 +172,7 @@ public class Chess extends AbstractGame {
 		super.u.setColor(Color.white);
 		if(f == -1){
 			super.u.drawString("Please wait...", 10, 20);
-		} else if(f == super.q){
+		} else if(f == super.userID){
 			super.u.drawString("Your turn - Make a move!", 10, 20);
 		} else {
 			super.u.drawString(super.n[f] + "'s turn - Please wait", 10, 20);
@@ -184,7 +184,7 @@ public class Chess extends AbstractGame {
 		super.k.b = 290;
 		super.k.a(0, 0, 0);
 		super.k.b = 279;
-		if(super.q == 0){
+		if(super.userID == 0){
 			for(int i1 = 0; i1 <= 7; i1++){
 				for(int k1 = 7; k1 >= 0; k1--){
 					if(eb[i1][k1] != 0){
@@ -209,11 +209,11 @@ public class Chess extends AbstractGame {
 	}
 	
 	private void b(int i1, int j1, int k1, int l1, int i2, int j2, int k2){
-		if(super.q == 0){
+		if(super.userID == 0){
 			j1 = 7 - j1;
 			l1 = 7 - l1;
 		}
-		if(super.q == 1){
+		if(super.userID == 1){
 			i1 = 7 - i1;
 			k1 = 7 - k1;
 		}
@@ -237,11 +237,11 @@ public class Chess extends AbstractGame {
 	}
 	
 	private void a(int i1, int j1, int k1, int l1, int i2, int j2, int k2){
-		if(super.q == 0){
+		if(super.userID == 0){
 			j1 = 7 - j1;
 			l1 = 7 - l1;
 		}
-		if(super.q == 1){
+		if(super.userID == 1){
 			i1 = 7 - i1;
 			k1 = 7 - k1;
 		}
@@ -265,10 +265,10 @@ public class Chess extends AbstractGame {
 	}
 	
 	private void a(int i1, int j1, int k1){
-		if(super.q == 0){
+		if(super.userID == 0){
 			j1 = 7 - j1;
 		}
-		if(super.q == 1){
+		if(super.userID == 1){
 			i1 = 7 - i1;
 		}
 		int l1 = (b[j1] + b[j1 + 1]) / 2;
@@ -281,10 +281,10 @@ public class Chess extends AbstractGame {
 	}
 	
 	private void b(int i1, int j1, int k1){
-		if(super.q == 0){
+		if(super.userID == 0){
 			j1 = 7 - j1;
 		}
-		if(super.q == 1){
+		if(super.userID == 1){
 			i1 = 7 - i1;
 		}
 		int l1 = (b[j1] + b[j1 + 1]) / 2;
@@ -297,10 +297,10 @@ public class Chess extends AbstractGame {
 	}
 	
 	private void a(int i1, int j1){
-		if(super.q == 0){
+		if(super.userID == 0){
 			j1 = 7 - j1;
 		}
-		if(super.q == 1){
+		if(super.userID == 1){
 			i1 = 7 - i1;
 		}
 		int k1 = (b[j1] + b[j1 + 1]) / 2;
@@ -328,7 +328,7 @@ public class Chess extends AbstractGame {
 			break;
 		}
 		
-		if(super.q == 0){
+		if(super.userID == 0){
 			a = 7 - a;
 		}
 		int ai[] = new int[9];
@@ -351,7 +351,7 @@ public class Chess extends AbstractGame {
 			break;
 		}
 		
-		if(super.q == 1){
+		if(super.userID == 1){
 			c = 7 - c;
 		}
 	}
@@ -365,13 +365,13 @@ public class Chess extends AbstractGame {
 		}
 		ib = 20 + l2 * 5;
 		lb = ib;
-		if(j1 == super.q * 7 && i1 == 0){
+		if(j1 == super.userID * 7 && i1 == 0){
 			cb = false;
 		}
-		if(j1 == super.q * 7 && i1 == 7){
+		if(j1 == super.userID * 7 && i1 == 7){
 			bb = false;
 		}
-		if(i2 == 1 + super.q * 6){
+		if(i2 == 1 + super.userID * 6){
 			cb = false;
 			bb = false;
 		}
@@ -392,7 +392,7 @@ public class Chess extends AbstractGame {
 		if(u){
 			return;
 		}
-		if(f != super.q){
+		if(f != super.userID){
 			return;
 		}
 		for(int k1 = 0; k1 < s; k1++){
@@ -428,7 +428,7 @@ public class Chess extends AbstractGame {
 		if(l == -1){
 			return;
 		}
-		if(f != super.q){
+		if(f != super.userID){
 			return;
 		} else {
 			l = -1;
@@ -445,7 +445,7 @@ public class Chess extends AbstractGame {
 		if(l != -1){
 			return;
 		}
-		if(f != super.q){
+		if(f != super.userID){
 			return;
 		}
 		for(int k1 = 0; k1 < y; k1++){
@@ -470,7 +470,7 @@ public class Chess extends AbstractGame {
 		eb[k1][l1] = i2;
 		v = false;
 		g = true;
-		a(1 - super.q);
+		a(1 - super.userID);
 		g = false;
 		eb[i1][j1] = i2;
 		eb[k1][l1] = j2;
@@ -701,7 +701,7 @@ public class Chess extends AbstractGame {
 		n = true;
 		s = 0;
 		y = 0;
-		a(super.q);
+		a(super.userID);
 		for(int i1 = 0; i1 < s; i1++){
 			int j1;
 			for(j1 = 0; j1 < y; j1++){
@@ -743,13 +743,13 @@ public class Chess extends AbstractGame {
 		}
 		if(!j){
 			b(((opencgd.client.library.EngineApplet) (super.w)).f, ((opencgd.client.library.EngineApplet) (super.w)).e);
-			if(f == super.q && c != -1 && l == -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
+			if(f == super.userID && c != -1 && l == -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 				d(c, a);
 			}
-			if(f == super.q && l != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 2){
+			if(f == super.userID && l != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 2){
 				c();
 			}
-			if(f == super.q && l != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
+			if(f == super.userID && l != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 				c(c, a);
 			}
 			
@@ -831,8 +831,8 @@ public class Chess extends AbstractGame {
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
 			n = false;
-			int k1 = super.connectionStream.getShort(super.ab, 1);
-			int i2 = super.connectionStream.getShort(super.ab, 3);
+			int k1 = super.connectionStream.getUShort(super.ab, 1);
+			int i2 = super.connectionStream.getUShort(super.ab, 3);
 			if(i2 > h){
 				u = false;
 			}
@@ -878,7 +878,7 @@ public class Chess extends AbstractGame {
 	}
 	
 	@Override
-	public boolean i(){
+	public boolean isNetworkedGame(){
 		return lb <= 0;
 	}
 }

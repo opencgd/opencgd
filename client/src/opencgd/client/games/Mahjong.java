@@ -208,14 +208,14 @@ public class Mahjong extends AbstractGame {
 				super.u.drawString("Don't claim", 20, i2);
 			}
 		}
-		if(o && g == super.q && r == 0){
+		if(o && g == super.userID && r == 0){
 			super.u.setColor(Color.white);
 			if(((opencgd.client.library.EngineApplet) (super.w)).f >= 156 && ((opencgd.client.library.EngineApplet) (super.w)).f <= 356 && ((opencgd.client.library.EngineApplet) (super.w)).e >= 118 && ((opencgd.client.library.EngineApplet) (super.w)).e <= 134){
 				super.u.setColor(Color.red);
 			}
 			opencgd.client.library.D.a(super.u, "Click here to declare kong", cb, 256, 126);
 		}
-		if(n && g == super.q && r == 0){
+		if(n && g == super.userID && r == 0){
 			super.u.setColor(Color.white);
 			if(((opencgd.client.library.EngineApplet) (super.w)).f >= 156 && ((opencgd.client.library.EngineApplet) (super.w)).f <= 356 && ((opencgd.client.library.EngineApplet) (super.w)).e >= 118 && ((opencgd.client.library.EngineApplet) (super.w)).e <= 134){
 				super.u.setColor(Color.red);
@@ -227,7 +227,7 @@ public class Mahjong extends AbstractGame {
 		if(r == 0){
 			if(g == -1){
 				super.u.drawString("Please wait...", 10, 20);
-			} else if(g == super.q){
+			} else if(g == super.userID){
 				super.u.drawString("Your turn - Choose a brick to discard", 10, 20);
 			} else {
 				super.u.drawString(super.n[g] + "'s turn - Please wait", 10, 20);
@@ -240,7 +240,7 @@ public class Mahjong extends AbstractGame {
 	public void d(){
 		i++;
 		u++;
-		if(g == super.q && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && !w && r == 0 && h > 0){
+		if(g == super.userID && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && !w && r == 0 && h > 0){
 			for(int i1 = 0; i1 < 14; i1++){
 				if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 <= f[i1] || ((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= e[i1] || ((opencgd.client.library.EngineApplet) (super.w)).e - 6 <= c[i1] || ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= b[i1] || t[i1] == 0){
 					continue;
@@ -272,12 +272,12 @@ public class Mahjong extends AbstractGame {
 				ab = -1;
 			}
 		}
-		if(g == super.q && !w){
+		if(g == super.userID && !w){
 			o = false;
 			n = false;
-			for(int j1 = 0; j1 < j[super.q]; j1++){
+			for(int j1 = 0; j1 < j[super.userID]; j1++){
 				for(int k1 = 0; k1 < 14; k1++){
-					if(t[k1] == k[super.q][j1] - 100){
+					if(t[k1] == k[super.userID][j1] - 100){
 						o = true;
 					}
 				}
@@ -298,16 +298,16 @@ public class Mahjong extends AbstractGame {
 				}
 			}
 			
-			if(g == super.q && !w && a(t)){
+			if(g == super.userID && !w && a(t)){
 				n = true;
 				o = false;
 			}
-			if(o && g == super.q && r == 0 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
+			if(o && g == super.userID && r == 0 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 				super.connectionStream.setPacketID(253);
 				super.connectionStream.sendPacket();
 				return;
 			}
-			if(n && g == super.q && r == 0 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
+			if(n && g == super.userID && r == 0 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 				super.connectionStream.setPacketID(252);
 				super.connectionStream.sendPacket();
 			}
@@ -352,7 +352,7 @@ public class Mahjong extends AbstractGame {
 	private void a(int i1, boolean flag, boolean flag1){
 		int ai[] = new int[14];
 		p = 0;
-		if(g == super.q){
+		if(g == super.userID){
 			bb = true;
 			return;
 		}
@@ -391,7 +391,7 @@ public class Mahjong extends AbstractGame {
 			if(a(ai)){
 				y[p] = 65;
 				z[p++] = "Claim for sequence " + (j1 - 2) + (j1 - 1) + j1 + " (mahjong!)";
-			} else if(q == super.q && !flag){
+			} else if(q == super.userID && !flag){
 				y[p] = 1;
 				z[p++] = "Claim for sequence " + (j1 - 2) + (j1 - 1) + j1 + " (chow)";
 			}
@@ -406,7 +406,7 @@ public class Mahjong extends AbstractGame {
 			if(a(ai)){
 				y[p] = 66;
 				z[p++] = "Claim for sequence " + (j1 - 1) + j1 + (j1 + 1) + " (mahjong!)";
-			} else if(q == super.q && !flag){
+			} else if(q == super.userID && !flag){
 				y[p] = 2;
 				z[p++] = "Claim for sequence " + (j1 - 1) + j1 + (j1 + 1) + " (chow)";
 			}
@@ -421,7 +421,7 @@ public class Mahjong extends AbstractGame {
 			if(a(ai)){
 				y[p] = 67;
 				z[p++] = "Claim for sequence " + j1 + (j1 + 1) + (j1 + 2) + " (mahjong!)";
-			} else if(q == super.q && !flag){
+			} else if(q == super.userID && !flag){
 				y[p] = 3;
 				z[p++] = "Claim for sequence " + j1 + (j1 + 1) + (j1 + 2) + " (chow)";
 			}
@@ -456,8 +456,8 @@ public class Mahjong extends AbstractGame {
 			y[p] = 6;
 			z[p++] = "Claim for quadruplet (kong)";
 		}
-		for(int k4 = 0; k4 < j[super.q]; k4++){
-			if(k[super.q][k4] == i1 + 100){
+		for(int k4 = 0; k4 < j[super.userID]; k4++){
+			if(k[super.userID][k4] == i1 + 100){
 				y[p] = 7;
 				z[p++] = "Claim for quadruplet (kong)";
 			}
@@ -545,29 +545,29 @@ public class Mahjong extends AbstractGame {
 	@Override
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
-			g = super.connectionStream.getShort(super.ab, 1);
-			h = super.connectionStream.getShort(super.ab, 3);
+			g = super.connectionStream.getUShort(super.ab, 1);
+			h = super.connectionStream.getUShort(super.ab, 3);
 			r = 0;
-			if(g != super.q){
+			if(g != super.userID){
 				w = false;
 			}
 			bb = false;
 			return;
 		}
 		if(i1 == 254){
-			v = super.connectionStream.getShort(super.ab, 1);
+			v = super.connectionStream.getUShort(super.ab, 1);
 			u = 0;
 			for(int k1 = 0; k1 < 14; k1++){
-				t[k1] = super.connectionStream.getShort(super.ab, k1 * 2 + 3);
+				t[k1] = super.connectionStream.getUShort(super.ab, k1 * 2 + 3);
 			}
 			
 			return;
 		}
 		if(i1 == 253){
-			g = super.connectionStream.getShort(super.ab, 1);
-			h = super.connectionStream.getShort(super.ab, 3);
-			x = super.connectionStream.getShort(super.ab, 5);
-			q = super.connectionStream.getShort(super.ab, 7);
+			g = super.connectionStream.getUShort(super.ab, 1);
+			h = super.connectionStream.getUShort(super.ab, 3);
+			x = super.connectionStream.getUShort(super.ab, 5);
+			q = super.connectionStream.getUShort(super.ab, 7);
 			r = 1;
 			w = false;
 			if(!bb){
@@ -576,9 +576,9 @@ public class Mahjong extends AbstractGame {
 			}
 		} else {
 			if(i1 == 252 && p > 0){
-				int l1 = super.connectionStream.getShort(super.ab, 1);
-				int j2 = super.connectionStream.getShort(super.ab, 3);
-				int l2 = super.q - g;
+				int l1 = super.connectionStream.getUShort(super.ab, 1);
+				int j2 = super.connectionStream.getUShort(super.ab, 3);
+				int l2 = super.userID - g;
 				if(l2 <= 0){
 					l2 += 10;
 				}
@@ -602,11 +602,11 @@ public class Mahjong extends AbstractGame {
 				}
 			}
 			if(i1 == 251){
-				int i2 = super.connectionStream.getShort(super.ab, 1);
-				int k2 = super.connectionStream.getShort(super.ab, 3);
+				int i2 = super.connectionStream.getUShort(super.ab, 1);
+				int k2 = super.connectionStream.getUShort(super.ab, 3);
 				j[i2] = k2;
 				for(int i3 = 0; i3 < k2; i3++){
-					k[i2][i3] = super.connectionStream.getShort(super.ab, 5 + i3 * 2);
+					k[i2][i3] = super.connectionStream.getUShort(super.ab, 5 + i3 * 2);
 				}
 				
 			}
@@ -614,7 +614,7 @@ public class Mahjong extends AbstractGame {
 	}
 	
 	@Override
-	public boolean i(){
+	public boolean isNetworkedGame(){
 		return true;
 	}
 }

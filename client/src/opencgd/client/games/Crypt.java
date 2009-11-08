@@ -141,12 +141,12 @@ public class Crypt extends AbstractGame {
 	public void a(){
 		super.k.a(0, 0, 99);
 		for(int i1 = 0; i1 < super.a; i1++){
-			if(i1 != super.q){
+			if(i1 != super.userID){
 				a(i1);
 			}
 		}
 		
-		a(super.q);
+		a(super.userID);
 		for(int j1 = 1; j1 >= -1; j1--){
 			for(int k1 = -1; k1 <= 1; k1++){
 				int i2 = 170 + j1 * 113 + k1 * 66;
@@ -186,7 +186,7 @@ public class Crypt extends AbstractGame {
 		if(j != -1){
 			super.k.a(5, 70, 69, 9, Color.red, 160, false);
 		}
-		if(ab == 0 && h == 0 && d == super.q){
+		if(ab == 0 && h == 0 && d == super.userID){
 			super.k.a(425, 220, 70, 70, bb, 160, false);
 			if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 453 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < 466 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 248 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < 261){
 				super.k.a(446, 241, 42);
@@ -225,7 +225,7 @@ public class Crypt extends AbstractGame {
 			}
 			
 			super.k.a(152, 83, 319, 28, bb, 160, false);
-			if(d == super.q && d == super.q){
+			if(d == super.userID && d == super.userID){
 				super.k.a(8, 82, 122, 198, bb, 160, false);
 			}
 		} else if(h > 0){
@@ -267,7 +267,7 @@ public class Crypt extends AbstractGame {
 		if(ab == 1 && h == 0){
 			super.u.setColor(Color.black);
 			opencgd.client.library.D.a(super.u, "Room Contents", oc, 317, 105);
-			if(d == super.q){
+			if(d == super.userID){
 				super.u.setColor(Color.white);
 				super.u.setFont(qc);
 				super.u.drawString("Choose an option", 16, 101);
@@ -307,7 +307,7 @@ public class Crypt extends AbstractGame {
 				}
 			}
 			
-			if(d == super.q){
+			if(d == super.userID){
 				super.u.setFont(rc);
 				super.u.setColor(Color.white);
 				for(int i6 = 0; i6 < v; i6++){
@@ -383,9 +383,9 @@ public class Crypt extends AbstractGame {
 		super.u.setColor(Color.white);
 		if(d == -1){
 			super.u.drawString("Please wait...", 10, 20);
-		} else if(d == super.q && ab == 0){
+		} else if(d == super.userID && ab == 0){
 			super.u.drawString("Your turn - Click on compass to move!", 10, 20);
-		} else if(d == super.q && ab == 1){
+		} else if(d == super.userID && ab == 1){
 			super.u.drawString("Your turn - Choose an option", 10, 20);
 		} else {
 			super.u.drawString(super.n[d] + "'s turn - Please wait", 10, 20);
@@ -422,7 +422,7 @@ public class Crypt extends AbstractGame {
 						i2 = (i3 * -ad + i2 * (xc + ad)) / xc;
 					}
 				}
-				if(i1 == super.q){
+				if(i1 == super.userID){
 					super.k.a(l1 + 62, i2 + 35, fb[i1]);
 					return;
 				}
@@ -471,7 +471,7 @@ public class Crypt extends AbstractGame {
 			
 		}
 		
-		if(ab == 0 || d != super.q){
+		if(ab == 0 || d != super.userID){
 			super.k.a(5, 220, 75, 70, bb, 160, false);
 			for(int j2 = -5; j2 <= 5; j2++){
 				for(int i3 = -5; i3 <= 5; i3++){
@@ -567,7 +567,7 @@ public class Crypt extends AbstractGame {
 			}
 			j = -1;
 		}
-		if(d == super.q && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && h == 0 && e > 0){
+		if(d == super.userID && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && h == 0 && e > 0){
 			if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 >= 433 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 < 460 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 >= 220 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < 247){
 				super.connectionStream.setPacketID(255);
 				super.connectionStream.addByte(0);
@@ -591,7 +591,7 @@ public class Crypt extends AbstractGame {
 			}
 		}
 		t = -1;
-		if(ab == 1 && d == super.q && h == 0){
+		if(ab == 1 && d == super.userID && h == 0){
 			for(int k1 = 0; k1 < v; k1++){
 				if(((opencgd.client.library.EngineApplet) (super.w)).f > 16 && ((opencgd.client.library.EngineApplet) (super.w)).f < 126 && ((opencgd.client.library.EngineApplet) (super.w)).e > 106 + k1 * 12 && ((opencgd.client.library.EngineApplet) (super.w)).e < 118 + k1 * 12){
 					t = k1;
@@ -697,9 +697,9 @@ public class Crypt extends AbstractGame {
 	@Override
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
-			d = super.connectionStream.getShort(super.ab, 1);
-			e = super.connectionStream.getShort(super.ab, 3);
-			f = super.connectionStream.getShort(super.ab, 5);
+			d = super.connectionStream.getUShort(super.ab, 1);
+			e = super.connectionStream.getUShort(super.ab, 3);
+			f = super.connectionStream.getUShort(super.ab, 5);
 			ab = 0;
 			if(d != s || ab != x){
 				s = d;
@@ -741,12 +741,12 @@ public class Crypt extends AbstractGame {
 			return;
 		}
 		if(i1 == 252){
-			d = super.connectionStream.getShort(super.ab, 1);
-			e = super.connectionStream.getShort(super.ab, 3);
+			d = super.connectionStream.getUShort(super.ab, 1);
+			e = super.connectionStream.getUShort(super.ab, 3);
 			ab = 1;
-			p = super.connectionStream.getShort(super.ab, 5);
-			o = super.connectionStream.getShort(super.ab, 7);
-			f = super.connectionStream.getShort(super.ab, 9);
+			p = super.connectionStream.getUShort(super.ab, 5);
+			o = super.connectionStream.getUShort(super.ab, 7);
+			f = super.connectionStream.getUShort(super.ab, 9);
 			if(d != s || ab != x){
 				s = d;
 				x = ab;
@@ -827,17 +827,17 @@ public class Crypt extends AbstractGame {
 			return;
 		}
 		if(i1 == 251){
-			int k1 = super.connectionStream.getShort(super.ab, 1);
-			int k2 = super.connectionStream.getShort(super.ab, 3);
-			int l3 = super.connectionStream.getShort(super.ab, 5);
-			int k4 = super.connectionStream.getShort(super.ab, 7);
+			int k1 = super.connectionStream.getUShort(super.ab, 1);
+			int k2 = super.connectionStream.getUShort(super.ab, 3);
+			int l3 = super.connectionStream.getUShort(super.ab, 5);
+			int k4 = super.connectionStream.getUShort(super.ab, 7);
 			tc[k1][k2] = l3;
 			yb[l3] = k4;
 			if(l3 + 1 > xb){
 				xb = l3 + 1;
 			}
 			for(int i5 = 0; i5 < k4; i5++){
-				wb[l3][i5] = super.connectionStream.getShort(super.ab, 9 + i5 * 2);
+				wb[l3][i5] = super.connectionStream.getUShort(super.ab, 9 + i5 * 2);
 			}
 			
 			b();
@@ -862,19 +862,19 @@ public class Crypt extends AbstractGame {
 			return;
 		}
 		if(i1 == 249){
-			ac = super.connectionStream.getShort(super.ab, 1);
-			int i2 = super.connectionStream.getShort(super.ab, 3);
-			int i3 = super.connectionStream.getShort(super.ab, 5);
-			if(ac == super.q){
+			ac = super.connectionStream.getUShort(super.ab, 1);
+			int i2 = super.connectionStream.getUShort(super.ab, 3);
+			int i3 = super.connectionStream.getUShort(super.ab, 5);
+			if(ac == super.userID){
 				cb[i2][i3] = true;
 			}
-			super.connectionStream.getShort(super.ab, 7);
-			dc = super.connectionStream.getShort(super.ab, 9);
-			bc = super.connectionStream.getShort(super.ab, 11);
+			super.connectionStream.getUShort(super.ab, 7);
+			dc = super.connectionStream.getUShort(super.ab, 9);
+			bc = super.connectionStream.getUShort(super.ab, 11);
 			tb = super.ab[13];
 			sb = super.ab[14];
-			ub = super.connectionStream.getShort(super.ab, 15);
-			rb = super.connectionStream.getShort(super.ab, 17);
+			ub = super.connectionStream.getUShort(super.ab, 15);
+			rb = super.connectionStream.getUShort(super.ab, 17);
 			qb = super.ab[19];
 			pb = super.ab[20];
 			ob = super.ab[21];
@@ -882,7 +882,7 @@ public class Crypt extends AbstractGame {
 			mb = super.ab[23];
 			vb = super.ab[24];
 			if(vb == 1){
-				zb = super.connectionStream.getShort(super.ab, 25);
+				zb = super.connectionStream.getUShort(super.ab, 25);
 			}
 			h = 200;
 			return;
@@ -897,7 +897,7 @@ public class Crypt extends AbstractGame {
 	}
 	
 	@Override
-	public boolean i(){
+	public boolean isNetworkedGame(){
 		if(ad != 0){
 			return false;
 		}

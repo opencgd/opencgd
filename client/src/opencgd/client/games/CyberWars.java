@@ -1517,15 +1517,15 @@ public class CyberWars extends AbstractGame {
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
 			for(int k1 = 0; k1 < 18; k1++){
-				bb[k1] = super.connectionStream.getShort(super.ab, 1 + k1 * 2);
+				bb[k1] = super.connectionStream.getUShort(super.ab, 1 + k1 * 2);
 			}
 			
-			bd = super.connectionStream.getShort(super.ab, 37);
+			bd = super.connectionStream.getUShort(super.ab, 37);
 			hd = true;
 			return;
 		}
 		if(i1 == 254){
-			j = super.connectionStream.getShort(super.ab, 1);
+			j = super.connectionStream.getUShort(super.ab, 1);
 			a = super.connectionStream.a(super.ab[3]) - 128;
 			if(vb != 2 && vb != 3 && vb != 4 && (vb != 7 || nc != 4)){
 				vb = 2;
@@ -1555,11 +1555,11 @@ public class CyberWars extends AbstractGame {
 			return;
 		}
 		if(i1 == 252){
-			f = super.connectionStream.getShort(super.ab, 1);
-			j = super.connectionStream.getShort(super.ab, 3);
-			ab = super.connectionStream.getShort(super.ab, 5);
-			ic = super.connectionStream.getShort(super.ab, 7);
-			hc = super.connectionStream.getShort(super.ab, 9);
+			f = super.connectionStream.getUShort(super.ab, 1);
+			j = super.connectionStream.getUShort(super.ab, 3);
+			ab = super.connectionStream.getUShort(super.ab, 5);
+			ic = super.connectionStream.getUShort(super.ab, 7);
+			hc = super.connectionStream.getUShort(super.ab, 9);
 			if(f != kc){
 				vb = 5;
 				n = 17;
@@ -1570,8 +1570,8 @@ public class CyberWars extends AbstractGame {
 			return;
 		}
 		if(i1 == 251){
-			f = super.connectionStream.getShort(super.ab, 1);
-			j = super.connectionStream.getShort(super.ab, 3);
+			f = super.connectionStream.getUShort(super.ab, 1);
+			j = super.connectionStream.getUShort(super.ab, 3);
 			if(vb != 6 && vb != 7){
 				vb = 5;
 			}
@@ -2218,7 +2218,7 @@ public class CyberWars extends AbstractGame {
 		}
 	}
 	
-	public boolean i(){
+	public boolean isNetworkedGame(){
 		if(!g && (l != 0 || e != 0 || md != 0 || je != 0 || cc != 0 || ie != 0 || oe[0] != 0 || xc != 0 || lb != 0)){
 			return false;
 		}

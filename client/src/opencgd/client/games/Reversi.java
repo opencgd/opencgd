@@ -55,12 +55,12 @@ public class Reversi extends AbstractGame {
 		super.u.setFont(l);
 		super.u.setColor(Color.white);
 		String s = "You are playing white";
-		if(super.q == 1){
+		if(super.userID == 1){
 			s = "You are playing red";
 		}
 		if(g == -1){
 			super.u.drawString("Please wait...", 10, 20);
-		} else if(g == super.q){
+		} else if(g == super.userID){
 			super.u.drawString("Your turn - " + s + " - Make a move!", 10, 20);
 		} else {
 			super.u.drawString(super.n[g] + "'s turn - Please wait", 10, 20);
@@ -137,7 +137,7 @@ public class Reversi extends AbstractGame {
 	}
 	
 	private int a(int i1, int j1, int k1, int l1){
-		int i2 = 1 + (1 - super.q) * 8;
+		int i2 = 1 + (1 - super.userID) * 8;
 		int j2 = i1 + k1;
 		int k2 = j1 + l1;
 		int l2 = 0;
@@ -146,12 +146,12 @@ public class Reversi extends AbstractGame {
 			j2 += k1;
 		}
 		
-		if(b(j2, k2) != super.q * 8 + 1 || l2 == 0){
+		if(b(j2, k2) != super.userID * 8 + 1 || l2 == 0){
 			return 0;
 		}
 		j2 = i1 + k1;
 		k2 = j1 + l1;
-		int i3 = (1 - super.q) * 8 + 2;
+		int i3 = (1 - super.userID) * 8 + 2;
 		for(; b(j2, k2) == i2; k2 += l1){
 			m[j2][k2] = i3;
 			j2 += k1;
@@ -167,7 +167,7 @@ public class Reversi extends AbstractGame {
 		if(i1 < 0 || j1 < 0 || i1 > 7 || j1 > 7 || h == 0){
 			return;
 		}
-		if(g != super.q){
+		if(g != super.userID){
 			return;
 		}
 		if(m[i1][j1] != 0){
@@ -205,7 +205,7 @@ public class Reversi extends AbstractGame {
 			super.connectionStream.addByte(i1);
 			super.connectionStream.addByte(j1);
 			super.connectionStream.sendPacket();
-			m[i1][j1] = super.q * 8 + 1;
+			m[i1][j1] = super.userID * 8 + 1;
 			b();
 			g = 1 - g;
 			f = true;
@@ -217,7 +217,7 @@ public class Reversi extends AbstractGame {
 	public void d(){
 		i++;
 		a(((opencgd.client.library.EngineApplet) (super.w)).f, ((opencgd.client.library.EngineApplet) (super.w)).e);
-		if(g == super.q && c != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
+		if(g == super.userID && c != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 			c(c, a);
 		}
 		if(i % 4 == 0){
@@ -280,8 +280,8 @@ public class Reversi extends AbstractGame {
 	@Override
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
-			g = super.connectionStream.getShort(super.ab, 1);
-			h = super.connectionStream.getShort(super.ab, 3);
+			g = super.connectionStream.getUShort(super.ab, 1);
+			h = super.connectionStream.getUShort(super.ab, 3);
 			return;
 		}
 		if(i1 == 254){
@@ -305,7 +305,7 @@ public class Reversi extends AbstractGame {
 	}
 	
 	@Override
-	public boolean i(){
+	public boolean isNetworkedGame(){
 		return !f;
 	}
 }

@@ -98,7 +98,7 @@ public class Pairs extends AbstractGame {
 				super.k.c(l1 + g[i3 - 23], k2 + f[i3 - 23], t, i[i3 - 23], h[i3 - 23]);
 			}
 		}
-		if(c == super.q && u == 0){
+		if(c == super.userID && u == 0){
 			for(int j1 = 0; j1 < 4; j1++){
 				super.k.c = b[j1];
 				int i2 = m[j1];
@@ -136,9 +136,9 @@ public class Pairs extends AbstractGame {
 		super.u.setColor(Color.white);
 		if(c == -1){
 			super.u.drawString("Please wait...", 10, 20);
-		} else if(c == super.q && j == 0){
+		} else if(c == super.userID && j == 0){
 			super.u.drawString("Your turn - Select a book", 10, 20);
-		} else if(c == super.q){
+		} else if(c == super.userID){
 			super.u.drawString("Your turn - Find the matching book", 10, 20);
 		} else {
 			super.u.drawString(super.n[c] + "'s turn - Please wait", 10, 20);
@@ -184,7 +184,7 @@ public class Pairs extends AbstractGame {
 				b();
 			}
 		}
-		if(c == super.q && u == 0 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && d > 0){
+		if(c == super.userID && u == 0 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && d > 0){
 			for(int i1 = 0; i1 < 4; i1++){
 				int j1 = m[i1];
 				for(int k1 = 0; k1 < 9; k1++){
@@ -227,9 +227,9 @@ public class Pairs extends AbstractGame {
 	@Override
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
-			c = super.connectionStream.getShort(super.ab, 1);
-			d = super.connectionStream.getShort(super.ab, 3);
-			j = super.connectionStream.getShort(super.ab, 5);
+			c = super.connectionStream.getUShort(super.ab, 1);
+			d = super.connectionStream.getUShort(super.ab, 3);
+			j = super.connectionStream.getUShort(super.ab, 5);
 			return;
 		}
 		if(i1 == 254){
@@ -243,7 +243,7 @@ public class Pairs extends AbstractGame {
 			
 			b();
 			for(int j2 = 0; j2 < 6; j2++){
-				k[j2] = super.connectionStream.getShort(super.ab, k1);
+				k[j2] = super.connectionStream.getUShort(super.ab, k1);
 				k1 += 2;
 			}
 			
@@ -251,17 +251,17 @@ public class Pairs extends AbstractGame {
 		}
 		if(i1 == 253){
 			u = 1;
-			s = super.connectionStream.getShort(super.ab, 1);
-			r = super.connectionStream.getShort(super.ab, 3);
-			t = super.connectionStream.getShort(super.ab, 5);
-			l = super.connectionStream.getShort(super.ab, 7);
+			s = super.connectionStream.getUShort(super.ab, 1);
+			r = super.connectionStream.getUShort(super.ab, 3);
+			t = super.connectionStream.getUShort(super.ab, 5);
+			l = super.connectionStream.getUShort(super.ab, 7);
 			q[s][r] = 0;
 			b();
 		}
 	}
 	
 	@Override
-	public boolean i(){
+	public boolean isNetworkedGame(){
 		return u == 0;
 	}
 }

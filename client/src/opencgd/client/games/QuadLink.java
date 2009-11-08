@@ -47,8 +47,8 @@ public class QuadLink extends AbstractGame {
 		if(u > 0){
 			a(r, q, t, u, s);
 		}
-		if(j == super.q && !m && c != -1){
-			a(c, 5, super.q + 1, 128, 128);
+		if(j == super.userID && !m && c != -1){
+			a(c, 5, super.userID + 1, 128, 128);
 		}
 		if(i > 0 && i % 20 < 10){
 			int i1 = g;
@@ -75,7 +75,7 @@ public class QuadLink extends AbstractGame {
 		super.u.setColor(Color.white);
 		if(j == -1){
 			super.u.drawString("Please wait...", 10, 20);
-		} else if(j == super.q){
+		} else if(j == super.userID){
 			super.u.drawString("Your turn - Make a move!", 10, 20);
 		} else {
 			super.u.drawString(super.n[j] + "'s turn - Please wait", 10, 20);
@@ -157,7 +157,7 @@ public class QuadLink extends AbstractGame {
 		if(i1 < 0 || i1 > 6){
 			return;
 		}
-		if(j != super.q || m || k == 0){
+		if(j != super.userID || m || k == 0){
 			return;
 		}
 		if(p[i1][5] != 0){
@@ -174,7 +174,7 @@ public class QuadLink extends AbstractGame {
 		
 		r = i1;
 		s = u = (5 - q) * 24 + 16;
-		t = super.q + 1;
+		t = super.userID + 1;
 		m = true;
 	}
 	
@@ -193,7 +193,7 @@ public class QuadLink extends AbstractGame {
 			i--;
 		}
 		a(((opencgd.client.library.EngineApplet) (super.w)).f, ((opencgd.client.library.EngineApplet) (super.w)).e);
-		if(j == super.q && c != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
+		if(j == super.userID && c != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 			a(c);
 		}
 	}
@@ -295,22 +295,22 @@ public class QuadLink extends AbstractGame {
 	@Override
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
-			j = super.connectionStream.getShort(super.ab, 1);
-			k = super.connectionStream.getShort(super.ab, 3);
-			if(j != super.q){
+			j = super.connectionStream.getUShort(super.ab, 1);
+			k = super.connectionStream.getUShort(super.ab, 3);
+			if(j != super.userID){
 				m = false;
 				return;
 			}
 		} else if(i1 == 254){
-			r = super.connectionStream.getShort(super.ab, 1);
-			q = super.connectionStream.getShort(super.ab, 3);
-			t = super.connectionStream.getShort(super.ab, 5);
+			r = super.connectionStream.getUShort(super.ab, 1);
+			q = super.connectionStream.getUShort(super.ab, 3);
+			t = super.connectionStream.getUShort(super.ab, 5);
 			s = u = (5 - q) * 24 + 16;
 		}
 	}
 	
 	@Override
-	public boolean i(){
+	public boolean isNetworkedGame(){
 		return u == 0 && i == 0;
 	}
 }

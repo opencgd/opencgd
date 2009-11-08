@@ -64,7 +64,7 @@ public class BattleCruisers extends AbstractGame {
 	
 	@Override
 	public void a(){
-		if(k != super.q || v == 0){
+		if(k != super.userID || v == 0){
 			super.k.a(0, 0, 22, m, 0);
 			for(int i1 = 0; i1 < 8; i1++){
 				for(int j1 = 0; j1 < 10; j1++){
@@ -132,7 +132,7 @@ public class BattleCruisers extends AbstractGame {
 		if(v == 1){
 			if(k == -1){
 				super.u.drawString("Please wait...", 10, 20);
-			} else if(k == super.q){
+			} else if(k == super.userID){
 				super.u.drawString("Your turn - Make a move!", 10, 20);
 				super.u.drawString("Your opponents grid is shown below", 10, 35);
 			} else {
@@ -244,7 +244,7 @@ public class BattleCruisers extends AbstractGame {
 		if(hb != 0 || bb != 0 || q != 0){
 			return;
 		}
-		if(k != super.q){
+		if(k != super.userID){
 			return;
 		} else {
 			super.connectionStream.setPacketID(253);
@@ -273,21 +273,21 @@ public class BattleCruisers extends AbstractGame {
 		}
 		if(hb < 0){
 			hb++;
-			if(hb == 0 && k == super.q){
+			if(hb == 0 && k == super.userID){
 				bb = 40;
 				d(fb, eb, 1);
 			}
-			if(hb == 0 && k != super.q){
+			if(hb == 0 && k != super.userID){
 				bb = 40;
 			}
 		}
 		if(hb > 0){
 			hb--;
-			if(hb == 0 && k == super.q){
+			if(hb == 0 && k == super.userID){
 				bb = 40;
 				d(fb, eb, 0);
 			}
-			if(hb == 0 && k != super.q){
+			if(hb == 0 && k != super.userID){
 				bb = 60;
 				a(fb, eb);
 			}
@@ -323,7 +323,7 @@ public class BattleCruisers extends AbstractGame {
 				((opencgd.client.library.EngineApplet) (super.w)).g = 0;
 				((opencgd.client.library.EngineApplet) (super.w)).hh = 0;
 			}
-			if(k == super.q && f != -1 && ((opencgd.client.library.EngineApplet) (super.w)).g == 1 && k == super.q){
+			if(k == super.userID && f != -1 && ((opencgd.client.library.EngineApplet) (super.w)).g == 1 && k == super.userID){
 				c(f, a);
 			}
 		}
@@ -530,19 +530,19 @@ public class BattleCruisers extends AbstractGame {
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
 			v = 0;
-			l = super.connectionStream.getShort(super.ab, 1);
+			l = super.connectionStream.getUShort(super.ab, 1);
 			return;
 		}
 		if(i1 == 254){
 			v = 1;
-			k = super.connectionStream.getShort(super.ab, 1);
-			l = super.connectionStream.getShort(super.ab, 3);
+			k = super.connectionStream.getUShort(super.ab, 1);
+			l = super.connectionStream.getUShort(super.ab, 3);
 			return;
 		}
 		if(i1 == 253){
 			f();
 			for(int k1 = 0; k1 < 6; k1++){
-				c(super.connectionStream.getShort(super.ab, 1 + k1 * 6), super.connectionStream.getShort(super.ab, 3 + k1 * 6), super.connectionStream.getShort(super.ab, 5 + k1 * 6), x[k1]);
+				c(super.connectionStream.getUShort(super.ab, 1 + k1 * 6), super.connectionStream.getUShort(super.ab, 3 + k1 * 6), super.connectionStream.getUShort(super.ab, 5 + k1 * 6), x[k1]);
 			}
 			
 			return;
@@ -574,7 +574,7 @@ public class BattleCruisers extends AbstractGame {
 	}
 	
 	@Override
-	public boolean i(){
+	public boolean isNetworkedGame(){
 		return hb == 0 && bb == 0 && r == 0;
 	}
 }

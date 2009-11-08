@@ -18,7 +18,7 @@ public abstract class AbstractGame {
 	private int x;
 	private int g;
 	protected String v[];
-	public int q;
+	public int userID;
 	public OpenCGD w;
 	private int s;
 	public int p;
@@ -29,8 +29,8 @@ public abstract class AbstractGame {
 	private int o;
 	private int c;
 	private int b;
-	private int i;
-	private int j;
+	private int packetID;
+	private int packetLength;
 	public byte ab[];
 	public Buffer connectionStream;
 	private Image h;
@@ -71,7 +71,7 @@ public abstract class AbstractGame {
 	public void handleIncomingPacket(int id, int length) throws IOException{
 	}
 	
-	public boolean i(){
+	public boolean isNetworkedGame(){
 		return true;
 	}
 	
@@ -138,46 +138,47 @@ public abstract class AbstractGame {
 				w.jj = "";
 				w.ii = "";
 			}
-			if(!i()){
+			if(!isNetworkedGame()){
+				//Don't read data, because this isn't going to receive anything
 				return;
 			}
-			if(j == 0 && connectionStream.p() >= 2){
-				j = connectionStream.q();
+			if(packetLength == 0 && connectionStream.available() >= 2){
+				packetLength = connectionStream.getShort();
 			}
-			if(j > 0 && connectionStream.p() >= j){
-				connectionStream.a(j, ab);
-				i = connectionStream.a(ab[0]);
-				if(i == 5){
-					m = connectionStream.getShort(ab, 1);
-					q = connectionStream.getShort(ab, 3);
-					System.out.println("Got id: " + q);
-					int i1 = (j - 5) / 18;
+			if(packetLength > 0 && connectionStream.available() >= packetLength){
+				connectionStream.a(packetLength, ab);
+				packetID = connectionStream.a(ab[0]);
+				if(packetID == 5){
+					m = connectionStream.getUShort(ab, 1);
+					userID = connectionStream.getUShort(ab, 3);
+					System.out.println("Got id: " + userID);
+					int i1 = (packetLength - 5) / 18;
 					a = 0;
 					for(int j2 = 0; j2 < o; j2++){
 						n[j2] = null;
 					}
 					
 					for(int i3 = 0; i3 < i1; i3++){
-						int k3 = connectionStream.getShort(ab, 5 + i3 * 18);
-						e[k3] = connectionStream.getShort(ab, 7 + i3 * 18);
+						int k3 = connectionStream.getUShort(ab, 5 + i3 * 18);
+						e[k3] = connectionStream.getUShort(ab, 7 + i3 * 18);
 						n[k3] = (new String(ab, 11 + i3 * 18, 12)).trim();
 						if(k3 + 1 > a){
 							a = k3 + 1;
 						}
 					}
 					
-				} else if(i == 8){
+				} else if(packetID == 8){
 					for(int j1 = 2; j1 >= 1; j1--){
 						v[j1] = v[j1 - 1];
 					}
 					
-					v[0] = new String(ab, 1, j - 1);
-				} else if(i == 17){
+					v[0] = new String(ab, 1, packetLength - 1);
+				} else if(packetID == 17){
 					for(int k1 = 0; k1 < 3; k1++){
 						v[k1] = "";
 					}
 					
-					String s1 = new String(ab, 1, j - 1);
+					String s1 = new String(ab, 1, packetLength - 1);
 					w.gameScreen = 2;
 					w.sb = 2;
 					w.d = 3;
@@ -185,38 +186,38 @@ public abstract class AbstractGame {
 					w.f = s1;
 					w.e = "";
 					n();
-				} else if(i == 18){
+				} else if(packetID == 18){
 					for(int l1 = 0; l1 < 3; l1++){
 						v[l1] = "";
 					}
 					
-					int k2 = connectionStream.a(ab[1]);
-					int j3 = connectionStream.getShort(ab, 2);
-					String s3 = new String(ab, 4, j - 4);
+					int winnerID = connectionStream.a(ab[1]);
+					int points = connectionStream.getUShort(ab, 2);
+					String s3 = new String(ab, 4, packetLength - 4);
 					w.gameScreen = 2;
 					w.sb = 2;
 					w.d = 3;
 					w.pd = 140;
-					if(j3 != 0){
-						if(k2 == q){
-							w.f = "You won! - points gained:" + j3;
+					if(points != 0){
+						if(winnerID == userID){
+							w.f = "You won! - points gained:" + points;
 						} else {
-							w.f = "You lost! - points lost:" + j3;
+							w.f = "You lost! - points lost:" + points;
 						}
-					} else if(k2 == q){
+					} else if(winnerID == userID){
 						w.f = "You won! - Non-rated game";
 					} else {
 						w.f = "You lost! - Non-rated game";
 					}
 					w.e = s3;
 					n();
-				} else if(i == 19){
+				} else if(packetID == 19){
 					for(int i2 = 0; i2 < 3; i2++){
 						v[i2] = "";
 					}
 					
-					int l2 = connectionStream.getShort(ab, 1);
-					String s2 = new String(ab, 3, j - 3);
+					int l2 = connectionStream.getUShort(ab, 1);
+					String s2 = new String(ab, 3, packetLength - 3);
 					w.gameScreen = 2;
 					w.sb = 2;
 					w.d = 5;
@@ -229,9 +230,9 @@ public abstract class AbstractGame {
 					}
 					n();
 				} else {
-					handleIncomingPacket(i, j);
+					handleIncomingPacket(packetID, packetLength);
 				}
-				j = 0;
+				packetLength = 0;
 				return;
 			}
 		} catch(IOException _ex){
@@ -285,11 +286,11 @@ public abstract class AbstractGame {
 		w = castle1;
 		o = w.ic;
 		a = w.j;
-		m = w.wb;
-		q = OpenCGD.id;
-		System.out.println("Copied id: " + q + " Castle id: " + OpenCGD.id + " extra id: " + i1);
-		j = w.kb;
-		i = w.jb;
+		m = w.currentPlayerCount;
+		userID = OpenCGD.userID;
+		System.out.println("Copied id: " + userID + " Castle id: " + OpenCGD.userID + " extra id: " + i1);
+		packetLength = w.packetLength;
+		packetID = w.packetID;
 		b = w.m;
 		c = w.n;
 		s = w.currentGame;
@@ -313,10 +314,10 @@ public abstract class AbstractGame {
 		k = w.nb;
 		l = w.qb;
 		h = w.hb;
-		connectionStream = w.y;
-		ab = w.oe;
-		n = w.ac;
-		e = w.x;
+		connectionStream = w.connection;
+		ab = w.incomingPacketData;
+		n = w.waitingList_name;
+		e = w.waitingList_rating;
 		s = w.currentGame;
 		g = 0;
 		loadMedia();

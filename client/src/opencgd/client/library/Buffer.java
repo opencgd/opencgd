@@ -43,13 +43,13 @@ public class Buffer implements Runnable {
 		}
 	}
 	
-	public void b() throws IOException{
+	public void b() throws IOException {
 		data[0] = (byte) ((offset - 2) / 256);
 		data[1] = (byte) (offset - 2 & 0xff);
 		a(data, 0, offset, false);
 	}
 	
-	public void c() throws IOException{
+	public void c() throws IOException {
 		data[0] = (byte) ((offset - 2) / 256);
 		data[1] = (byte) (offset - 2 & 0xff);
 		a(data, 0, offset, true);
@@ -644,11 +644,11 @@ public class Buffer implements Runnable {
 		}
 	}
 	
-	public int a(byte abyte0[], int i1){
+	public int getInt(byte abyte0[], int i1){
 		return a(abyte0[i1]) * 0x1000000 + a(abyte0[i1 + 1]) * 0x10000 + a(abyte0[i1 + 2]) * 256 + a(abyte0[i1 + 3]);
 	}
 	
-	public int getShort(byte abyte0[], int i1){
+	public int getUShort(byte abyte0[], int i1){
 		return a(abyte0[i1]) * 256 + a(abyte0[i1 + 1]);
 	}
 	
@@ -680,7 +680,7 @@ public class Buffer implements Runnable {
 		
 	}
 	
-	public int p() throws IOException{
+	public int available() throws IOException{
 		if(m){
 			return 0;
 		} else {
@@ -693,12 +693,12 @@ public class Buffer implements Runnable {
 	}
 	
 	private int f() throws IOException{
-		int i1 = q();
-		int j1 = q();
+		int i1 = getShort();
+		int j1 = getShort();
 		return i1 * 0x10000 + j1;
 	}
 	
-	public int q() throws IOException{
+	public int getShort() throws IOException{
 		int i1 = r();
 		int j1 = r();
 		return i1 * 256 + j1;

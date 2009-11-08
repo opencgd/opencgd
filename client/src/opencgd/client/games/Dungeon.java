@@ -96,10 +96,10 @@ public class Dungeon extends AbstractGame {
 			super.k.a(12, 2, 28 + (g / 2 & 3));
 		} else if(ab > 0 && o != -1){
 			super.k.a(12, 2, 31 + o);
-		} else if(e == super.q && j == 0 && ab == 0){
+		} else if(e == super.userID && j == 0 && ab == 0){
 			super.k.a(12, 2, 38);
 		}
-		if(j == 1 && e == super.q && ((opencgd.client.library.EngineApplet) (super.w)).f > 93 && ((opencgd.client.library.EngineApplet) (super.w)).f < 485 && ((opencgd.client.library.EngineApplet) (super.w)).e > 41 && ((opencgd.client.library.EngineApplet) (super.w)).e < 286){
+		if(j == 1 && e == super.userID && ((opencgd.client.library.EngineApplet) (super.w)).f > 93 && ((opencgd.client.library.EngineApplet) (super.w)).f < 485 && ((opencgd.client.library.EngineApplet) (super.w)).e > 41 && ((opencgd.client.library.EngineApplet) (super.w)).e < 286){
 			int k2 = (((opencgd.client.library.EngineApplet) (super.w)).f - 93) / 49;
 			int l3 = (((opencgd.client.library.EngineApplet) (super.w)).e - 41) / 49;
 			int k4 = 117 + 49 * k2;
@@ -118,9 +118,9 @@ public class Dungeon extends AbstractGame {
 		super.k.a(super.u, 6, 6, false);
 		super.u.setFont(r);
 		super.u.setColor(Color.white);
-		if(e == super.q && j == 0){
+		if(e == super.userID && j == 0){
 			super.u.drawString("Your turn - Choose a direction", 95, 20);
-		} else if(e == super.q && j == 1){
+		} else if(e == super.userID && j == 1){
 			super.u.drawString("Teleporter! - Choose any location", 95, 20);
 		} else {
 			super.u.drawString(super.n[e] + "'s turn - Please wait", 95, 20);
@@ -160,7 +160,7 @@ public class Dungeon extends AbstractGame {
 	@Override
 	public void d(){
 		g++;
-		if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && j == 0 && e == super.q && f > 0){
+		if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && j == 0 && e == super.userID && f > 0){
 			int i1 = ((opencgd.client.library.EngineApplet) (super.w)).f - 18;
 			int k1 = ((opencgd.client.library.EngineApplet) (super.w)).e - 8;
 			if(i1 > 0 && k1 > 0 && i1 < 20 && k1 < 20){
@@ -204,7 +204,7 @@ public class Dungeon extends AbstractGame {
 				super.connectionStream.sendPacket();
 			}
 		}
-		if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && j == 1 && e == super.q && f > 0 && ((opencgd.client.library.EngineApplet) (super.w)).f > 93 && ((opencgd.client.library.EngineApplet) (super.w)).f < 485 && ((opencgd.client.library.EngineApplet) (super.w)).e > 41 && ((opencgd.client.library.EngineApplet) (super.w)).e < 286){
+		if(((opencgd.client.library.EngineApplet) (super.w)).hh == 1 && j == 1 && e == super.userID && f > 0 && ((opencgd.client.library.EngineApplet) (super.w)).f > 93 && ((opencgd.client.library.EngineApplet) (super.w)).f < 485 && ((opencgd.client.library.EngineApplet) (super.w)).e > 41 && ((opencgd.client.library.EngineApplet) (super.w)).e < 286){
 			int j1 = (((opencgd.client.library.EngineApplet) (super.w)).f - 93) / 49;
 			int l1 = (((opencgd.client.library.EngineApplet) (super.w)).e - 41) / 49;
 			super.connectionStream.setPacketID(254);
@@ -282,8 +282,8 @@ public class Dungeon extends AbstractGame {
 	@Override
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
-			e = super.connectionStream.getShort(super.ab, 1);
-			f = super.connectionStream.getShort(super.ab, 3);
+			e = super.connectionStream.getUShort(super.ab, 1);
+			f = super.connectionStream.getUShort(super.ab, 3);
 			j = 0;
 			return;
 		}
@@ -349,8 +349,8 @@ public class Dungeon extends AbstractGame {
 				return;
 			}
 			if(i1 == 251){
-				e = super.connectionStream.getShort(super.ab, 1);
-				f = super.connectionStream.getShort(super.ab, 3);
+				e = super.connectionStream.getUShort(super.ab, 1);
+				f = super.connectionStream.getUShort(super.ab, 3);
 				j = 1;
 				return;
 			}
@@ -361,7 +361,7 @@ public class Dungeon extends AbstractGame {
 	}
 	
 	@Override
-	public boolean i(){
+	public boolean isNetworkedGame(){
 		if(ab != 0){
 			return false;
 		}

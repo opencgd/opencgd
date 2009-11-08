@@ -82,7 +82,7 @@ public class MysteryMonster extends AbstractGame {
 			}
 			opencgd.client.library.D.a(super.u, gb, eb[i1], 256, 15);
 		}
-		if(j == super.q && r == 1){
+		if(j == super.userID && r == 1){
 			super.u.setFont(ab);
 			super.u.setColor(Color.white);
 			super.u.drawString("Only one", 390, 54);
@@ -100,7 +100,7 @@ public class MysteryMonster extends AbstractGame {
 				super.u.setColor(z);
 			}
 			super.u.drawString("Make guess!", 390, 283);
-		} else if(j == super.q){
+		} else if(j == super.userID){
 			super.u.setFont(db);
 			super.u.setColor(Color.white);
 			super.u.drawString("Has your monster got:", 390, 35);
@@ -163,7 +163,7 @@ public class MysteryMonster extends AbstractGame {
 			super.u.setColor(Color.white);
 			if(j == -1){
 				super.u.drawString("Please wait...", 10, 20);
-			} else if(j == super.q){
+			} else if(j == super.userID){
 				super.u.drawString("Your turn - Choose a question", 10, 20);
 			} else {
 				super.u.drawString(super.n[j] + "'s turn - Please wait", 10, 20);
@@ -185,7 +185,7 @@ public class MysteryMonster extends AbstractGame {
 			
 		}
 		
-		if(j == super.q){
+		if(j == super.userID){
 			super.k.a(382, 19, 113, 14, w, 150, false);
 			super.k.a(382, 34, 103, 108, w, 150, false);
 			super.k.a(486, 34, 9, 108, w, 150, false);
@@ -277,7 +277,7 @@ public class MysteryMonster extends AbstractGame {
 				
 			}
 		}
-		if(j == super.q){
+		if(j == super.userID){
 			if(((opencgd.client.library.EngineApplet) (super.w)).g == 1 && (l & 3) == 0){
 				if(((opencgd.client.library.EngineApplet) (super.w)).f - 6 > 486 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 > 34 && ((opencgd.client.library.EngineApplet) (super.w)).f - 6 <= 495 && ((opencgd.client.library.EngineApplet) (super.w)).e - 6 < 88 && f > 0){
 					f--;
@@ -412,8 +412,8 @@ public class MysteryMonster extends AbstractGame {
 	@Override
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
-			j = super.connectionStream.getShort(super.ab, 1);
-			k = super.connectionStream.getShort(super.ab, 3);
+			j = super.connectionStream.getUShort(super.ab, 1);
+			k = super.connectionStream.getUShort(super.ab, 3);
 			if(j != q){
 				b();
 				return;
@@ -425,7 +425,7 @@ public class MysteryMonster extends AbstractGame {
 				return;
 			}
 			if(i1 == 253){
-				x = super.connectionStream.getShort(super.ab, 1);
+				x = super.connectionStream.getUShort(super.ab, 1);
 				fb[x % 6][x / 6] = true;
 				b();
 			}
@@ -433,7 +433,7 @@ public class MysteryMonster extends AbstractGame {
 	}
 	
 	@Override
-	public boolean i(){
+	public boolean isNetworkedGame(){
 		return hb == 0;
 	}
 }

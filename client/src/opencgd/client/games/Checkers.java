@@ -79,7 +79,7 @@ public class Checkers extends AbstractGame {
 		
 		if(bb > 0){
 			b(x, w, ab, z, r[v], bb, y);
-		} else if(h % 20 < 10 && f == super.q && !l){
+		} else if(h % 20 < 10 && f == super.userID && !l){
 			for(int k1 = 0; k1 < q; k1++){
 				a(n[k1], m[k1]);
 			}
@@ -90,7 +90,7 @@ public class Checkers extends AbstractGame {
 		super.u.setColor(Color.white);
 		if(f == -1){
 			super.u.drawString("Please wait...", 10, 20);
-		} else if(f == super.q){
+		} else if(f == super.userID){
 			super.u.drawString("Your turn - Make a move!", 10, 20);
 		} else {
 			super.u.drawString(super.n[f] + "'s turn - Please wait", 10, 20);
@@ -263,7 +263,7 @@ public class Checkers extends AbstractGame {
 		if(s){
 			return;
 		}
-		if(f != super.q){
+		if(f != super.userID){
 			return;
 		}
 		for(int k1 = 0; k1 < q; k1++){
@@ -299,7 +299,7 @@ public class Checkers extends AbstractGame {
 		if(j == -1){
 			return;
 		}
-		if(f != super.q){
+		if(f != super.userID){
 			return;
 		} else {
 			j = -1;
@@ -313,13 +313,13 @@ public class Checkers extends AbstractGame {
 		if(i1 == -1 || j1 == -1){
 			return;
 		}
-		if(u[i1][j1] != super.q && u[i1][j1] != super.q + 2){
+		if(u[i1][j1] != super.userID && u[i1][j1] != super.userID + 2){
 			return;
 		}
 		if(j != -1){
 			return;
 		}
-		if(f != super.q){
+		if(f != super.userID){
 			return;
 		}
 		for(int k1 = 0; k1 < q; k1++){
@@ -342,18 +342,18 @@ public class Checkers extends AbstractGame {
 		q = 0;
 		for(int i1 = 0; i1 < 8; i1++){
 			for(int j1 = 0; j1 < 8; j1++){
-				if((p == -1 || p == i1 && o == j1) && (u[i1][j1] == super.q || u[i1][j1] == super.q + 2)){
-					if(i1 > 1 && j1 < 6 && u[i1 - 1][j1 + 1] % 2 != super.q && u[i1 - 1][j1 + 1] % 2 != -1 && u[i1 - 2][j1 + 2] == -1){
+				if((p == -1 || p == i1 && o == j1) && (u[i1][j1] == super.userID || u[i1][j1] == super.userID + 2)){
+					if(i1 > 1 && j1 < 6 && u[i1 - 1][j1 + 1] % 2 != super.userID && u[i1 - 1][j1 + 1] % 2 != -1 && u[i1 - 2][j1 + 2] == -1){
 						n[q] = i1;
 						m[q++] = j1;
-					} else if(i1 < 6 && j1 < 6 && u[i1 + 1][j1 + 1] % 2 != super.q && u[i1 + 1][j1 + 1] % 2 != -1 && u[i1 + 2][j1 + 2] == -1){
+					} else if(i1 < 6 && j1 < 6 && u[i1 + 1][j1 + 1] % 2 != super.userID && u[i1 + 1][j1 + 1] % 2 != -1 && u[i1 + 2][j1 + 2] == -1){
 						n[q] = i1;
 						m[q++] = j1;
 					} else if(u[i1][j1] == 2 || u[i1][j1] == 3){
-						if(i1 > 1 && j1 > 1 && u[i1 - 1][j1 - 1] % 2 != super.q && u[i1 - 1][j1 - 1] % 2 != -1 && u[i1 - 2][j1 - 2] == -1){
+						if(i1 > 1 && j1 > 1 && u[i1 - 1][j1 - 1] % 2 != super.userID && u[i1 - 1][j1 - 1] % 2 != -1 && u[i1 - 2][j1 - 2] == -1){
 							n[q] = i1;
 							m[q++] = j1;
-						} else if(i1 < 6 && j1 > 1 && u[i1 + 1][j1 - 1] % 2 != super.q && u[i1 + 1][j1 - 1] % 2 != -1 && u[i1 + 2][j1 - 2] == -1){
+						} else if(i1 < 6 && j1 > 1 && u[i1 + 1][j1 - 1] % 2 != super.userID && u[i1 + 1][j1 - 1] % 2 != -1 && u[i1 + 2][j1 - 2] == -1){
 							n[q] = i1;
 							m[q++] = j1;
 						}
@@ -368,7 +368,7 @@ public class Checkers extends AbstractGame {
 		}
 		for(int k1 = 0; k1 < 8; k1++){
 			for(int l1 = 0; l1 < 8; l1++){
-				if(u[k1][l1] == super.q || u[k1][l1] == super.q + 2){
+				if(u[k1][l1] == super.userID || u[k1][l1] == super.userID + 2){
 					if(k1 > 0 && l1 < 7 && u[k1 - 1][l1 + 1] == -1){
 						n[q] = k1;
 						m[q++] = l1;
@@ -395,20 +395,20 @@ public class Checkers extends AbstractGame {
 		int i1 = j;
 		int j1 = i;
 		q = 0;
-		if(i1 > 1 && j1 < 6 && u[i1 - 1][j1 + 1] % 2 != super.q && u[i1 - 1][j1 + 1] != -1 && u[i1 - 2][j1 + 2] == -1){
+		if(i1 > 1 && j1 < 6 && u[i1 - 1][j1 + 1] % 2 != super.userID && u[i1 - 1][j1 + 1] != -1 && u[i1 - 2][j1 + 2] == -1){
 			n[q] = i1 - 2;
 			m[q++] = j1 + 2;
 		}
-		if(i1 < 6 && j1 < 6 && u[i1 + 1][j1 + 1] % 2 != super.q && u[i1 + 1][j1 + 1] != -1 && u[i1 + 2][j1 + 2] == -1){
+		if(i1 < 6 && j1 < 6 && u[i1 + 1][j1 + 1] % 2 != super.userID && u[i1 + 1][j1 + 1] != -1 && u[i1 + 2][j1 + 2] == -1){
 			n[q] = i1 + 2;
 			m[q++] = j1 + 2;
 		}
 		if(k == 2 || k == 3){
-			if(i1 > 1 && j1 > 1 && u[i1 - 1][j1 - 1] % 2 != super.q && u[i1 - 1][j1 - 1] % 2 != -1 && u[i1 - 2][j1 - 2] == -1){
+			if(i1 > 1 && j1 > 1 && u[i1 - 1][j1 - 1] % 2 != super.userID && u[i1 - 1][j1 - 1] % 2 != -1 && u[i1 - 2][j1 - 2] == -1){
 				n[q] = i1 - 2;
 				m[q++] = j1 - 2;
 			}
-			if(i1 < 6 && j1 > 1 && u[i1 + 1][j1 - 1] % 2 != super.q && u[i1 + 1][j1 - 1] % 2 != -1 && u[i1 + 2][j1 - 2] == -1){
+			if(i1 < 6 && j1 > 1 && u[i1 + 1][j1 - 1] % 2 != super.userID && u[i1 + 1][j1 - 1] % 2 != -1 && u[i1 + 2][j1 - 2] == -1){
 				n[q] = i1 + 2;
 				m[q++] = j1 - 2;
 			}
@@ -447,13 +447,13 @@ public class Checkers extends AbstractGame {
 			}
 		}
 		b(((opencgd.client.library.EngineApplet) (super.w)).f, ((opencgd.client.library.EngineApplet) (super.w)).e);
-		if(f == super.q && c != -1 && j == -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
+		if(f == super.userID && c != -1 && j == -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 			d(c, a);
 		}
-		if(f == super.q && j != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 2){
+		if(f == super.userID && j != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 2){
 			c();
 		}
-		if(f == super.q && j != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
+		if(f == super.userID && j != -1 && ((opencgd.client.library.EngineApplet) (super.w)).hh == 1){
 			c(c, a);
 		}
 		super.w.hh = 0;
@@ -497,8 +497,8 @@ public class Checkers extends AbstractGame {
 	public void handleIncomingPacket(int i1, int j1) throws IOException{
 		if(i1 == 255){
 			l = false;
-			int k1 = super.connectionStream.getShort(super.ab, 1);
-			int i2 = super.connectionStream.getShort(super.ab, 3);
+			int k1 = super.connectionStream.getUShort(super.ab, 1);
+			int i2 = super.connectionStream.getUShort(super.ab, 3);
 			if(i2 > g){
 				s = false;
 			}
@@ -531,11 +531,11 @@ public class Checkers extends AbstractGame {
 		if(i1 == 253){
 			g = 60;
 			f = super.connectionStream.a(super.ab[1]);
-			if(f == super.q){
+			if(f == super.userID){
 				p = super.connectionStream.a(super.ab[2]);
 				o = super.connectionStream.a(super.ab[3]);
 			}
-			if(super.q == 1){
+			if(super.userID == 1){
 				p = 7 - p;
 				o = 7 - o;
 			}
@@ -548,7 +548,7 @@ public class Checkers extends AbstractGame {
 			w = super.connectionStream.a(super.ab[2]);
 			ab = super.connectionStream.a(super.ab[3]);
 			z = super.connectionStream.a(super.ab[4]);
-			if(super.q == 1){
+			if(super.userID == 1){
 				x = 7 - x;
 				w = 7 - w;
 				ab = 7 - ab;
@@ -561,7 +561,7 @@ public class Checkers extends AbstractGame {
 	}
 	
 	@Override
-	public boolean i(){
+	public boolean isNetworkedGame(){
 		return bb <= 0;
 	}
 }

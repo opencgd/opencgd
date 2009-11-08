@@ -29,15 +29,15 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 	
 	private static final long serialVersionUID = -5350768759203686867L;
 	private int p;
-	private String eb[] = {
+	private String ratingText[] = {
 			"Non rated game", "Rated Game"
 	};
-	private String l[] = {
+	private String timeText[] = {
 			"30-secs", "1-min", "2-mins", "4-mins", "10-mins"
 	};
 	private int ue;
-	private int fb;
-	private int o;
+	private int ratingMode;
+	private int matchTimeMode;
 	private int xc;
 	private boolean ve[] = {
 			true, true, true, true, true, true, true, true
@@ -107,17 +107,17 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 	private boolean cb;
 	private int ad;
 	private int ib;
-	protected static int id;
+	protected static int userID;
 	private static int myscore;
-	private boolean dd;
-	private int tc[];
-	private int vc[];
-	private int uc[];
-	private String yc[];
-	private int rb[];
-	int x[];
-	String ac[];
-	int wb;
+	private boolean displayHiscores;
+	private int hiscores_gamesWon[];
+	private int hiscores_gamesPlayed[];
+	private int hiscores_score[];
+	private String hiscores_name[];
+	private int waitingList_score[];
+	int waitingList_rating[];
+	String waitingList_name[];
+	int currentPlayerCount;
 	int j;
 	int ic;
 	private String de[];
@@ -125,10 +125,10 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 	boolean oc;
 	int n;
 	int m;
-	int jb;
-	int kb;
-	byte oe[];
-	Buffer y;
+	int packetID;
+	int packetLength;
+	byte incomingPacketData[];
+	Buffer connection;
 	private int zd[];
 	private boolean ed;
 	private AbstractGame games[];
@@ -177,20 +177,20 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 		games = new AbstractGame[11];
 		ed = false;
 		zd = new int[11];
-		oe = new byte[5000];
+		incomingPacketData = new byte[5000];
 		n = 75;
 		oc = false;
 		wc = "127.0.0.1";
 		de = new String[3];
 		ic = 500;
-		ac = new String[ic];
-		x = new int[ic];
-		rb = new int[ic];
-		yc = new String[50];
-		uc = new int[50];
-		vc = new int[50];
-		tc = new int[50];
-		dd = false;
+		waitingList_name = new String[ic];
+		waitingList_rating = new int[ic];
+		waitingList_score = new int[ic];
+		hiscores_name = new String[50];
+		hiscores_score = new int[50];
+		hiscores_gamesPlayed = new int[50];
+		hiscores_gamesWon = new int[50];
+		displayHiscores = false;
 		cb = true;
 		username = "";
 		password = "";
@@ -216,8 +216,8 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 		k = 1;
 		gb = true;
 		xc = -330;
-		o = 1;
-		fb = 1;
+		matchTimeMode = 1;
+		ratingMode = 1;
 	}
 	
 	private void a(Graphics g1, int i1, int j1, int k1, int l1, boolean flag){
@@ -275,10 +275,10 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 			nb.a(graphics, 6, 6, false);
 			graphics.setColor(Color.black);
 			graphics.setFont(me);
-			if(wb == 1){
-				graphics.drawString(fd[currentGame] + " - Currently " + wb + " player", 148, 24);
+			if(currentPlayerCount == 1){
+				graphics.drawString(fd[currentGame] + " - Currently " + currentPlayerCount + " player", 148, 24);
 			} else {
-				graphics.drawString(fd[currentGame] + " - Currently " + wb + " players", 148, 24);
+				graphics.drawString(fd[currentGame] + " - Currently " + currentPlayerCount + " players", 148, 24);
 			}
 			if(d == 0){
 				graphics.drawLine(144, 52, 495, 52);
@@ -292,24 +292,24 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 				graphics.drawString("Won:", 457, 63);
 				graphics.drawLine(144, 66, 495, 66);
 				graphics.setFont(t);
-				if(dd){
+				if(displayHiscores){
 					Graphics g1 = graphics.create();
 					g1.clipRect(138, 70, 352, 105);
 					for(int k1 = 0; k1 < 50; k1++){
 						int k2 = (78 + k1 * 16) - xc / 3;
 						if(k2 >= 30 && k2 <= 190){
-							g1.drawString((k1 + 1) + ": " + yc[k1], 148, k2);
-							g1.drawString(b(uc[k1]), 263, k2);
-							g1.drawString(String.valueOf(uc[k1]), 355, k2);
-							g1.drawString(String.valueOf(vc[k1]), 403, k2);
-							g1.drawString(String.valueOf(tc[k1]), 457, k2);
+							g1.drawString((k1 + 1) + ": " + hiscores_name[k1], 148, k2);
+							g1.drawString(b(hiscores_score[k1]), 263, k2);
+							g1.drawString(String.valueOf(hiscores_score[k1]), 355, k2);
+							g1.drawString(String.valueOf(hiscores_gamesPlayed[k1]), 403, k2);
+							g1.drawString(String.valueOf(hiscores_gamesWon[k1]), 457, k2);
 						}
 					}
 					
 				}
 			} else if(d == 1){
 				D.a(graphics, f, ec, 320, 90);
-				D.a(graphics, l[o] + " per move - " + eb[fb], u, 320, 110);
+				D.a(graphics, timeText[matchTimeMode] + " per move - " + ratingText[ratingMode], u, 320, 110);
 				if(super.f > 214 && super.f < 414 && super.e > 125 && super.e < 145){
 					graphics.setColor(db);
 				} else {
@@ -324,7 +324,7 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 				D.a(graphics, "Decline Challenge", u, 320, 160);
 			} else if(d == 2){
 				D.a(graphics, f, ec, 320, 80);
-				D.a(graphics, l[o] + " per move - " + eb[fb], u, 320, 100);
+				D.a(graphics, timeText[matchTimeMode] + " per move - " + ratingText[ratingMode], u, 320, 100);
 				D.a(graphics, "Waiting for a response", u, 320, 120);
 				if(super.f > 214 && super.f < 414 && super.e > 145 && super.e < 165){
 					graphics.setColor(db);
@@ -350,7 +350,7 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 			} else if(d == 4){
 				D.a(graphics, f, ec, 320, 70);
 				D.a(graphics, e, u, 320, 90);
-				D.a(graphics, l[o] + " per move - " + eb[fb], me, 320, 105);
+				D.a(graphics, timeText[matchTimeMode] + " per move - " + ratingText[ratingMode], me, 320, 105);
 				if(ue == 0){
 					D.a(graphics, "All player-levels allowed", me, 320, 120);
 				} else {
@@ -361,7 +361,7 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 				} else {
 					graphics.setColor(Color.black);
 				}
-				if(id == 0){
+				if(userID == 0){
 					D.a(graphics, "Start game", u, 320, 140);
 				}
 				if(super.f > 214 && super.f < 414 && super.e > 145 && super.e < 165){
@@ -369,7 +369,7 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 				} else {
 					graphics.setColor(Color.black);
 				}
-				if(id == 0){
+				if(userID == 0){
 					D.a(graphics, "Abort game", u, 320, 160);
 				} else {
 					D.a(graphics, "Leave game", u, 320, 160);
@@ -497,10 +497,10 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 				i3 -= 13;
 			}
 			for(int j3 = ib; j3 < j; j3++){
-				if(ac[j3] == null){
+				if(waitingList_name[j3] == null){
 					continue;
 				}
-				if(c(rb[j3])){
+				if(c(waitingList_score[j3])){
 					graphics.setColor(Color.black);
 				} else {
 					graphics.setColor(xd);
@@ -508,7 +508,7 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 				if(mb == j3 && fe){
 					graphics.setColor(db);
 				}
-				graphics.drawString(ac[j3] + " (" + x[j3] + ")", 20, i3 + i1);
+				graphics.drawString(waitingList_name[j3] + " (" + waitingList_rating[j3] + ")", 20, i3 + i1);
 				i1 += 12;
 				if(++i2 >= 19 || i2 >= 7 && !fe){
 					break;
@@ -647,14 +647,14 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 	
 	private void i(){
 		j();
-		k();
+		handleIncomingPackets();
 		if(pd < 140){
 			pd += 3;
 			if(pd > 140){
 				pd = 140;
 			}
 		}
-		if(pd >= 200 && dd){
+		if(pd >= 200 && displayHiscores){
 			xc += 2;
 			if(xc >= 2450){
 				xc = -330;
@@ -685,7 +685,7 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 					if(ib < 0){
 						ib = 0;
 					}
-				} while(ib != 0 && ac[ib] == null);
+				} while(ib != 0 && waitingList_name[ib] == null);
 			}
 			if(super.f > 18 && super.e > 280 && super.f < 138 && super.e < 290 && fe){
 				do {
@@ -693,7 +693,7 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 					if(ib > j - 7){
 						ib = j - 7;
 					}
-				} while(ib != j - 7 && ac[ib] == null);
+				} while(ib != j - 7 && waitingList_name[ib] == null);
 			}
 			if(super.f > 18 && super.e > 128 && super.f < 138 && super.e < 138 && !fe){
 				do {
@@ -701,7 +701,7 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 					if(ib > j - 7){
 						ib = j - 7;
 					}
-				} while(ib != j - 7 && ac[ib] == null);
+				} while(ib != j - 7 && waitingList_name[ib] == null);
 			}
 			if(super.f > 18 && super.e > 140 && super.f < 138 && super.e < 150){
 				do {
@@ -739,7 +739,7 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 				int j1 = 57;
 				int l1 = 0;
 				for(int k2 = ib; k2 < j; k2++){
-					if(ac[k2] == null){
+					if(waitingList_name[k2] == null){
 						continue;
 					}
 					if(super.e >= j1 - 10 && super.e <= j1 + 2){
@@ -752,9 +752,9 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 				}
 				
 				if(super.hh != 0 && mb != -1){
-					y.setPacketID(6);
-					y.addShort(mb);
-					y.sendPacket();
+					connection.setPacketID(6);
+					connection.addShort(mb);
+					connection.sendPacket();
 					super.hh = 0;
 				}
 			} else {
@@ -775,31 +775,31 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 				
 				if(super.hh != 0 && hd != -1){
 					if(hd < xb){
-						y.setPacketID(13);
-						y.addShort(hd);
-						y.sendPacket();
+						connection.setPacketID(13);
+						connection.addShort(hd);
+						connection.sendPacket();
 					} else {
-						y.setPacketID(10);
-						y.sendPacket();
+						connection.setPacketID(10);
+						connection.sendPacket();
 					}
 				}
 			}
 		}
 		if(d == 1 && super.hh != 0){
 			if(super.f > 214 && super.f < 414 && super.e > 125 && super.e < 145){
-				y.setPacketID(7);
-				y.sendPacket();
+				connection.setPacketID(7);
+				connection.sendPacket();
 			}
 			if(super.f > 214 && super.f < 414 && super.e > 145 && super.e < 165){
-				y.setPacketID(8);
-				y.sendPacket();
+				connection.setPacketID(8);
+				connection.sendPacket();
 				d = 0;
 			}
 			super.hh = 0;
 		} else if(d == 2 && super.hh != 0){
 			if(super.f > 214 && super.f < 414 && super.e > 145 && super.e < 165){
-				y.setPacketID(8);
-				y.sendPacket();
+				connection.setPacketID(8);
+				connection.sendPacket();
 				d = 0;
 			}
 			super.hh = 0;
@@ -808,13 +808,13 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 			super.hh = 0;
 		} else if(d == 4 && super.hh != 0){
 			if(super.f > 214 && super.f < 414 && super.e > 125 && super.e < 145){
-				y.setPacketID(11);
-				y.sendPacket();
+				connection.setPacketID(11);
+				connection.sendPacket();
 				super.hh = 0;
 			}
 			if(super.f > 214 && super.f < 414 && super.e > 145 && super.e < 165){
-				y.setPacketID(12);
-				y.sendPacket();
+				connection.setPacketID(12);
+				connection.sendPacket();
 				d = 0;
 				super.hh = 0;
 			}
@@ -890,9 +890,9 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 				}
 			}
 			if(flag){
-				y.setPacketID(5);
-				y.addShort(k);
-				y.addShort(gb ? 1 : 0);
+				connection.setPacketID(5);
+				connection.addShort(k);
+				connection.addShort(gb ? 1 : 0);
 				int j2 = 0;
 				if(!ve[0]){
 					j2++;
@@ -918,116 +918,118 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 				if(!ve[7]){
 					j2 += 128;
 				}
-				y.addShort(j2);
-				y.sendPacket();
+				connection.addShort(j2);
+				connection.sendPacket();
 			}
 		}
 		super.hh = 0;
 	}
 	
-	private void k(){
+	private void handleIncomingPackets(){
 		try{
 			if(super.ii != ""){
-				y.setPacketID(3);
-				y.addString(super.ii);
-				y.sendPacket();
+				connection.setPacketID(3);
+				connection.addString(super.ii);
+				connection.sendPacket();
 				m = 0;
 				super.jj = "";
 				super.ii = "";
 			}
-			if(kb == 0 && y.p() >= 2){
-				kb = y.q();
+			if(packetLength == 0 && connection.available() >= 2){
+				packetLength = connection.getShort();
 			}
-			if(kb > 0 && y.p() >= kb){
-				y.a(kb, oe);
-				jb = y.a(oe[0]);
+			if(packetLength > 0 && connection.available() >= packetLength){
+				connection.a(packetLength, incomingPacketData);
+				packetID = connection.a(incomingPacketData[0]);
 				
-				if(jb == 5){					
-					wb = y.getShort(oe, 1);
-					id = y.getShort(oe, 3);
-					int i1 = (kb - 5) / 18;
+				if(packetID == 5){
+					currentPlayerCount = connection.getUShort(incomingPacketData, 1);
+					userID = connection.getUShort(incomingPacketData, 3);
+					int playerCount = (packetLength - 5) / 18;
 					j = 0;
+					
+					//Clear current list
 					for(int k2 = 0; k2 < ic; k2++){
-						ac[k2] = null;
+						waitingList_name[k2] = null;
 					}
 					
-					for(int j3 = 0; j3 < i1; j3++){
-						int l3 = y.getShort(oe, 5 + j3 * 18);
-						x[l3] = y.getShort(oe, 7 + j3 * 18);
-						rb[l3] = y.getShort(oe, 9 + j3 * 18);
-						ac[l3] = (new String(oe, 11 + j3 * 18, 12)).trim();
+					for(int j3 = 0; j3 < playerCount; j3++){
+						int index = connection.getUShort(incomingPacketData, 5 + j3 * 18);
+						waitingList_rating[index] = connection.getUShort(incomingPacketData, 7 + j3 * 18);
+						waitingList_score[index] = connection.getUShort(incomingPacketData, 9 + j3 * 18);
+						waitingList_name[index] = (new String(incomingPacketData, 11 + j3 * 18, 12)).trim();
 						
-						if(l3 + 1 > j){
-							j = l3 + 1;
+						if(index + 1 > j){
+							j = index + 1;
 						}
 					}
 					
-				} else if(jb == 6){
-					int j1 = (kb - 1) / 18;
+				} else if(packetID == 6){
+					int j1 = (packetLength - 1) / 18;
 					xb = 0;
 					for(int l2 = 0; l2 < jc; l2++){
 						gd[l2] = null;
 					}
 					
 					for(int k3 = 0; k3 < j1; k3++){
-						int i4 = y.getShort(oe, 1 + k3 * 18);
-						gd[i4] = (new String(oe, 3 + k3 * 18, 12)).trim();
-						bd[i4] = y.getShort(oe, 15 + k3 * 18);
-						ld[i4] = y.getShort(oe, 17 + k3 * 18);
+						int i4 = connection.getUShort(incomingPacketData, 1 + k3 * 18);
+						gd[i4] = (new String(incomingPacketData, 3 + k3 * 18, 12)).trim();
+						bd[i4] = connection.getUShort(incomingPacketData, 15 + k3 * 18);
+						ld[i4] = connection.getUShort(incomingPacketData, 17 + k3 * 18);
 						if(i4 + 1 > xb){
 							xb = i4 + 1;
 						}
 					}
 					
-				} else if(jb == 7){
-					myscore = y.a(oe, 1);
+				} else if(packetID == 7){
+					myscore = connection.getInt(incomingPacketData, 1);
 					for(int k1 = 0; k1 < 50; k1++){
-						yc[k1] = (new String(oe, 5 + k1 * 20, 12)).trim();
-						uc[k1] = y.a(oe, 17 + k1 * 20);
-						vc[k1] = y.getShort(oe, 21 + k1 * 20);
-						tc[k1] = y.getShort(oe, 23 + k1 * 20);
+						hiscores_name[k1] = (new String(incomingPacketData, 5 + k1 * 20, 12)).trim();
+						hiscores_score[k1] = connection.getInt(incomingPacketData, 17 + k1 * 20);
+						hiscores_gamesPlayed[k1] = connection.getUShort(incomingPacketData, 21 + k1 * 20);
+						hiscores_gamesWon[k1] = connection.getUShort(incomingPacketData, 23 + k1 * 20);
 					}
 					
-					dd = true;
-				} else if(jb == 8){
+					displayHiscores = true;
+				} else if(packetID == 8){
 					nd = true;
 					for(int l1 = 2; l1 >= 1; l1--){
 						de[l1] = de[l1 - 1];
 					}
 					
-					de[0] = new String(oe, 1, kb - 1);
-				} else if(jb == 9 && fe){
-					f = ac[y.getShort(oe, 1)] + " has challenged you!";
-					o = y.getShort(oe, 3);
-					fb = y.getShort(oe, 5);
+					de[0] = new String(incomingPacketData, 1, packetLength - 1);
+				} else if(packetID == 9 && fe){
+					f = waitingList_name[connection.getUShort(incomingPacketData, 1)] + " has challenged you!";
+					matchTimeMode = connection.getUShort(incomingPacketData, 3);
+					ratingMode = connection.getUShort(incomingPacketData, 5);
 					d = 1;
-				} else if(jb == 10 && fe){
-					f = "Challenging: " + ac[y.getShort(oe, 1)];
-					o = y.getShort(oe, 3);
-					fb = y.getShort(oe, 5);
+				} else if(packetID == 10 && fe){
+					f = "Challenging: " + waitingList_name[connection.getUShort(incomingPacketData, 1)];
+					matchTimeMode = connection.getUShort(incomingPacketData, 3);
+					ratingMode = connection.getUShort(incomingPacketData, 5);
 					d = 2;
-				} else if(jb == 11 && fe){
+				} else if(packetID == 11 && fe){
 					f = "Player busy with another challenge";
 					e = "";
 					d = 3;
-				} else if(jb == 12 && d == 2 && fe){
+				} else if(packetID == 12 && d == 2 && fe){
 					f = "Other player declined challenge";
 					e = "";
 					d = 3;
-				} else if(jb == 12 && d == 1 && fe){
+				} else if(packetID == 12 && d == 1 && fe){
 					f = "Other player aborted challenge";
 					e = "";
 					d = 3;
-				} else if(jb == 13 && !fe){
-					int i2 = y.getShort(oe, 3);
-					int i3 = y.getShort(oe, 5);
-					o = y.getShort(oe, 7);
-					fb = y.getShort(oe, 9);
-					ue = y.getShort(oe, 11);
+				} else if(packetID == 13 && !fe){
+					int i2 = connection.getUShort(incomingPacketData, 3);
+					int i3 = connection.getUShort(incomingPacketData, 5);
+					matchTimeMode = connection.getUShort(incomingPacketData, 7);
+					ratingMode = connection.getUShort(incomingPacketData, 9);
+					ue = connection.getUShort(incomingPacketData, 11);
 					if(i2 == 1){
-						f = ac[0] + "'s game - Currently 1 player";
+						f = waitingList_name[0] + "'s game - Currently 1 player";
 					} else {
-						f = ac[0] + "'s game - Currently " + i2 + " players";
+						f = waitingList_name[0] + "'s game - Currently " + i2 + " players";
 					}
 					if(i3 > 0){
 						e = "Game starts in: " + i3;
@@ -1035,23 +1037,23 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 						e = "";
 					}
 					d = 4;
-				} else if(jb == 14 && !fe){
+				} else if(packetID == 14 && !fe){
 					f = "Game Aborted by owner";
 					e = "";
 					d = 3;
-				} else if(jb == 15 && !fe){
+				} else if(packetID == 15 && !fe){
 					f = "Game is not available for joining";
 					e = "";
 					d = 3;
-				} else if(jb == 16){
-					id = y.getShort(oe, 1);
+				} else if(packetID == 16){
+					userID = connection.getUShort(incomingPacketData, 1);
 					gameScreen = currentGame + 3;
 					for(int j2 = 0; j2 < 3; j2++){
 						de[j2] = "";
 					}
 					
 				}
-				kb = 0;
+				packetLength = 0;
 				return;
 			}
 		} catch(IOException _ex){
@@ -1069,8 +1071,8 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 		qc = true;
 		int i1 = 0;
 		try{ // XXX Games
-			y.setPacketID(15);
-			y.sendPacket();
+			connection.setPacketID(15);
+			connection.sendPacket();
 			
 			if(games[currentGame] == null){
 				if(currentGame == 0){
@@ -1105,11 +1107,11 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 			games[currentGame].a(this);
 			i1 = 0;
 		} catch(Throwable throwable){
-			if(gameScreen != 0 && y != null && cb){
+			if(gameScreen != 0 && connection != null && cb){
 				cb = false;
-				y.setPacketID(17);
-				y.addString("l: " + throwable + " s:" + gameScreen + " g:" + currentGame + " dl:" + i1);
-				y.sendPacket();
+				connection.setPacketID(17);
+				connection.addString("l: " + throwable + " s:" + gameScreen + " g:" + currentGame + " dl:" + i1);
+				connection.sendPacket();
 			}
 		}
 		qc = false;
@@ -1125,9 +1127,9 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 			fe = false;
 		}
 		
-		y.setPacketID(16);
-		y.addByte(currentGame + 1);
-		y.sendPacket();
+		connection.setPacketID(16);
+		connection.addByte(currentGame + 1);
+		connection.sendPacket();
 		xc = -330;
 		ib = 0;
 		ad = 0;
@@ -1451,35 +1453,35 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 	private void o(){
 		try{
 			if(super.ii != ""){
-				y.setPacketID(3);
-				y.addString(super.ii);
-				y.sendPacket();
+				connection.setPacketID(3);
+				connection.addString(super.ii);
+				connection.sendPacket();
 				m = 0;
 				super.jj = "";
 				super.ii = "";
 			}
-			if(kb == 0 && y.p() >= 2){
-				kb = y.q();
+			if(packetLength == 0 && connection.available() >= 2){
+				packetLength = connection.getShort();
 			}
-			if(kb > 0 && y.p() >= kb){
-				y.a(kb, oe);
-				jb = y.a(oe[0]);
-				if(jb == 8){
+			if(packetLength > 0 && connection.available() >= packetLength){
+				connection.a(packetLength, incomingPacketData);
+				packetID = connection.a(incomingPacketData[0]);
+				if(packetID == 8){
 					nd = true;
 					for(int i1 = 2; i1 >= 1; i1--){
 						de[i1] = de[i1 - 1];
 					}
 					
-					de[0] = new String(oe, 1, kb - 1);
-				} else if(jb == 255){
+					de[0] = new String(incomingPacketData, 1, packetLength - 1);
+				} else if(packetID == 255){
 					ed = true;
 					nd = true;
 					for(int j1 = 0; j1 < 11; j1++){
-						zd[j1] = y.getShort(oe, 1 + j1 * 2);
+						zd[j1] = connection.getUShort(incomingPacketData, 1 + j1 * 2);
 					}
 					
 				}
-				kb = 0;
+				packetLength = 0;
 				return;
 			}
 		} catch(IOException _ex){
@@ -2182,9 +2184,9 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 			de[i1] = "";
 		}
 		
-		y.setPacketID(16);
-		y.addByte(0);
-		y.sendPacket();
+		connection.setPacketID(16);
+		connection.addByte(0);
+		connection.sendPacket();
 	}
 	
 	private void loadCastle(){
@@ -2298,8 +2300,8 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 	
 	private void processServerResponse(){
 		try{
-			y.q();
-			int response = y.i();
+			connection.getShort();
+			int response = connection.i();
 			System.out.println("Got response: " + response);
 			if(response == 0){
 				gameScreen = 1;
@@ -2342,7 +2344,7 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 			messageBottom = "Connecting to server";
 			draw();
 			f();
-			y = null;
+			connection = null;
 			Socket socket;
 			if(inAppletMode){
 				socket = new Socket(InetAddress.getByName(getCodeBase().getHost()), 4600);
@@ -2351,11 +2353,11 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 			}
 			socket.setSoTimeout(10000);
 			socket.setTcpNoDelay(true);
-			y = new Buffer(socket);
-			y.setPacketID(0);
-			y.addString(D.fixUserCredential(username, 12));
-			y.addString(D.fixUserCredential(password, 12));
-			y.c();
+			connection = new Buffer(socket);
+			connection.setPacketID(0);
+			connection.addString(D.fixUserCredential(username, 12));
+			connection.addString(D.fixUserCredential(password, 12));
+			connection.c();
 			return;
 		} catch(Exception exception){
 			System.out.println(String.valueOf(exception));
@@ -2427,8 +2429,8 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 				if(pc == 2 && super.s != 0){
 					j();
 					if(super.s == 121 || super.s == 89){
-						y.setPacketID(2);
-						y.sendPacket();
+						connection.setPacketID(2);
+						connection.sendPacket();
 						processServerResponse();
 						return;
 					} else {
@@ -2516,9 +2518,9 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 	}
 	
 	private void db(){
-		if(y != null){
-			y.setPacketID(1);
-			y.sendPacket();
+		if(connection != null){
+			connection.setPacketID(1);
+			connection.sendPacket();
 		}
 		gameScreen = 0;
 		pc = 0;
@@ -2529,8 +2531,8 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 			m++;
 			if(m > n){
 				m = 0;
-				y.setPacketID(4);
-				y.c();
+				connection.setPacketID(4);
+				connection.c();
 				return;
 			}
 		} catch(IOException _ex){
@@ -2563,16 +2565,16 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 					return;
 				}
 				if(gameScreen >= 3){
-					games[gameScreen - 3].a(this, id);
+					games[gameScreen - 3].a(this, userID);
 					return;
 				}
 			}
 		} catch(Throwable throwable){
-			if(gameScreen != 0 && y != null && cb){
+			if(gameScreen != 0 && connection != null && cb){
 				cb = false;
-				y.setPacketID(17);
-				y.addString("init: " + throwable + " screen:" + gameScreen);
-				y.sendPacket();
+				connection.setPacketID(17);
+				connection.addString("init: " + throwable + " screen:" + gameScreen);
+				connection.sendPacket();
 			}
 			
 			throwable.printStackTrace();
@@ -2629,11 +2631,11 @@ public class OpenCGD extends opencgd.client.library.EngineApplet {
 			super.s = 0;
 			return;
 		} catch(Throwable throwable){
-			if(gameScreen != 0 && y != null && cb){
+			if(gameScreen != 0 && connection != null && cb){
 				cb = false;
-				y.setPacketID(17);
-				y.addString("p: " + throwable + " s:" + gameScreen + " a:" + pe + " cl:" + be);
-				y.sendPacket();
+				connection.setPacketID(17);
+				connection.addString("p: " + throwable + " s:" + gameScreen + " a:" + pe + " cl:" + be);
+				connection.sendPacket();
 			}
 			
 			//throwable.printStackTrace();
