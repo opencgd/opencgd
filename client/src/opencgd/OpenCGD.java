@@ -28,7 +28,7 @@ import opencgd.library.F;
 public class OpenCGD extends opencgd.library.EngineApplet {
 	
 	private static final long serialVersionUID = -5350768759203686867L;
-	private static final boolean TEST_MOVEMENT = true;
+	private static final boolean TEST_MOVEMENT = false;
 	private int p;
 	private String eb[] = {
 			"Non rated game", "Rated Game"
