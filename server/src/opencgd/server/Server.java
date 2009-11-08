@@ -125,7 +125,20 @@ public class Server {
 				
 				ctx.getChannel().write(response.createFrame());
 			} else if(frame.getID() == 3){
-				System.out.println("Chat message: "+new String(frame.getData()));
+				final String msg = new String(frame.getData());
+				System.out.println("Chat message: "+msg);
+				
+				if(msg.charAt(0) == '/'){
+					final String command = msg.substring(1);
+					
+					if(command.equals("chreq")){
+						final FrameWriter response = new FrameWriter(9);
+						response.addShort(2); //Index of waitingList
+						response.addShort(4); //Time per move l[o];
+						response.addShort(1); //Nonrated(0)/Rated(1)
+						ctx.getChannel().write(response.createFrame());
+					}
+				}
 			} else if(frame.getID() == 16){
 				int game = frame.readByte();
 				
@@ -141,8 +154,7 @@ public class Server {
 				System.out.println("Showing interface");
 				//opened interface
 				
-				FrameWriter response = new FrameWriter();
-				response.setID(5);
+				FrameWriter response = new FrameWriter(5);
 				response.addShort(4); //number of players
 				response.addShort(3); //current player's ID
 				
@@ -150,18 +162,50 @@ public class Server {
 					response.addShort(i); //index
 					response.addShort(0); //rating
 					response.addShort(0); //score
-					
-					String name = "bob"+i;
-					
-					while(name.length() < 12){
-						name += ' ';
-					}
-					
-					response.addBytes(name.getBytes());
+					response.addBytes(encodeUsername("bob"+i));
 				}
 				
 				ctx.getChannel().write(response.createFrame());
+				
+				//Send hiscores list
+				FrameWriter hiscores = new FrameWriter(7);
+				hiscores.addInt(400); //My score
+				
+				for(int i = 0; i < 50; i++){
+					hiscores.addBytes(encodeUsername("test"+i));
+					hiscores.addInt(i*20); //score of user
+					hiscores.addShort(i*3); //# games played
+					hiscores.addShort(i); //# games won
+				}
+				
+				ctx.getChannel().write(hiscores.createFrame());
+			} else if(frame.getID() == 5){
+				System.out.println("Set match options");
+				final int timeSetting = frame.readShort();
+				final boolean isRated = frame.readShort() == 1;
+				final int filter = frame.readShort();
+				
+				System.out.println("Time="+timeSetting+", Rated?="+isRated+", Filter="+filter);
+			} else if(frame.getID() == 6){
+				System.out.println("Challenging...");
+				
+				//Show the challenge request screen				
+				FrameWriter response = new FrameWriter(10);
+				response.addShort(2);
+				response.addShort(4);
+				response.addShort(1);
+				ctx.getChannel().write(response.createFrame());
 			}
+		}
+		
+		//TODO Move out
+		private byte[] encodeUsername(String name){
+			//XXX string builder...
+			while(name.length() < 12){
+				name += ' ';
+			}
+			
+			return name.getBytes();
 		}
 		
 		/**
