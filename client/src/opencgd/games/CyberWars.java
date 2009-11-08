@@ -1452,7 +1452,7 @@ public class CyberWars extends AbstractGame {
 		super.v[0] = "Welcome to CyberWars! For further instructions on any screen just type: help";
 	}
 	
-	public void h(){
+	public void loadMedia(){
 		super.p = 6;
 		super.k.a();
 		super.k.a("crypt/back.jpg", 0, false);

@@ -270,7 +270,7 @@ public class Reversi extends AbstractGame {
 	}
 	
 	@Override
-	public void h(){
+	public void loadMedia(){
 		super.p = 2;
 		super.k.a();
 		super.k.a("reversi/board.jpg", 0, false);

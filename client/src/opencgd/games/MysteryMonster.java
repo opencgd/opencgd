@@ -365,7 +365,7 @@ public class MysteryMonster extends AbstractGame {
 	}
 	
 	@Override
-	public void h(){
+	public void loadMedia(){
 		super.p = 2;
 		super.k.a();
 		super.k.a("crypt/back.jpg", 4, false);

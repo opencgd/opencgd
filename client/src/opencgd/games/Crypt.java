@@ -681,7 +681,7 @@ public class Crypt extends AbstractGame {
 	}
 	
 	@Override
-	public void h(){
+	public void loadMedia(){
 		super.p = 4;
 		super.k.a();
 		super.k.a("crypt/back.jpg", 0, false);

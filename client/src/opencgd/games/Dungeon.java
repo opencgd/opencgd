@@ -269,7 +269,7 @@ public class Dungeon extends AbstractGame {
 	}
 	
 	@Override
-	public void h(){
+	public void loadMedia(){
 		super.p = 6;
 		super.k.a();
 		super.k.a("dungeon/caves.jpg", 0, false);

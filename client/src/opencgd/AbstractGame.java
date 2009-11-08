@@ -63,8 +63,7 @@ public abstract class AbstractGame {
 	public void d(){
 	}
 	
-	public void h(){
-	}
+	public abstract void loadMedia();
 	
 	public void g(){
 	}
@@ -293,7 +292,7 @@ public abstract class AbstractGame {
 		i = w.jb;
 		b = w.m;
 		c = w.n;
-		s = w.kd;
+		s = w.currentGame;
 		g = 0;
 		for(int j1 = 0; j1 < 3; j1++){
 			v[j1] = "";
@@ -318,8 +317,8 @@ public abstract class AbstractGame {
 		ab = w.oe;
 		n = w.ac;
 		e = w.x;
-		s = w.kd;
+		s = w.currentGame;
 		g = 0;
-		h();
+		loadMedia();
 	}
 }

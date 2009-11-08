@@ -341,7 +341,7 @@ public class Mahjong extends AbstractGame {
 	}
 	
 	@Override
-	public void h(){
+	public void loadMedia(){
 		super.p = 6;
 		super.k.a();
 		super.k.a("mahjong/bricks.jpg", 0, false);

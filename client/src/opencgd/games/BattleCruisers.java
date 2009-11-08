@@ -510,7 +510,7 @@ public class BattleCruisers extends AbstractGame {
 	}
 	
 	@Override
-	public void h(){
+	public void loadMedia(){
 		super.p = 2;
 		super.k.a();
 		super.k.a("battle/board.jpg", 0, false);

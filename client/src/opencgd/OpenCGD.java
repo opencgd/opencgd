@@ -56,7 +56,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 	String f;
 	int d;
 	private int mb;
-	int kd;
+	int currentGame;
 	private String fd[] = {
 			"Checkers", "Chess", "Battle-Cruisers", "Quad-Link", "Reversi", "Mystery Monster", "Mahjong", "Pairs", "Treasure Crypt", "Castle Dungeon", "Cyber wars"
 	};
@@ -277,9 +277,9 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 			graphics.setColor(Color.black);
 			graphics.setFont(me);
 			if(wb == 1){
-				graphics.drawString(fd[kd] + " - Currently " + wb + " player", 148, 24);
+				graphics.drawString(fd[currentGame] + " - Currently " + wb + " player", 148, 24);
 			} else {
-				graphics.drawString(fd[kd] + " - Currently " + wb + " players", 148, 24);
+				graphics.drawString(fd[currentGame] + " - Currently " + wb + " players", 148, 24);
 			}
 			if(d == 0){
 				graphics.drawLine(144, 52, 495, 52);
@@ -554,7 +554,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 					if(hd == k3){
 						graphics.setColor(db);
 					}
-					graphics.drawString(gd[k3] + "'s game (" + bd[k3] + "/" + games[kd].p + ")", 20, j1 + 57 + 130);
+					graphics.drawString(gd[k3] + "'s game (" + bd[k3] + "/" + games[currentGame].p + ")", 20, j1 + 57 + 130);
 					j1 += 12;
 					if(++j2 >= 7){
 						break;
@@ -579,7 +579,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 				graphics.drawString("Down", 65, 288);
 			}
 			graphics.drawImage(qb, 0, 298, this);
-			graphics.drawImage(hb, kd * 46 + 3, 352, this);
+			graphics.drawImage(hb, currentGame * 46 + 3, 352, this);
 			graphics.setColor(Color.white);
 			graphics.setFont(t);
 			if(super.jj != null){
@@ -672,7 +672,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 			te = -1;
 			se = -1;
 			super.hh = 0;
-			if(kd == i1){
+			if(currentGame == i1){
 				pe = -1;
 			} else {
 				pe = i1;
@@ -1044,7 +1044,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 					d = 3;
 				} else if(jb == 16){
 					id = y.b(oe, 1);
-					gameScreen = kd + 3;
+					gameScreen = currentGame + 3;
 					for(int j2 = 0; j2 < 3; j2++){
 						de[j2] = "";
 					}
@@ -1073,43 +1073,43 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 				y.sendPacket();
 			}
 			
-			if(games[kd] == null){
-				if(kd == 0){
-					games[kd] = new Checkers(); // Checkers (media done)
-				} else if(kd == 1){
-					games[kd] = new Chess(); // Chess (media done)
-				} else if(kd == 2){
-					games[kd] = new BattleCruisers(); // Battle Cruisers (media done)
-				} else if(kd == 3){
-					games[kd] = new QuadLink(); // Quadlink (media done)
-				} else if(kd == 4){
-					games[kd] = new Reversi(); // Reversi (media done)
-				} else if(kd == 5){
-					games[kd] = new MysteryMonster(); // Mystery Monster
+			if(games[currentGame] == null){
+				if(currentGame == 0){
+					games[currentGame] = new Checkers(); // Checkers (media done)
+				} else if(currentGame == 1){
+					games[currentGame] = new Chess(); // Chess (media done)
+				} else if(currentGame == 2){
+					games[currentGame] = new BattleCruisers(); // Battle Cruisers (media done)
+				} else if(currentGame == 3){
+					games[currentGame] = new QuadLink(); // Quadlink (media done)
+				} else if(currentGame == 4){
+					games[currentGame] = new Reversi(); // Reversi (media done)
+				} else if(currentGame == 5){
+					games[currentGame] = new MysteryMonster(); // Mystery Monster
 					// (missing back.gif
 					// which I think are the
 					// monsters in the grid
 					// or the grid itself)
-				} else if(kd == 6){
-					games[kd] = new Mahjong(); // Mahjong (media done)
-				} else if(kd == 7){
-					games[kd] = new Pairs(); // Pairs (media done)
-				} else if(kd == 8){
-					games[kd] = new Crypt(); // Crypt (media done)
-				} else if(kd == 9){
-					games[kd] = new Dungeon(); // Dungeon (media done)
-				} else if(kd == 10){
-					games[kd] = new CyberWars(); // CyberWars (media done)
+				} else if(currentGame == 6){
+					games[currentGame] = new Mahjong(); // Mahjong (media done)
+				} else if(currentGame == 7){
+					games[currentGame] = new Pairs(); // Pairs (media done)
+				} else if(currentGame == 8){
+					games[currentGame] = new Crypt(); // Crypt (media done)
+				} else if(currentGame == 9){
+					games[currentGame] = new Dungeon(); // Dungeon (media done)
+				} else if(currentGame == 10){
+					games[currentGame] = new CyberWars(); // CyberWars (media done)
 				}
 			}
 			i1 = 1;
-			games[kd].a(this);
+			games[currentGame].a(this);
 			i1 = 0;
 		} catch(Throwable throwable){
 			if(gameScreen != 0 && y != null && cb){
 				cb = false;
 				y.setPacketID(17);
-				y.addString("l: " + throwable + " s:" + gameScreen + " g:" + kd + " dl:" + i1);
+				y.addString("l: " + throwable + " s:" + gameScreen + " g:" + currentGame + " dl:" + i1);
 				y.sendPacket();
 			}
 		}
@@ -1120,7 +1120,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 			de[j1] = "";
 		}
 		
-		if(games[kd].p == 2){
+		if(games[currentGame].p == 2){
 			fe = true;
 		} else {
 			fe = false;
@@ -1128,10 +1128,10 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		
 		if(!TEST_MOVEMENT){
 			y.setPacketID(16);
-			y.addByte(kd + 1);
+			y.addByte(currentGame + 1);
 			y.sendPacket();
 		} else {
-			gameScreen = kd + 3;
+			gameScreen = currentGame + 3;
 			for(int j2 = 0; j2 < 3; j2++){
 				de[j2] = "";
 			}
@@ -1455,7 +1455,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		}
 		if(b == 20){
 			gameScreen = 2;
-			kd = mc[te][se] - 100;
+			currentGame = mc[te][se] - 100;
 		}
 	}
 	
@@ -1630,7 +1630,7 @@ public class OpenCGD extends opencgd.library.EngineApplet {
 		} catch(Exception _ex){
 			gameScreen = 2;
 		}
-		kd = pe;
+		currentGame = pe;
 		pe = -1;
 	}
 	
